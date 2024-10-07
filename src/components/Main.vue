@@ -6,7 +6,7 @@
 
 <template>
 
-<section class="container mx-auto mt-28 px-8 flex justify-between flex-wrap items-center">
+<section class="container mx-auto mt-44 pt-24 px-8 flex justify-between flex-wrap items-center" id="main">
         <div class="left flex flex-col">
             <div class="Generate">
                 <h2 class="my-4 text-red-600 text-6xl">
@@ -24,13 +24,13 @@
                 DEFI, NFT AND MORE POWERED BY IPI UTILITY COIN. MOST POPULAR COINS WRAPPED.
             </h3>
             <div class="flex justify-center gap-8 mt-8">
-                <button class="border-solid border-2 border-red-600 bg-red-600 text-gray-100 text-base font-medium rounded-3xl max-w-34 px-4 py-3">
-                    <a href="https://">
+                <button class="border-solid border-2 border-red-600 bg-red-600 text-gray-100 text-base font-medium rounded-3xl max-w-34 px-4 py-3 hover:bg-neutral-100 hover:border-neutral-100 hover:text-red-600">
+                    <a href="https://ipi.io/whitepaper.pdf" class="hover:text-red-600">
                         READ OUR WHITEPAPER
                     </a>
                 </button>
-                <button class="border-solid border-2 border-red-600 text-gray-100 text-base font-medium rounded-3xl max-w-34 px-4 py-3">
-                    <a href="https://">
+                <button class="border-solid border-2 border-red-600 text-gray-100 text-base font-medium rounded-3xl max-w-34 px-4 py-3 hover:bg-red-600">
+                    <a href="https://t.me/ipicoin" class="hover:text-gray-100">
                         JOIN OUR TELEGRAM GROUP
                     </a>
                 </button>

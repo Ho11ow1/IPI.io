@@ -6,7 +6,7 @@
 
 <template>
 
-    <header class="header" id="header">
+    <header class="header w-full" id="header">
         <nav class="nav container mt-3 mx-auto py-6 flex justify-between text-base font-semibold">
             <div class="Nav-logo">
                 <a href="/" class="flex items-center justify-center">
@@ -19,42 +19,42 @@
             <div class="nav--menu">
                 <ul class="nav--list flex flex-row gap-10 items-center text-neutral-300 ">
                     <li class="nav--item">
-                        <a href="">
+                        <a href="#main">
                             Home
                         </a>
                     </li>
                     <li class="nav--item">
-                        <a href="">
+                        <a href="#advantages">
                             Advantages
                         </a>
                     </li>
                     <li class="nav--item">
-                        <a href="">
+                        <a href="#platform">
                             Platform
                         </a>
                     </li>
                     <li class="nav--item">
-                        <a href="">
+                        <a href="#eco">
                             Ecosystem
                         </a>
                     </li>
                     <li class="nav--item">
-                        <a href="">
+                        <a href="#coins">
                             Coins
                         </a>
                     </li>
                     <li class="nav--item">
-                        <a href="">
+                        <a href="https://scan.ipi.io">
                             Scan
                         </a>
                     </li>
                     <li class="nav--item">
-                        <a href="">
+                        <a href="#contact">
                             Contact
                         </a>
                     </li>
                     <li class="nav--item">
-                        <a href="">
+                        <a href="https://wallet.ipi.io">
                             <button class="border-solid border-2 border-red-600 px-6 py-2 rounded-3xl text-base font-semibold">
                                 WALLET
                             </button>
@@ -69,6 +69,12 @@
 
 <style scoped>
 
-
+.header{
+    background-color:#0f1932;
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:1000;
+}
 
 </style>

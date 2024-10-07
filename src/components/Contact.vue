@@ -6,7 +6,7 @@
 
 <template>
 
-    <section class="container mt-24 mx-auto px-8 flex justify-center gap-24 items-center">
+    <section class="container mt-24 mx-auto px-8 flex justify-center items-center" id="contact">
         <div class="Contact-details mr-96">
             <div class="contact-section">
                 <div class="rotating-circles">
@@ -84,8 +84,12 @@ button:hover{
 
 .rotating-circles {
   position: absolute;
-  width: 300px;
-  height: 300px;
+  width: 350px;
+  height: 350px;
+  /* background-image:url(../assets/dot-c-azalea.png);
+  background-position-x:19%;
+  background-position-y:12%;
+  background-repeat:no-repeat; */
 }
 
 .circle {

@@ -6,7 +6,7 @@
 
 <template>
 
-<section class="section mt-32 mb-96" id="advantages">
+<section class="section mt-32 mb-96 pt-32" id="advantages">
             <div id="dev-table" style="display: none;">
               <div class="comparison-table-wrapper">
                 <table class="comparison-table">
