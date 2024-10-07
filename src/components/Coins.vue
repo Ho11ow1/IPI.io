@@ -16,7 +16,7 @@
         </div>
         <div class="container flex mx-auto flex-row items-center justify-between">
             <div class="grid grid-cols-2 items-center gap-4 max-w-xl">
-                <div class="distribution-item border-solid border-2 rounded-lg text-left px-8 py-3">
+                <div class="distribution-item border-solid border-2 rounded-lg text-left px-8 py-3 ">
                     <h2 class="distribution-title text-xl mb-4">
                         Public Coin Sale 6.5M
                     </h2>
@@ -201,6 +201,54 @@
 
 .blue {
     background-color: #3498db;
+}
+
+.distribution-item{
+    padding: 20px;
+    
+    /* Apply only left and right borders */
+    border-left: 2px solid #5f6d82;
+    border-right: 2px solid #5f6d82;
+
+    /* Add border radius to corners */
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+
+    /* No border on top or bottom */
+    border-top: none;
+    border-bottom: none;
+    z-index:1;
+}
+
+.distribution-item::before, .distribution-item::after {
+    content: '';
+    position: absolute;
+    width: 100%; /* Stretch this out as desired */
+    height: 20px;
+    border: 2px solid #5f6d82;
+    border-top: none;
+    border-right: none;
+    z-index: 0;
+}
+
+.distribution-item::before {
+    top: 0;
+    left: -2px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.distribution-item::after {
+    top: 0;
+    right: -2px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.distribution-item:hover{
+    border-color:rgba(255, 10, 120, 0.7);
 }
 
 </style>
