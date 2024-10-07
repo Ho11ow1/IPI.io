@@ -5,7 +5,7 @@
 
 <template>
 
-    <section class="coins container mx-auto mb-96">
+    <section class="coins container mx-auto mb-96 pt-32" id="coins">
         <div class="Section-title">
             <h2 class="text-center mx-auto mb-8 font-medium text-5xl text-neutral-300">
                 COINS
