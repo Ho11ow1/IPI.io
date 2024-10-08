@@ -2,26 +2,32 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
 :root{
-  --white-color:#fff;
-  --black-color:#000;
+	--white-colour:#fff;
+	--black-colour:#000;
+
+    --bg-colour:#0f1932;
 }
 
 *{
-  box-sizing:border-box;
-  padding:0;
-  margin:0;
-  color:var(--white-color);
+    box-sizing:border-box;
+    padding:0;
+    margin:0;
 }
 
 html{
-  scroll-behavior:smooth;
+    scroll-behavior:smooth;
 }
 
 body{
-  background-color:#0f1932; 
+    font-family:'Poppins', sans-serif;
+    background-color: var(--bg-colour);
+    color:var(--white-colour);
+    overflow-x:hidden;
 }
 
 a:hover{
-  color:rgb(239, 68, 68);
+	color:rgb(239, 68, 68);
 }

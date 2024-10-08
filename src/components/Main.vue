@@ -6,7 +6,7 @@
 
 <template>
 
-<section class="container mx-auto mt-44 pt-24 px-8 flex justify-between flex-wrap items-center" id="main">
+<section class="container mx-auto mt-44 px-8 flex justify-between items-center" id="main">
         <div class="left flex flex-col">
             <div class="Generate">
                 <h2 class="my-4 text-red-600 text-6xl">
@@ -19,7 +19,7 @@
                     I
                 </h2>
             </div>
-            <h3 class="text-gray-400 mt-8 text-1xl max-w-5xl">
+            <h3 class="text-gray-400 mt-8 text-1xl max-w-5xl main-description">
                 WE COMBINE THE BEST PROTOCOLS TO BUILD THE FASTEST, SAFEST AND SIMPLEST NON-CUSTODIAL BLOCKCHAIN FOR STORING, TRADING, DAPPS, 
                 DEFI, NFT AND MORE POWERED BY IPI UTILITY COIN. MOST POPULAR COINS WRAPPED.
             </h3>
@@ -49,9 +49,8 @@
 
 @media (max-width:1600px)
 {
-    .right{
-        margin-right:auto;
-        margin-top:6rem;
+    .main-description{
+        max-width:540px;
     }
 }
 

@@ -1,11 +1,41 @@
 <script setup>
 
 
+
+</script>
+
+<script>
+    import { Bar } from 'vue-chartjs'
+    import { Chart as ChartJS, Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale } from 'chart.js'
+
+    ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
+
+    export default {
+    name: 'BarChart',
+    components: { Bar },
+    data() {
+        return {
+        chartData: {
+            labels: [ 'January', 'February', 'March' ],
+            datasets: [ { data: [40, 20, 12] } ]
+        },
+        chartOptions: {
+            responsive: true
+        }
+        }
+    }
+    }
 </script>
 
 <template>
-
-    <section class="coins container mx-auto mb-96 pt-32" id="coins">
+    <div class="chart mx-auto" style="max-width:800px"> <!-- THIS IS VERY TEMPORARY, NEED TO FIGURE OUT HOW TO MAKE A PIE INSTEAD OF A BAR -->
+        <Bar
+            id="my-chart-id"
+            :options="chartOptions"
+            :data="chartData"
+        />
+    </div>
+    <section class="coins container mx-auto mb-72 pt-32" id="coins">
         <div class="Section-title">
             <h2 class="text-center mx-auto mb-8 font-medium text-5xl text-neutral-300">
                 COINS
@@ -205,27 +235,23 @@
 
 .distribution-item{
     padding: 20px;
-    
-    /* Apply only left and right borders */
+
     border-left: 2px solid #5f6d82;
     border-right: 2px solid #5f6d82;
 
-    /* Add border radius to corners */
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
 
-    /* No border on top or bottom */
     border-top: none;
     border-bottom: none;
-    z-index:1;
 }
 
 .distribution-item::before, .distribution-item::after {
     content: '';
     position: absolute;
-    width: 100%; /* Stretch this out as desired */
+    width: 100%;
     height: 20px;
     border: 2px solid #5f6d82;
     border-top: none;

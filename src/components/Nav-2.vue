@@ -19,7 +19,7 @@
             <div class="nav--menu">
                 <ul class="nav--list flex flex-row gap-10 items-center text-neutral-300 ">
                     <li class="nav--item">
-                        <a href="#main">
+                        <a href="#app">
                             Home
                         </a>
                     </li>
@@ -33,11 +33,11 @@
                             Platform
                         </a>
                     </li>
-                    <li class="nav--item">
+                    <!-- <li class="nav--item">
                         <a href="#eco">
                             Ecosystem
                         </a>
-                    </li>
+                    </li> -->
                     <li class="nav--item">
                         <a href="#coins">
                             Coins
@@ -71,7 +71,7 @@
 
 .header{
     background-color:#0f1932;
-    position:fixed;
+    position:sticky;
     top:0;
     left:0;
     z-index:1000;
