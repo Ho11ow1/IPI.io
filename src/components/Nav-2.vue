@@ -98,7 +98,7 @@ const toggleMenu = () => {
         top: 100%;
         left: 0;
         right: 0;
-        width: 100vw; /* Full width dropdown */
+        width: 100vw;
         background-color: #0f1932;
         padding: 1rem;
         z-index: 1000;
@@ -111,12 +111,15 @@ const toggleMenu = () => {
     }
 }
 
-/* @media (min-width: 768px) {
+@media (min-width: 768px) {
+    .nav--menu {
+        display: flex !important; 
+    }
     .nav--list {
         flex-direction: row;
         position: static;
         background-color: transparent;
         padding: 0;
     }
-} */
+}
 </style>

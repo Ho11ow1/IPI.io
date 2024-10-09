@@ -13,57 +13,59 @@
             </p>
         </div>
         <div class="container flex mx-auto flex-row items-center justify-between Mobile">
-            <div class="grid grid-cols-2 items-center gap-4 max-w-xl second">
-                <div class="distribution-item text-left">
-                    <h2 class="distribution-title text-xl mb-4">
-                        Public Coin Sale 6.5M
-                    </h2>
-                    <p class="distribution-des max-w-64">
-                        65% (To ensure maximal decentralization)
-                    </p>
-                </div>
-                <div class="distribution-item text-left grid-column">
-                    <h2 class="distribution-title text-xl mb-4">
-                        Team Incentive 1.5M
-                    </h2>
-                    <p class="distribution-des max-w-64">
-                        15% (Reward for building software)
-                    </p>
-                </div>
-                <div class="distribution-item text-left grid-column">
-                    <h2 class="distribution-title text-xl mb-4">
-                        Marketing 1M
-                    </h2>
-                    <p class="distribution-des max-w-64">
-                        10% (Advertising and promotional <br/>activities)
-                    </p>
-                </div>
-                <div class="distribution-item text-left grid-column">
-                    <h2 class="distribution-title text-xl mb-4">
-                        Reserve Fund
-                    </h2>
-                    <p class="distribution-des max-w-64">
-                        7% (To be burned after 36 <br/>months)
-                    </p>
-                </div>
-                <div class="flex flex-row">
+            <div class="Mid flex">
+                <div class="grid grid-cols-2 items-center gap-4 max-w-xl second">
+                    <div class="distribution-item text-left">
+                        <h2 class="distribution-title text-xl mb-4">
+                            Public Coin Sale 6.5M
+                        </h2>
+                        <p class="distribution-des max-w-64">
+                            65% (To ensure maximal decentralization)
+                        </p>
+                    </div>
                     <div class="distribution-item text-left grid-column">
-                    <h2 class="distribution-title text-xl mb-4">
-                        Bug bounty
-                    </h2>
-                    <p class="distribution-des max-w-64">
-                        3% (6 months lockup)
-                    </p>
-                </div>
+                        <h2 class="distribution-title text-xl mb-4">
+                            Team Incentive 1.5M
+                        </h2>
+                        <p class="distribution-des max-w-64">
+                            15% (Reward for building software)
+                        </p>
+                    </div>
+                    <div class="distribution-item text-left grid-column">
+                        <h2 class="distribution-title text-xl mb-4">
+                            Marketing 1M
+                        </h2>
+                        <p class="distribution-des max-w-64">
+                            10% (Advertising and promotional <br/>activities)
+                        </p>
+                    </div>
+                    <div class="distribution-item text-left grid-column">
+                        <h2 class="distribution-title text-xl mb-4">
+                            Reserve Fund
+                        </h2>
+                        <p class="distribution-des max-w-64">
+                            7% (To be burned after 36 <br/>months)
+                        </p>
+                    </div>
+                    <div class="flex flex-row">
+                        <div class="distribution-item text-left grid-column">
+                        <h2 class="distribution-title text-xl mb-4">
+                            Bug bounty
+                        </h2>
+                        <p class="distribution-des max-w-64">
+                            3% (6 months lockup)
+                        </p>
+                    </div>
                 </div>
             </div>
             <!-- Interactive Pie Chart Section -->
-            <div class="flex flex-col items-center mr-64 chart">
+            <div class="flex flex-col items-center mr-12 chart">
                 <HELPME/>
             </div>
+        </div>
 
             <div class="flex items-center">
-                <div class="info-section grid grid-cols-2 gap-6 max-w-96 stats">
+                <div class="info-section grid grid-cols-2 gap-6 max-w-screen-sm stats">
                     <div class="info-box flex items-center px-3 py-3">
                         <div class="info-line purple"></div>
                         <div class="info-content flex flex-col">
@@ -101,6 +103,13 @@
 
 <style scoped>
 
+.info-title{
+    font-size:1.1rem;
+    font-weight:600;
+    letter-spacing:.1rem;
+    margin-bottom:.6rem;
+}
+
 .max-w-xl{
     max-width:600px;
 }
@@ -118,6 +127,10 @@
     height: 100%;
     margin-right: 10px;
     border-radius: 2px;
+}
+
+.info-box{
+    width:240px;
 }
 
 .purple {
@@ -172,19 +185,36 @@
     border-color:#f42f54;
 } */
 
-@media (max-width:768px)
+canvas{
+    max-width:480px;
+    max-height:480px;
+}
+
+@media (max-width:1280px)
+{
+    .Mobile{
+        display:grid;
+        grid-template-rows:repeat(2, 1fr);
+    }
+    .info-section{
+        margin-left:auto;
+        margin-right:auto;
+    }
+}
+
+@media (max-width:940px)
 {
     .Mobile{
         display:grid;
         grid-template-rows:repeat(3, 1fr);
     }
     .second{
-        grid-row:2/3;
         display:flex;
         flex-wrap:wrap;
+        max-width:380px;
     }
     .chart{
-        margin-right:0;
+        max-width:300px;
     }
     .info-section{
         grid-template-columns:repeat(2, 1fr);
