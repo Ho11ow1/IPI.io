@@ -3,9 +3,6 @@
 </script>
 
 <template>
-    <!-- <div class="chart mx-auto" style="max-width:800px"> THIS IS VERY TEMPORARY, NEED TO FIGURE OUT HOW TO MAKE A PIE INSTEAD OF A BAR -->
-        <!-- <HELPME/>
-    </div> -->
     <section class="coins container mx-auto mb-72 pt-32" id="coins">
         <div class="Section-title">
             <h2 class="text-center mx-auto mb-8 font-medium text-5xl text-neutral-300">
@@ -15,9 +12,9 @@
                 Breakdown of our Coin Recipients.
             </p>
         </div>
-        <div class="container flex mx-auto flex-row items-center justify-between">
-            <div class="grid grid-cols-2 items-center gap-4 max-w-xl">
-                <div class="distribution-item border-solid border-2 rounded-lg text-left px-8 py-3 ">
+        <div class="container flex mx-auto flex-row items-center justify-between Mobile">
+            <div class="grid grid-cols-2 items-center gap-4 max-w-xl second">
+                <div class="distribution-item text-left">
                     <h2 class="distribution-title text-xl mb-4">
                         Public Coin Sale 6.5M
                     </h2>
@@ -25,7 +22,7 @@
                         65% (To ensure maximal decentralization)
                     </p>
                 </div>
-                <div class="distribution-item border-solid border-2 rounded-lg text-left px-8 py-3 grid-column">
+                <div class="distribution-item text-left grid-column">
                     <h2 class="distribution-title text-xl mb-4">
                         Team Incentive 1.5M
                     </h2>
@@ -33,7 +30,7 @@
                         15% (Reward for building software)
                     </p>
                 </div>
-                <div class="distribution-item border-solid border-2 rounded-lg text-left px-8 py-3 grid-column">
+                <div class="distribution-item text-left grid-column">
                     <h2 class="distribution-title text-xl mb-4">
                         Marketing 1M
                     </h2>
@@ -41,7 +38,7 @@
                         10% (Advertising and promotional <br/>activities)
                     </p>
                 </div>
-                <div class="distribution-item border-solid border-2 rounded-lg text-left px-8 py-3 grid-column">
+                <div class="distribution-item text-left grid-column">
                     <h2 class="distribution-title text-xl mb-4">
                         Reserve Fund
                     </h2>
@@ -50,7 +47,7 @@
                     </p>
                 </div>
                 <div class="flex flex-row">
-                    <div class="distribution-item border-solid border-2 rounded-lg text-left px-8 py-3 grid-column">
+                    <div class="distribution-item text-left grid-column">
                     <h2 class="distribution-title text-xl mb-4">
                         Bug bounty
                     </h2>
@@ -61,12 +58,12 @@
                 </div>
             </div>
             <!-- Interactive Pie Chart Section -->
-            <div class="flex flex-col items-center mr-64">
+            <div class="flex flex-col items-center mr-64 chart">
                 <HELPME/>
             </div>
 
             <div class="flex items-center">
-                <div class="info-section grid grid-cols-2 gap-6 max-w-96">
+                <div class="info-section grid grid-cols-2 gap-6 max-w-96 stats">
                     <div class="info-box flex items-center px-3 py-3">
                         <div class="info-line purple"></div>
                         <div class="info-content flex flex-col">
@@ -108,67 +105,8 @@
     max-width:600px;
 }
 
-/* Pie chart container */
-.pie-chart {
-    position: relative;
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    transform: rotate(-90deg);
-}
-
-/* Base slice style */
-.slice {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    clip-path: polygon(50% 50%, 100% 0, 100% 100%, 60% 100%);
-    background-color: rgba(255, 255, 255, 0.1);
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-/* Visible part of the slice */
-.slice::before {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    clip-path: polygon(50% 50%, 100% 0, 100% 100%, 50% 100%);
-    background-color: inherit;
-    transition: background-color 0.3s ease;
-}
-
-.slice-1 {
-    background-color: #f5475d; /* Color for Public Coin Sale */
-    transform: rotate(15deg); 
-}
-
-.slice-2 {
-    background-color: #aa80ff; /* Color for Team Incentive */
-    transform: rotate(40deg);
-}
-
-.slice-3 {
-    background-color: #22a1f2; /* Color for Marketing */
-    transform: rotate(255deg);
-}
-
-.slice-4 {
-    background-color: #ffca28; /* Color for Reserve Fund */
-    transform: rotate(180deg);
-}
-
-.slice-5 {
-    background-color: #5f6d82; /* Color for Bug Bounty */
-    transform: rotate(60deg);
-}
-
-.slice:hover::before {
-    background-color: rgba(255, 0, 0, 1.0)
+.max-w-64{
+    max-width:22rem;;
 }
 
 .grid-column{
@@ -199,47 +137,60 @@
 }
 
 .distribution-item{
-    padding: 20px;
-
-    border-left: 2px solid #5f6d82;
-    border-right: 2px solid #5f6d82;
-
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-
-    border-top: none;
-    border-bottom: none;
+    position:relative;
+    padding:.75rem 1.5rem;
+    padding-right:2.25rem;
 }
 
-.distribution-item::before, .distribution-item::after {
-    content: '';
+.distribution-des{
+    width:100%;
+}
+
+.distribution-item:before, .distribution-item:after {
     position: absolute;
-    width: 100%;
-    height: 20px;
-    border: 2px solid #5f6d82;
-    border-top: none;
-    border-right: none;
-    z-index: 0;
-}
-
-.distribution-item::before {
+    content: '';
     top: 0;
-    left: -2px;
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
+    height: 100%;
+    width: 45px;
+    border: 2px solid #97afd5;
 }
 
-.distribution-item::after {
-    top: 0;
-    right: -2px;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
+.distribution-item::before{
+    left:0;
+    border-radius:6px 0 0 6px;
+    border-right:none;
 }
 
-.distribution-item:hover{
-    border-color:rgba(255, 10, 120, 0.7);
+.distribution-item:after {
+    right:0;
+    border-radius:0 6px 6px 0;
+    border-left:none;
+}
+
+/*-----------------------------------CHARTS HOVER EFFECT-----------------------------------------*/
+/* .distribution-item::before, .distribution-item:after{
+    border-color:#f42f54;
+} */
+
+@media (max-width:768px)
+{
+    .Mobile{
+        display:grid;
+        grid-template-rows:repeat(3, 1fr);
+    }
+    .second{
+        grid-row:2/3;
+        display:flex;
+        flex-wrap:wrap;
+    }
+    .chart{
+        margin-right:0;
+    }
+    .info-section{
+        grid-template-columns:repeat(2, 1fr);
+        max-width:100%;
+        column-gap:12rem;
+    }
 }
 
 </style>

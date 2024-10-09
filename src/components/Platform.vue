@@ -10,7 +10,7 @@
     <h3 class="text-center mx-auto mb-12 font-medium text-5xl text-neutral-300">
         PLATFORM
     </h3>
-    <div class="mx-auto flex flex-nowrap justify-center items-center mb-24 max-w-screen-md">
+    <div class="buttons mx-auto flex flex-nowrap justify-center items-center mb-24 max-w-screen-md ">
         <button @click="showTab(2)" class="border-solid border-2 border-red-500 rounded-xl py-3 px-5 font-semibold  hover:border-red-500 hover:text-red-500 active:border-red-500 active:text-red-500" data-toggle="tab" id="btab1" :class="{'active': activeTab === 2, 'inactive': activeTab !== 2}">
                 FOR CRYPTO USERS
         </button>
@@ -141,6 +141,28 @@ export default
     }
     .row > p{
         max-width:260px;
+    }
+}
+
+@media (max-width:768px)
+{
+    .content{
+        flex-wrap:wrap-reverse;
+    }
+    .right{
+        margin-left:auto;
+        margin-right:auto;
+        margin-bottom:3rem;
+        justify-content:center;
+    }
+    .left{
+        margin-left:2rem;
+    }
+    .row > p{
+        max-width:85%;
+    }
+    .buttons{
+        max-width:95%;
     }
 }
 

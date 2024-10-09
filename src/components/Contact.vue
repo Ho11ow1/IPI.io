@@ -173,4 +173,21 @@ button:hover{
 	}
 }
 
+@media (max-width:768px)
+{
+	section{
+		flex-wrap:wrap-reverse
+	}
+	.Form{
+		max-width:100%;
+		width:100%;
+	}
+	.top{
+		justify-content:space-between;
+	}
+	.Names > input, .Emails > input{
+		width:340px;
+	}
+}
+
 </style>

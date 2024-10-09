@@ -31,3 +31,10 @@ body{
 a:hover{
 	color:rgb(239, 68, 68);
 }
+
+@media (max-width:768px)
+{
+    .container{
+        max-width:680px;
+    }
+}

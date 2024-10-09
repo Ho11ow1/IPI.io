@@ -61,6 +61,25 @@
     }
 }
 
+@media (max-width:768px)
+{
+    section{
+        flex-wrap:wrap;
+        margin-top:2rem;
+    }
+    .right{
+        margin-top:1.5rem;
+        margin-left:auto;
+        margin-right:auto;
+    }
+    .main-description{
+        max-width:94%;
+    }
+    img{
+        max-width:100%;
+    }
+}
+
 .container{
     max-width:1680px;
 }
