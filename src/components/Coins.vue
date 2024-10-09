@@ -1,40 +1,11 @@
 <script setup>
-
-
-
-</script>
-
-<script>
-    import { Bar } from 'vue-chartjs'
-    import { Chart as ChartJS, Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale } from 'chart.js'
-
-    ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
-
-    export default {
-    name: 'BarChart',
-    components: { Bar },
-    data() {
-        return {
-        chartData: {
-            labels: [ 'January', 'February', 'March' ],
-            datasets: [ { data: [40, 20, 12] } ]
-        },
-        chartOptions: {
-            responsive: true
-        }
-        }
-    }
-    }
+    import HELPME from './things/work.vue'
 </script>
 
 <template>
-    <div class="chart mx-auto" style="max-width:800px"> <!-- THIS IS VERY TEMPORARY, NEED TO FIGURE OUT HOW TO MAKE A PIE INSTEAD OF A BAR -->
-        <Bar
-            id="my-chart-id"
-            :options="chartOptions"
-            :data="chartData"
-        />
-    </div>
+    <!-- <div class="chart mx-auto" style="max-width:800px"> THIS IS VERY TEMPORARY, NEED TO FIGURE OUT HOW TO MAKE A PIE INSTEAD OF A BAR -->
+        <!-- <HELPME/>
+    </div> -->
     <section class="coins container mx-auto mb-72 pt-32" id="coins">
         <div class="Section-title">
             <h2 class="text-center mx-auto mb-8 font-medium text-5xl text-neutral-300">
@@ -91,13 +62,7 @@
             </div>
             <!-- Interactive Pie Chart Section -->
             <div class="flex flex-col items-center mr-64">
-                <div class="pie-chart">
-                    <div class="slice slice-1" title="65% Public Coin Sale"></div>
-                    <div class="slice slice-2" title="15% Team Incentive"></div>
-                    <div class="slice slice-3" title="10% Marketing"></div>
-                    <div class="slice slice-4" title="7% Reserve Fund"></div>
-                    <div class="slice slice-5" title="3% Bug Bounty"></div>
-                </div>
+                <HELPME/>
             </div>
 
             <div class="flex items-center">
