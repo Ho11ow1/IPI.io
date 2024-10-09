@@ -6,6 +6,33 @@
 
 <template>
 
+<section class="section mt-32 mb-96" id="advantages">
+	<div class="container table mx-auto px-4" id="tab1">
+		<div class="header-row flex"> <!---------------------------------------------HEADER IMGS HERE---------------------------------------------------->
+			<div class="row-item flex items-center flex-col">
+				<img src="../assets/vue.svg" class="row-img">
+				<p class="text-neutral-300 mb-3">IPI</p>
+				<div class="score"><span></span></div>
+			</div>
+		</div>
+		<div class="row flex">
+			<h2 class="row-title text-center">TITLE</h2>
+			<div class="row-item flex items-center flex-col"> <!--------------------------------Row's look something like this---------------------------->
+				<img src="../assets/vue.svg" class="row-img">
+				<p class="text-neutral-300 mb-3">Proof</p>
+			</div>
+		</div>
+	</div>
+	<div class="text-center" style="display:none;">
+		<p class="Star-text">
+		* - according to <a href="https://www.mevwatch.info/">https://www.mevwatch.info/</a>
+		</p>
+		<p class="SStar-text">
+			** -- First IPI is mined from staking 1 BTC to avoid SEC investigation
+		</p>
+	</div>
+</section>
+
 <section class="section mt-32 mb-96 pt-32" id="advantages">
 	<div id="dev-table" style="display: none;">
 		<div class="comparison-table-wrapper">
