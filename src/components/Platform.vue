@@ -144,7 +144,7 @@ export default
     }
 }
 
-@media (max-width:768px)
+@media (max-width:940px)
 {
     .content{
         flex-wrap:wrap-reverse;
@@ -162,7 +162,7 @@ export default
         max-width:85%;
     }
     .buttons{
-        max-width:95%;
+        max-width:80%;
     }
 }
 

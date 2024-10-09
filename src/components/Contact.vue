@@ -7,7 +7,7 @@
 <template>
 
 	<section class="container mx-auto px-8 mb-56 flex justify-center items-center" id="contact">
-		<div class="Contact-details mr-56">
+		<div class="Contact-details mr-14">
 			<div class="contact-section">
 				<div class="rotating-circles">
 					<div class="circle circle-outer"></div>
@@ -155,15 +155,20 @@ button:hover{
 	margin-right: 8px;
 }
 
+.Names > input,
+.Emails > input{
+	max-width:260px;
+}
+
 @media (max-width:1024px)
 {
 	section{
-		max-width:920px;
+		max-width:1024px;
 		padding-bottom:8rem;
 		gap:3rem;
 	}
 	.Contact-details{
-		margin-right:50px;
+		margin-right:20px;
 	}
 	.Form{
 		max-width:480px;
@@ -171,9 +176,13 @@ button:hover{
 	input{
 		padding-right:0;
 	}
+	.Names > input,
+	.Emails > input{
+		max-width:210px;
+	}
 }
 
-@media (max-width:768px)
+@media (max-width:940px)
 {
 	section{
 		flex-wrap:wrap-reverse
@@ -184,9 +193,6 @@ button:hover{
 	}
 	.top{
 		justify-content:space-between;
-	}
-	.Names > input, .Emails > input{
-		width:340px;
 	}
 }
 

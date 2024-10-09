@@ -13,11 +13,11 @@ import Contact from './components/Contact.vue';
 <template>
 	<NavBar2/>
 	<main>
-		<!-- <MAIN/> --> <!--Good to go 768px-->
+		<MAIN/> <!--Good to go 768px + 1240px-->
 		<!-- <Advantage/> --> <!-- NEED TO REWRITE THIS FROM SCRATCH-->
-		<!-- <Platform/> --> <!--Good to go 768px-->
+		<Platform/> <!--Good to go 768px-->
 		<!-- <Ecosystem/> SHOULD PROBABLY REMOVE THIS-->
-		<Coins/> <!--Good to go 768px MAKE COINS BIGGER-->
-		<!-- <Contact/>-->  <!-- Good to go 768px-->
+		<Coins/> <!--Good to go 768px + 1240px-->
+		<Contact/>  <!-- Good to go 768p + 1240px-->
 	</main>
 </template>
