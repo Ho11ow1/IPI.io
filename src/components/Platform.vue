@@ -127,4 +127,21 @@ export default
     color: rgb(212, 212, 212);
 }
 
+@media (max-width:1024px)
+{
+	section{
+		max-width:920px;
+		padding-bottom:8rem;
+	}
+    .content{
+        gap:2rem;
+    }
+    .row{
+        margin-bottom:1.75rem;
+    }
+    .row > p{
+        max-width:260px;
+    }
+}
+
 </style>

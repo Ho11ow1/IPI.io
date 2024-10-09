@@ -48,7 +48,7 @@
 						<h4 class="text-gray-400 mb-2 ml-2 font-bold text-xs tracking-widest">
 							YOUR MESSAGE
 						</h4>
-						<input type="text" placeholder="Your message goes here" class="border-solid border border-neutral-600  bg-transparent font-medium rounded-lg px-5 py-2 h-28 w-full">
+						<textarea type="text" placeholder="Your message goes here" class="border-solid border border-neutral-600  bg-transparent font-medium rounded-lg px-5 py-2 h-28 w-full"></textarea>
 					</div>
 				</div>
 				<div class="btn mt-8 flex flex-row-reverse">
@@ -75,85 +75,102 @@ button:hover{
 }
 
 .contact-section {
-position: relative;
-display: flex;
-justify-content: center;
-align-items: center;
-height: 100vh;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .rotating-circles {
-position: absolute;
-width: 350px;
-height: 350px;
-/* background-image:url(../assets/dot-c-azalea.png);
-background-position-x:19%;
-background-position-y:12%;
-background-repeat:no-repeat; */
+	position: absolute;
+	width: 350px;
+	height: 350px;
+	/* background-image:url(../assets/dot-c-azalea.png);
+	background-position-x:19%;
+	background-position-y:12%;
+	background-repeat:no-repeat; */
 }
 
 .circle {
-border-radius: 50%;
-position: absolute;
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%);
+	border-radius: 50%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 }
 
 .circle-outer {
-width: 100%;
-height: 100%;
-border: 2px solid transparent;
-border-top-color: white; /* Top section white */
-border-right-color: rgba(255, 255, 255, 0.2); /* Right section light white */
-border-bottom-color: rgba(255, 255, 255, 0.2); /* Bottom section light white */
-border-left-color: white; /* Left section white */
-animation: rotate 20s infinite linear;
+	width: 100%;
+	height: 100%;
+	border: 2px solid transparent;
+	border-top-color: white; /* Top section white */
+	border-right-color: rgba(255, 255, 255, 0.2); /* Right section light white */
+	border-bottom-color: rgba(255, 255, 255, 0.2); /* Bottom section light white */
+	border-left-color: white; /* Left section white */
+	animation: rotate 20s infinite linear;
 }
 
 .circle-inner {
-width: 70%;
-height: 70%;
-border: 2px solid transparent;
-border-top-color: white; /* Top section white */
-border-right-color: rgba(255, 255, 255, 0.2); /* Right section light white */
-border-bottom-color: rgba(255, 255, 255, 0.2); /* Bottom section light white */
-border-left-color: white; /* Left section white */
-animation: rotate-reverse 15s infinite linear;
+	width: 70%;
+	height: 70%;
+	border: 2px solid transparent;
+	border-top-color: white; /* Top section white */
+	border-right-color: rgba(255, 255, 255, 0.2); /* Right section light white */
+	border-bottom-color: rgba(255, 255, 255, 0.2); /* Bottom section light white */
+	border-left-color: white; /* Left section white */
+	animation: rotate-reverse 15s infinite linear;
 }
 
 @keyframes rotate {
-0% {
-	transform: translate(-50%, -50%) rotate(0deg);
-}
-100% {
-	transform: translate(-50%, -50%) rotate(360deg);
-}
+	0% {
+		transform: translate(-50%, -50%) rotate(0deg);
+	}
+	100% {
+		transform: translate(-50%, -50%) rotate(360deg);
+	}
 }
 
 @keyframes rotate-reverse {
-0% {
-	transform: translate(-50%, -50%) rotate(0deg);
-}
-100% {
-	transform: translate(-50%, -50%) rotate(-360deg);
-}
+	0% {
+		transform: translate(-50%, -50%) rotate(0deg);
+	}
+	100% {
+		transform: translate(-50%, -50%) rotate(-360deg);
+	}
 }
 
 .contact-info {
-position: relative;
-text-align: center;
-z-index: 1;
+	position: relative;
+	text-align: center;
+	z-index: 1;
 }
 
 .contact-info p {
-margin: 10px 0;
-font-size: 18px;
+	margin: 10px 0;
+	font-size: 18px;
 }
 
 .contact-info img {
-vertical-align: middle;
-margin-right: 8px;
+	vertical-align: middle;
+	margin-right: 8px;
+}
+
+@media (max-width:1024px)
+{
+	section{
+		max-width:920px;
+		padding-bottom:8rem;
+		gap:3rem;
+	}
+	.Contact-details{
+		margin-right:50px;
+	}
+	.Form{
+		max-width:480px;
+	}
+	input{
+		padding-right:0;
+	}
 }
 
 </style>

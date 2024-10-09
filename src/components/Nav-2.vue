@@ -1,7 +1,5 @@
-<script setup>
-
-
-
+<script setup lang="ts">
+import { RiHeartFill } from "@remixicon/vue";
 </script>
 
 <template>
@@ -61,6 +59,8 @@
                         </a>
                     </li>
                 </ul>
+                <!-- <RiHeartFill class="ri Hamburger"/> -->
+                <!--Add hamburger here on width and stuff-->
             </div>
         </nav>
     </header>
@@ -75,6 +75,16 @@
     top:0;
     left:0;
     z-index:1000;
+}
+
+@media (max-width:1023px)
+{
+    header{
+        padding-top:.75rem;
+    }
+    .nav--list{
+        gap:1rem;
+    }
 }
 
 </style>
