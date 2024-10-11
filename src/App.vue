@@ -15,11 +15,11 @@ import Contact from './components/Contact.vue';
 	<NavBar2/>
 	<main>
 		<MAIN/> <!--Good to go 768px + 1240px-->
-		<Advantage/> <!--NEED TO MAKE IT RESPONSIVE (JUST REMOVE IMG) & (SCALE DOWN) -->
+		<!--<Advantage/>--> <!--Works until 1024px // TODO: 768px -> should be good (RM img, Scales text) -->
 		<Platform/> <!--Good to go 768px-->
 		<!-- <Ecosystem/> SHOULD PROBABLY REMOVE THIS-->
 		<Coins/> <!--Good to go 768px + 1240px-->
-		<RoadMap/> <!--New-->
+		<RoadMap/>
 		<Contact/>  <!-- Good to go 768p + 1240px-->
 	</main>
 </template>
