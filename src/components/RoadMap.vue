@@ -1,7 +1,7 @@
 <template>
     <section class="roadmap container mx-auto" id="roadmap">
         <Carousel v-if="products.length > 0" :value="products" :numVisible="3" :numScroll="2" :responsiveOptions="responsiveOptions">
-            <template #item="slotProps"> <!-- Scoped Slot Definition -->
+            <template #item="slotProps">
                 <div class="border border-surface-200 dark:border-surface-700 rounded m-2  p-4">
                     <div class="mb-4">
                         <div class="relative mx-auto">
@@ -29,7 +29,6 @@ import Carousel from 'primevue/carousel';
 import Button from 'primevue/button';
 import Tag from 'primevue/tag';
 
-// Example data and responsive options
 const products = ref([
     {name: 'Product 1', image: 'product1.jpg', price: 50},
     {name: 'Product 2', image: 'product2.jpg', price: 30},
@@ -58,7 +57,6 @@ const responsiveOptions = [
     }
 ];
 
-// Function to get severity based on inventory status
 const getSeverity = (inventoryStatus: string) => {
     switch (inventoryStatus) {
         case 'In Stock':
