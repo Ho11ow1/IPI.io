@@ -6,7 +6,7 @@
 
 <template>
 
-<section class="container mx-auto mt-32 px-8 flex justify-between items-center" id="main">
+<section class="container mx-auto px-8 mb-72 pt-36 flex justify-between items-center" id="main">
         <div class="left flex flex-col">
             <div class="Generate">
                 <h2 class="my-4 text-red-600 text-6xl">
