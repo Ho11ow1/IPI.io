@@ -1,488 +1,251 @@
-<script setup>
-
-
-
-</script>
-
 <template>
-
-<section class="section mt-32 mb-96" id="advantages">
-	<div class="container table mx-auto px-4" id="tab1">
-		<div class="header-row flex"> <!---------------------------------------------HEADER IMGS HERE---------------------------------------------------->
-			<div class="row-item flex items-center flex-col">
-				<img src="../assets/vue.svg" class="row-img">
-				<p class="text-neutral-300 mb-3">IPI</p>
-				<div class="score"><span></span></div>
-			</div>
-		</div>
-		<div class="row flex">
-			<h2 class="row-title text-center">TITLE</h2>
-			<div class="row-item flex items-center flex-col"> <!--------------------------------Row's look something like this---------------------------->
-				<img src="../assets/vue.svg" class="row-img">
-				<p class="text-neutral-300 mb-3">Proof</p>
-			</div>
-		</div>
-	</div>
-	<div class="text-center" style="display:none;">
-		<p class="Star-text">
-		* - according to <a href="https://www.mevwatch.info/">https://www.mevwatch.info/</a>
-		</p>
-		<p class="SStar-text">
-			** -- First IPI is mined from staking 1 BTC to avoid SEC investigation
-		</p>
-	</div>
-</section>
-
-<section class="section mt-32 mb-96 pt-32" id="advantages">
-	<div id="dev-table" style="display: none;">
-		<div class="comparison-table-wrapper">
-		<table class="comparison-table">
-			<thead>
-			<tr>
-			<th>
-				<div class="icon-wrapper"><img src="../assets/vue.svg" alt="IPI" title="IPI"></div>
-				<div class="name">IPI</div>
-				<div class="symbol">IPI</div>
-				<div class="score"><span style="width: 100.0%"></span></div>
+	<section class="container mx-auto">
+	<table class="main-table mx-auto py-3 px-3">
+		<tr class="coins-list">
+			<!-- Loop through coins to create the headers -->
+			<th v-for="(coin, index) in coins" :key="coin.id">
+				<div class="flex items-center flex-col text-center">
+					<img src="../assets/vue.svg" alt="" class="coin-image mb-4" />
+					<p class="cell-text">
+						{{ coin.TITLE }}
+					</p>
+				</div>
 			</th>
-			<th>
-				<div class="icon-wrapper"><img src="../assets/vue.svg" alt="BTC" title="Bitcoin (BTC)"></div>
-				<div class="name">Bitcoin (BTC)</div>
-				<div class="symbol">BTC</div>
-				<div class="score"><span style="width: 0.0%"></span></div>
-			</th>
-			<th>
-				<div class="icon-wrapper"><img src="../assets/vue.svg" alt="ETH" title="Ethereum (ETH)"></div>
-				<div class="name">Ethereum (ETH)</div>
-				<div class="symbol">ETH</div>
-				<div class="score"><span style="width: 13.3%"></span></div>
-			</th>
-			<th>
-				<div class="icon-wrapper"><img src="../assets/vue.svg" alt="BNB" title="Binance Smart Chain (BNB)"></div>
-				<div class="name">Binance Smart Chain (BNB)</div>
-				<div class="symbol">BNB</div>
-				<div class="score"><span style="width: 20.0%"></span></div>
-			</th>
-			<th>
-				<div class="icon-wrapper"><img src="../assets/vue.svg" alt="XRP" title="Ripple (XRP)"></div>
-				<div class="name">Ripple (XRP)</div>
-				<div class="symbol">XRP</div>
-				<div class="score"><span style="width: 6.7%"></span></div>
-			</th>
-			<th>
-				<div class="icon-wrapper"><img src="../assets/vue.svg" alt="ADA" title="Cardano (ADA)"></div>
-				<div class="name">Cardano (ADA)</div>
-				<div class="symbol">ADA</div>
-				<div class="score"><span style="width: 6.7%"></span></div>
-			</th>
-			<th>
-				<div class="icon-wrapper"><img src="../assets/vue.svg" alt="SOL" title="Solana (SOL)"></div>
-				<div class="name">Solana (SOL)</div>
-				<div class="symbol">SOL</div>
-				<div class="score"><span style="width: 40.0%"></span></div>
-			</th>
-			<th>
-				<div class="icon-wrapper"><img src="../assets/vue.svg" alt="TRX" title="Tron (TRX)"></div>
-				<div class="name">Tron (TRX)</div>
-				<div class="symbol">TRX</div>
-				<div class="score"><span style="width: 6.7%"></span></div>
-			</th>
-			<th>
-				<div class="icon-wrapper"><img src="../assets/vue.svg" alt="DOT" title="Polkadot (DOT)"></div>
-				<div class="name">Polkadot (DOT)</div>
-				<div class="symbol">DOT</div>
-				<div class="score"><span style="width: 20.0%"></span></div>
-			</th>
-			<th>
-				<div class="icon-wrapper"><img src="../assets/vue.svg" alt="ALGO" title="Algorand (ALGO)"></div>
-				<div class="name">Algorand (ALGO)</div>
-				<div class="symbol">ALGO</div>
-				<div class="score"><span style="width: 53.3%"></span></div>
-			</th>
-			</tr>
-			</thead>
-			<tbody>
-			<tr>
-			<th colspan="10">Consensus / Decentralization Level</th>
-			</tr>
-			<tr>
-			<td class="plus2"> Proof of Network / Very High</td>
-			<td class="plus2"> Proof of Work / Very High</td>
-			<td class="plus1"> Proof of Stake / High with censorship*</td>
-			<td class="minus1"> Proof of Authority / Moderate</td>
-			<td class="minus1"> XRP Ledger Consensus Protocol (XRP LCP) / Low</td>
-			<td class="plus1"> Ouroboros Praos (Proof of Stake) / High</td>
-			<td class="minus1"> Proof of History (PoH) &amp; Tower BFT (Finality) / Moderate</td>
-			<td class="minus1"> Delegated Proof-of-Stake (DPoS) / Moderate</td>
-			<td class="plus1"> BABE (Block Proposal) &amp; GRANDPA (Finality) / High</td>
-			<td class="plus2"> Pure Proof of Stake / Very High</td>
-			</tr>
-			<tr>
-			<th colspan="10">TPS** Range</th>
-			</tr>
-			<tr>
-			<td class="plus2">96k-123k</td>
-			<td class="minus1">4-7</td>
-			<td class="minus1">15-45</td>
-			<td class="minus1">100-200 (on-chain)</td>
-			<td class="mid">1500</td>
-			<td class="minus1">200-250</td>
-			<td class="plus2">50k-65k</td>
-			<td class="mid">700-2000</td>
-			<td class="mid">1k-2k</td>
-			<td class="plus2"> 1k-46k</td>
-			</tr>
-			<tr>
-			<th colspan="10">Smart Contracts/Speed</th>
-			</tr>
-			<tr>
-			<td class="plus2">Yes, fastest</td>
-			<td class="minus1">No</td>
-			<td class="plus1">Yes</td>
-			<td class="plus1">Yes, fast</td>
-			<td class="minus1">No</td>
-			<td class="plus1">Yes</td>
-			<td class="plus1">Yes,fast</td>
-			<td class="plus1">Yes</td>
-			<td class="plus1">Yes</td>
-			<td class="plus1"> Yes , fast</td>
-			</tr>
-			<tr>
-			<th colspan="10">Smart Contract Language</th>
-			</tr>
-			<tr>
-			<td class="plus2">AssemblyScript (TypeScript Dialect), Rust, Go, Python, C, C++</td>
-			<td class="minus1">N/A</td>
-			<td class="mid"> Solidity</td>
-			<td class="mid">Solidity</td>
-			<td class="minus1">N/A</td>
-			<td class="minus1"> Plutus</td>
-			<td class="mid">Rust</td>
-			<td class="mid">Solidity</td>
-			<td class="minus1"> Ink! (Rust-based)</td>
-			<td class="minus1"> TEAL</td>
-			</tr>
-			<tr>
-			<th colspan="10">No-Code Smart Contracts with AI</th>
-			</tr>
-			<tr>
-			<td class="plus2">Yes</td>
-			<td class="minus1">No</td>
-			<td class="minus1">No</td>
-			<td class="minus1">No</td>
-			<td class="minus1">No</td>
-			<td class="minus1">No</td>
-			<td class="minus1">No</td>
-			<td class="minus1">No</td>
-			<td class="minus1">No</td>
-			<td class="minus1"> No</td>
-			</tr>
-			<tr>
-			<th colspan="10">Approx. Finality Time</th>
-			</tr>
-			<tr>
-			<td class="plus2">2.5-4.5 seconds</td>
-			<td class="minus1">60 minutes (6 confirmations)</td>
-			<td class="minus1"> ~6 minutes (12-32 slots for finality)</td>
-			<td class="plus2">~5 seconds</td>
-			<td class="plus2">~3-5 seconds</td>
-			<td class="minus1">~20 minutes</td>
-			<td class="plus2">~0.4 seconds</td>
-			<td class="minus1"> Every 6 hours (27 Super Representatives rotate)</td>
-			<td class="mid"> ~2 minutes</td>
-			<td class="plus2"> 2.5-4.5 seconds</td>
-			</tr>
-			</tbody>
-		</table>
-		<p>* - according to <a href="https://www.mevwatch.info/">https://www.mevwatch.info/</a> </p>
-		<p>** - Transactions Per Second (TPS) is highly dependent on the specific implementation and network conditions, and these numbers are rough estimates only.</p>
-		</div>
-	</div>
-	<div id="inv-table" style="display: block;">
-		<div class="comparison-table-wrapper">
-		<table class="comparison-table">
-			<thead>
-			<tr>
-			<th>
-				<div class="icon-wrapper"><img src="../assets/vue.svg" alt="IPI" title="IPI"></div>
-				<div class="name">IPI</div>
-				<div class="symbol">IPI</div>
-				<div class="score"><span style="width: 100.0%"></span></div>
-			</th>
-			<th>
-				<div class="icon-wrapper"><img src="../assets/vue.svg" alt="BTC" title="Bitcoin (BTC)"></div>
-				<div class="name">Bitcoin (BTC)</div>
-				<div class="symbol">BTC</div>
-				<div class="score"><span style="width: 64.3%"></span></div>
-			</th>
-			<th>
-				<div class="icon-wrapper"><img src="../assets/vue.svg" alt="ETH" title="Ethereum (ETH)"></div>
-				<div class="name">Ethereum (ETH)</div>
-				<div class="symbol">ETH</div>
-				<div class="score"><span style="width: 14.3%"></span></div>
-			</th>
-			<th>
-				<div class="icon-wrapper"><img src="../assets/vue.svg" alt="BNB" title="Binance Smart Chain (BNB)"></div>
-				<div class="name">Binance Smart Chain (BNB)</div>
-				<div class="symbol">BNB</div>
-				<div class="score"><span style="width: 14.3%"></span></div>
-			</th>
-			<th>
-				<div class="icon-wrapper"><img src="../assets/vue.svg" alt="XRP" title="Ripple (XRP)"></div>
-				<div class="name">Ripple (XRP)</div>
-				<div class="symbol">XRP</div>
-				<div class="score"><span style="width: 0.0%"></span></div>
-			</th>
-			<th>
-				<div class="icon-wrapper"><img src="../assets/vue.svg" alt="ADA" title="Cardano (ADA)"></div>
-				<div class="name">Cardano (ADA)</div>
-				<div class="symbol">ADA</div>
-				<div class="score"><span style="width: 28.6%"></span></div>
-			</th>
-			<th>
-				<div class="icon-wrapper"><img src="../assets/vue.svg" alt="SOL" title="Solana (SOL)"></div>
-				<div class="name">Solana (SOL)</div>
-				<div class="symbol">SOL</div>
-				<div class="score"><span style="width: 21.4%"></span></div>
-			</th>
-			<th>
-				<div class="icon-wrapper"><img src="../assets/vue.svg" alt="TRX" title="Tron (TRX)"></div>
-				<div class="name">Tron (TRX)</div>
-				<div class="symbol">TRX</div>
-				<div class="score"><span style="width: 14.3%"></span></div>
-			</th>
-			<th>
-				<div class="icon-wrapper"><img src="../assets/vue.svg" alt="DOT" title="Polkadot (DOT)"></div>
-				<div class="name">Polkadot (DOT)</div>
-				<div class="symbol">DOT</div>
-				<div class="score"><span style="width: 28.6%"></span></div>
-			</th>
-			<th>
-				<div class="icon-wrapper"><img src="../assets/vue.svg" alt="ALGO" title="Algorand (ALGO)"></div>
-				<div class="name">Algorand (ALGO)</div>
-				<div class="symbol">ALGO</div>
-				<div class="score"><span style="width: 35.7%"></span></div>
-			</th>
-			</tr>
-			</thead>
-			<tbody>
-			<tr>
-			<th colspan="10">Consensus / Decentralization Level</th>
-			</tr>
-			<tr>
-			<td class="plus2"> Proof of Network / Very High</td>
-			<td class="plus2"> Proof of Work / Very High</td>
-			<td class="plus1"> Proof of Stake / High with censorship*</td>
-			<td class="minus1"> Proof of Authority / Moderate</td>
-			<td class="minus1"> XRP Ledger Consensus Protocol (XRP LCP) / Low</td>
-			<td class="plus1"> Ouroboros Praos (Proof of Stake) / High</td>
-			<td class="minus1"> Proof of History (PoH) &amp; Tower BFT (Finality) / Moderate</td>
-			<td class="minus1"> Delegated Proof-of-Stake (DPoS) / Moderate</td>
-			<td class="plus1"> BABE (Block Proposal) &amp;GRANDPA (Finality) / High</td>
-			<td class="plus2"> Pure Proof of Stake / Very High</td>
-			</tr>
-			<tr>
-			<th colspan="10">Max Supply</th>
-			</tr>
-			<tr>
-			<td class="plus2"> 100M</td>
-			<td class="plus2"> 21M</td>
-			<td class="minus1">∞</td>
-			<td class="plus1">200M</td>
-			<td class="minus1">100B</td>
-			<td class="minus1">45B</td>
-			<td class="minus1">∞</td>
-			<td class="minus1">∞</td>
-			<td class="minus1">∞</td>
-			<td class="minus1">10B</td>
-			</tr>
-			<tr>
-			<th colspan="10">Instamine</th>
-			</tr>
-			<tr>
-			<td class="plus2"> 0**</td>
-			<td class="plus2"> 0</td>
-			<td class="mid"> 72M</td>
-			<td class="minus1">200M</td>
-			<td class="minus1">100B</td>
-			<td class="minus1">45B</td>
-			<td class="mid">500K</td>
-			<td class="minus1">100B</td>
-			<td class="minus1">Yes</td>
-			<td class="minus1">2.5B</td>
-			</tr>
-			<tr>
-			<th colspan="10">Halving/Period</th>
-			</tr>
-			<tr>
-			<td class="plus2"> Yes/~4Y</td>
-			<td class="plus2"> Yes/~4Y</td>
-			<td class="minus1"> No</td>
-			<td class="minus1">No</td>
-			<td class="minus1">No</td>
-			<td class="minus1"> No</td>
-			<td class="minus1">No</td>
-			<td class="minus1">No</td>
-			<td class="minus1">No</td>
-			<td class="minus1">No</td>
-			</tr>
-			<tr>
-			<th colspan="10">Network Speed/Gas price</th>
-			</tr>
-			<tr>
-			<td class="plus2"> Very fast/Very cheap</td>
-			<td class="minus1"> Very Slow/Regular</td>
-			<td class="minus1">Fast/Expensive</td>
-			<td class="plus2">Fast/Cheap</td>
-			<td class="plus2">Fast/Cheap</td>
-			<td class="plus2">Fast/Cheap</td>
-			<td class="plus2">Fast/Cheap</td>
-			<td class="plus2">Fast/Cheap</td>
-			<td class="plus2">Fast/Cheap</td>
-			<td class="plus2">Fast/Cheap</td>
-			</tr>
-			<tr>
-			<th colspan="10">Native Wallet &amp; Scanner</th>
-			</tr>
-			<tr>
-			<td class="plus2"> Yes</td>
-			<td class="mid">Wallet only</td>
-			<td class="plus2"> Yes</td>
-			<td class="mid">Scanner only</td>
-			<td class="mid">Scanner only</td>
-			<td class="plus2"> Yes</td>
-			<td class="plus2"> Yes</td>
-			<td class="plus2"> Yes</td>
-			<td class="plus2"> Yes</td>
-			<td class="plus2"> Yes</td>
-			</tr>
-			</tbody>
-		</table>
-		<p>* - according to <a href="https://www.mevwatch.info/">https://www.mevwatch.info/</a></p>
-		<p>** -- First IPI is mined from staking 1 BTC to avoid SEC investigation </p>
-		</div>
-	</div>
+		</tr>
+		<tr>
+			<td :colspan="coins.length" class="text-center py-4">
+				<h2 class="text-xl font-bold">
+					Consensus / Decentralization Level
+				</h2>
+			</td>
+		</tr>
+		<tr> <!-- Create a new row-->
+			<td v-for="(text, index) in data_1" :key="text.id"> <!-- go with the row because no flex-->
+				<div class="flex items-center flex-col text-center">
+					<img src="../assets/vue.svg" alt="" class="coin-image mb-4" />
+					<p class="cell-text">
+						{{ text.name }}>
+					</p>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td :colspan="coins.length" class="text-center py-4">
+				<h2 class="text-xl font-bold">
+					Max Supply
+				</h2>
+			</td>
+		</tr>
+		<tr> <!-- Create a new row-->
+			<td v-for="(text, index) in data_2" :key="text.id"> <!-- go with the row because no flex-->
+				<div class="flex items-center flex-col text-center">
+					<img src="../assets/vue.svg" alt="" class="coin-image mb-4" />
+					<p class="cell-text">
+						{{ text.name }}>
+					</p>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td :colspan="coins.length" class="text-center py-4">
+				<h2 class="text-xl font-bold">
+					Instamine
+				</h2>
+			</td>
+		</tr>
+		<tr> <!-- Create a new row-->
+			<td v-for="(text, index) in data_3" :key="text.id"> <!-- go with the row because no flex-->
+				<div class="flex items-center flex-col text-center">
+					<img src="../assets/vue.svg" alt="" class="coin-image mb-4" />
+					<p class="cell-text">
+						{{ text.name }}>
+					</p>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td :colspan="coins.length" class="text-center py-4">
+				<h2 class="text-xl font-bold">
+					Halving / Period
+				</h2>
+			</td>
+		</tr>
+		<tr> <!-- Create a new row-->
+			<td v-for="(text, index) in data_4" :key="text.id"> <!-- go with the row because no flex-->
+				<div class="flex items-center flex-col text-center">
+					<img src="../assets/vue.svg" alt="" class="coin-image mb-4" />
+					<p class="cell-text">
+						{{ text.name }}>
+					</p>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td :colspan="coins.length" class="text-center py-4">
+				<h2 class="text-xl font-bold">
+					Networking Speed / Gas Price
+				</h2>
+			</td>
+		</tr>
+		<tr> <!-- Create a new row-->
+			<td v-for="(text, index) in data_5" :key="text.id"> <!-- go with the row because no flex-->
+				<div class="flex items-center flex-col text-center">
+					<img src="../assets/vue.svg" alt="" class="coin-image mb-4" />
+					<p class="cell-text">
+						{{ text.name }}>
+					</p>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td :colspan="coins.length" class="text-center py-4">
+				<h2 class="text-xl font-bold">
+					Native Wallet & Scanner
+				</h2>
+			</td>
+		</tr>
+		<tr> <!-- Create a new row-->
+			<td v-for="(text, index) in data_6" :key="text.id"> <!-- go with the row because no flex-->
+				<div class="flex items-center flex-col text-center">
+					<img src="../assets/vue.svg" alt="" class="coin-image mb-4" />
+					<p class="cell-text">
+						{{ text.name }}>
+					</p>
+				</div>
+			</td>
+		</tr>
+	</table>
 	</section>
-
 </template>
 
 <style scoped>
 
-.comparison-table-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    width: 100%;
-    box-sizing: border-box;
-    padding-left: 1em;
-    padding-right: 1em;
+.coins-list{
+	background-color:transparent;
 }
 
-.comparison-table {
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 20px;
-    width: 100%;
-    border-collapse: collapse;
-    border-spacing: 0;
-    margin-bottom: 1rem;
-    margin-top: 1rem;
-    color: #eef3fc;
-    overflow: hidden;
-    margin: 2em 2rem;
-    max-width: 1140px;
+tr{
+	background-color:#202B47;
+	padding-bottom:.75rem !important;
 }
 
-.comparison-table thead th {
-    width: 10%;
-    font-size: 0.8em;
-    padding-bottom: 1em;
+tr *{
+	vertical-align:top;
 }
 
-th {
-    text-align: inherit;
+p{
+	font-size:.75em;
 }
 
-.comparison-table thead th .icon-wrapper {
-    height: 2px;
-    margin-top: 5em;
-    margin-bottom: 3em;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+div{
+	vertical-align: top;
+	margin-left:.5rem;
+	margin-right:.5rem;
 }
 
-.comparison-table thead th .icon-wrapper img {
-    position: absolute;
-    /* transform: scale(0.4); */
-    max-width: 40%;
+@media (max-width:1010px)
+{
+	section{
+		margin-right:0;
+	}
+	img{
+		transform:scale(0.5);
+	}
 }
 
-.comparison-table thead .name {
-    height: 4em;
-    text-align: center;
-    font-weight: 400;
-}
-
-.comparison-table thead th .symbol {
-    display: none;
-}
-
-.comparison-table thead .score {
-    height: 4px;
-    background: #7fa3cdff;
-    position: relative;
-    margin-left: 2em;
-    margin-right: 2em;
-}
-
-.comparison-table tbody tr:nth-child(4n+1), .comparison-table tbody tr:nth-child(4n+2) {
-    background-color: #202B47;
-}
-
-.comparison-table tbody th {
-    text-align: center;
-    padding-top: 0.7em;
-    padding-bottom: 0.7em;
-}
-
-.comparison-table tbody tr:nth-child(4n+1), .comparison-table tbody tr:nth-child(4n+2) {
-    background-color: #202B47;
-}
-
-.comparison-table tbody td {
-    vertical-align: top;
-    font-size: 0.7em;
-}
-
-.comparison-table td {
-    text-align: center;
-    padding: 0.5rem 1rem;
-}
-
-.comparison-table td:before {
-    display: block;
-    content: ' ';
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: 50% 50%;
-    height: 2.3em;
-    margin-bottom: 1em;
-}
-
-.comparison-table td.minus1:before {
-    background-image: url(../assets/minus.svg);
-}
-.comparison-table td.mid:before {
-    background-image: url(../assets/mid.svg);
-}
-.comparison-table td.plus2:before {
-    background-image: url(../assets/plus2.svg);
-}
-.comparison-table td.plus1:before {
-    background-image: url(../assets/plus.svg);
-}
 
 </style>
+
+<script lang="ts">
+export default {
+	name: 'Table',
+	data() {
+	return {
+		coins: [
+		{ id: 1, IMG: '../assets/vue.svg', TITLE: 'IPI' },
+		{ id: 2, IMG: '../assets/vue.svg', TITLE: 'Bitcoin (BTC)' },
+		{ id: 3, IMG: '../assets/vue.svg', TITLE: 'Ethereum (ETH)' },
+		{ id: 4, IMG: '../assets/vue.svg', TITLE: 'Binance Smart Chain (BNB)' },
+		{ id: 5, IMG: '../assets/vue.svg', TITLE: 'Ripple (XRP)' },
+		{ id: 6, IMG: '../assets/vue.svg', TITLE: 'Cardano (ADA)' },
+		{ id: 7, IMG: '../assets/vue.svg', TITLE: 'Solana (SOL)' },
+		{ id: 8, IMG: '../assets/vue.svg', TITLE: 'Tron (TRX)' },
+		{ id: 9, IMG: '../assets/vue.svg', TITLE: 'Polkadot (DOT)' },
+		{ id: 10, IMG: '../assets/vue.svg', TITLE: 'Algorand (ALGO)' },
+		],
+		data_1: [
+		{ id: 1, IMG: './/assets/vue.svg', name: 'Proof of Network / Very High' },
+		{ id: 2, IMG: './/assets/vue.svg', name: 'Proof of Work / Very High' },
+		{ id: 3, IMG: './/assets/vue.svg', name: 'Proof of Stake / High with censorship*' },
+		{ id: 4, IMG: './/assets/vue.svg', name: 'Proof of Authority / Moderate' },
+		{ id: 5, IMG: './/assets/vue.svg', name: 'XRP Ledger Consensus Protocol (XRP LCP) / Low' },
+		{ id: 6, IMG: './/assets/vue.svg', name: 'Ouroboros Praos (Proof of Stake) / High' },
+		{ id: 7, IMG: './/assets/vue.svg', name: 'Proof of History (PoH) & Tower BFT (Finality) / Moderate' },
+		{ id: 8, IMG: './/assets/vue.svg', name: 'Delegated Proof-of-Stake (DPoS) / Moderate' },
+		{ id: 9, IMG: './/assets/vue.svg', name: 'BABE (Block Proposal) & GRANDPA (Finality) / High' },
+		{ id: 10, IMG: './/assets/vue.svg', name: 'Pure Proof of Stake / Very High' },
+		],
+		data_2: [
+		{ id: 1, IMG: './/assets/vue.svg', name: '100M' },
+		{ id: 2, IMG: './/assets/vue.svg', name: '21M' },
+		{ id: 3, IMG: './/assets/vue.svg', name: '∞' },
+		{ id: 4, IMG: './/assets/vue.svg', name: '200M' },
+		{ id: 5, IMG: './/assets/vue.svg', name: '100B' },
+		{ id: 6, IMG: './/assets/vue.svg', name: '45B' },
+		{ id: 7, IMG: './/assets/vue.svg', name: '∞' },
+		{ id: 8, IMG: './/assets/vue.svg', name: '∞' },
+		{ id: 9, IMG: './/assets/vue.svg', name: '∞' },
+		{ id: 10, IMG: './/assets/vue.svg', name: '10B' },
+		],
+		data_3: [
+		{ id: 1, IMG: './/assets/vue.svg', name: '0**' },
+		{ id: 2, IMG: './/assets/vue.svg', name: '0' },
+		{ id: 3, IMG: './/assets/vue.svg', name: '72M' },
+		{ id: 4, IMG: './/assets/vue.svg', name: '200M' },
+		{ id: 5, IMG: './/assets/vue.svg', name: '100B' },
+		{ id: 6, IMG: './/assets/vue.svg', name: '45B' },
+		{ id: 7, IMG: './/assets/vue.svg', name: '500K' },
+		{ id: 8, IMG: './/assets/vue.svg', name: '100B' },
+		{ id: 9, IMG: './/assets/vue.svg', name: 'Yes' },
+		{ id: 10, IMG: './/assets/vue.svg', name: '2.5B' },
+		],
+		data_4: [
+		{ id: 1, IMG: './/assets/vue.svg', name: 'Yes/~4Y' },
+		{ id: 2, IMG: './/assets/vue.svg', name: 'Yes/~4Y' },
+		{ id: 3, IMG: './/assets/vue.svg', name: 'NO' },
+		{ id: 4, IMG: './/assets/vue.svg', name: 'NO' },
+		{ id: 5, IMG: './/assets/vue.svg', name: 'NO' },
+		{ id: 6, IMG: './/assets/vue.svg', name: 'NO' },
+		{ id: 7, IMG: './/assets/vue.svg', name: 'NO' },
+		{ id: 8, IMG: './/assets/vue.svg', name: 'NO' },
+		{ id: 9, IMG: './/assets/vue.svg', name: 'NO' },
+		{ id: 10, IMG: './/assets/vue.svg', name: 'NO' },
+		],
+		data_5: [
+		{ id: 1, IMG: './/assets/vue.svg', name: 'Very fast/Very cheap' },
+		{ id: 2, IMG: './/assets/vue.svg', name: 'Very Slow/Regular' },
+		{ id: 3, IMG: './/assets/vue.svg', name: 'Fast/Expensive' },
+		{ id: 4, IMG: './/assets/vue.svg', name: 'Fast/Cheap' },
+		{ id: 5, IMG: './/assets/vue.svg', name: 'Fast/Cheap' },
+		{ id: 6, IMG: './/assets/vue.svg', name: 'Fast/Cheap' },
+		{ id: 7, IMG: './/assets/vue.svg', name: 'Fast/Cheap' },
+		{ id: 8, IMG: './/assets/vue.svg', name: 'Fast/Cheap' },
+		{ id: 9, IMG: './/assets/vue.svg', name: 'Fast/Cheap' },
+		{ id: 10, IMG: './/assets/vue.svg', name: 'Fast/Cheap' },
+		],
+		data_6: [
+		{ id: 1, IMG: './/assets/vue.svg', name: 'Yes' },
+		{ id: 2, IMG: './/assets/vue.svg', name: 'Wallet only' },
+		{ id: 3, IMG: './/assets/vue.svg', name: 'Yes' },
+		{ id: 4, IMG: './/assets/vue.svg', name: 'Scanner only' },
+		{ id: 5, IMG: './/assets/vue.svg', name: 'Scanner only' },
+		{ id: 6, IMG: './/assets/vue.svg', name: 'YES' },
+		{ id: 7, IMG: './/assets/vue.svg', name: 'YES' },
+		{ id: 8, IMG: './/assets/vue.svg', name: 'YES' },
+		{ id: 9, IMG: './/assets/vue.svg', name: 'YES' },
+		{ id: 10, IMG: './/assets/vue.svg', name: 'YES' },
+		],
+	};
+	},
+};
+</script>
