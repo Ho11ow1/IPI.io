@@ -136,33 +136,31 @@ onMounted(() => {
     padding-top: 2rem;
 }
 
-/* Timeline line (pseudo-element) */
 .roadmap-scroll-container::before {
     content: '';
     position: absolute;
-    top: 50px; /* Position the line correctly */
+    top: 50px;
     left: 0;
     width: calc(100% + 23%); /* Ensure the line spans the full width of the container */
     height: 2px;
-    /* Dynamic background gradient controlled by scroll */
+    /*controlled by scroll */
     background: linear-gradient(to right, #4a5568 0%, #63b3ed calc(var(--scroll-percentage, 0%) * 100%), #4a5568 100%);
-    z-index: 0; /* Keep it behind the circles */
+    z-index: 0;
     transition: background 0.3s ease-in-out;
 }
 
 /* Each roadmap item */
 .roadmap-item {
     flex-shrink: 0;
-    width: 300px; /* Adjust width as necessary */
+    width: 300px;
     position: relative;
     padding-top: 2rem;
     z-index: 1; /* Ensure items stay above the line */
 }
 
-/* The circle on the timeline */
 .roadmap-circle {
     position: absolute;
-    top: 10px; /* Adjust to align the circle over the line */
+    top: 10px;
     left: 50%;
     transform: translateX(-50%);
     width: 20px;
@@ -173,7 +171,6 @@ onMounted(() => {
     border: 3px solid #4a5568; /* Match the circle's border to the line */
 }
 
-/* Each content box */
 .roadmap-content {
     background-color: #1b263b;
     padding: 1.5rem;
@@ -191,10 +188,10 @@ onMounted(() => {
     color: #63b3ed;
     text-align: center;
     position: absolute;
-    top: -2rem; /* Move the Q1/Q2 text above the timeline */
+    top: -2rem; /* Move the text above the line */
     left: 50%;
     transform: translateX(-50%);
-    white-space: nowrap; /* Ensure the period text stays on one line */
+    white-space: nowrap; /* Ensure the text stays inline */
 }
 
 .date-range {
@@ -208,7 +205,6 @@ onMounted(() => {
     line-height: 1.4;
 }
 
-/* Responsiveness for mobile */
 @media (max-width: 768px) {
     .roadmap-item {
         width: 250px;
