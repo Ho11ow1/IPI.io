@@ -1,18 +1,18 @@
 <template>
-    <section class="roadmap container mx-auto" id="roadmap">
-        <div class="roadmap-controls">
-            <button @click="scrollLeft" class="scroll-button">←</button>
-            <button @click="scrollRight" class="scroll-button">→</button>
-        </div>
-        <div class="roadmap-scroll-container" ref="roadmapContainer" @scroll="handleScroll">
+    <section class="roadmap" id="roadmap">
+        <div class="roadmap-scroll-container ml-auto" ref="roadmapContainer" @scroll="handleScroll">
             <div class="roadmap-item" v-for="(item, index) in roadmap" :key="index">
-                <div class="roadmap-circle"></div>
-                <div class="roadmap-content">
-                    <div class="period">{{ item.period }}</div>
-                    <div class="date-range">{{ item.dateRange }}</div>
-                    <div class="description">{{ item.description }}</div>
+                <div class="item-circle"></div>
+                <div class="item-content">
+                    <div class="quarter">{{ item.quarter }}</div>
+                    <div class="date-range"><h2 class="text-center text-neutral-100">{{ item.dateRange }}</h2></div>
+                    <div class="description"><p class="text-center text-gray-400">{{ item.description }}</p></div>
                 </div>
             </div>
+        </div>
+        <div class="roadmap-controls mx-auto">
+            <button @click="scrollLeft" class="scroll-button">←</button>
+            <button @click="scrollRight" class="scroll-button">→</button>
         </div>
     </section>
 </template>
@@ -22,34 +22,34 @@ import { ref, onMounted } from 'vue';
 
 const roadmap = ref([
     {
-        period: 'Q1 2023',
+        quarter: 'Q4 2022',
+        dateRange: 'Oct 2022 - Dec 2022',
+        description: 'Collecting requirements, creating a business model, software documentationand creating a team of top developers.'
+    },
+    {
+        quarter: 'Q1 2023',
         dateRange: 'Jan 2023 - Mar 2023',
-        description: 'Starting IPI Mainnet. Requirement analysis, research and development, designing the architecture of the blockchain network and protocols.'
+        description: 'Starting IPI Mainnet, Requirement analysis, research and development, designing the architecture of the blockchain network and protocols.',
     },
     {
-        period: 'Q2 2023',
+        quarter: 'Q2 2023',
         dateRange: 'Apr 2023 - Sep 2023',
-        description: 'Development of multi-chain wallet and native scanner. Creating a smart contract engine. Private offering.'
+        description: 'Development of multi-chain wallet and native scanner.Creating a smart contract engine.Private offering.'
     },
     {
-        period: 'Q3 2024',
+        quarter: 'Q3 2024',
         dateRange: 'Oct 2023 - Sep 2024',
-        description: 'Developing smart contract engine, developer tools, documentation, and basic building blocks.'
+        description: 'Developing smart contract engine, developer tools, documentation, and basic building blocks'
     },
     {
-        period: 'Q4 2024',
+        quarter: 'Q4 2024',
         dateRange: 'Oct 2024 - Dec 2024',
-        description: 'Building a community of developers, creating decentralized applications with us. Transitioning existing protocols.'
+        description: 'Building a community of developers creating decentralized applications with us. Transitioning existing protocols.'
     },
     {
-        period: 'Q4 2024',
-        dateRange: 'Oct 2024 - Dec 2024',
-        description: 'Building a community of developers, creating decentralized applications with us. Transitioning existing protocols.'
-    },
-    {
-        period: 'Q1 2025',
+        quarter: 'Q1 2025 - till later',
         dateRange: 'Jan 2025 - till later',
-        description: 'Start of public mining. Completion of decentralized applications.'
+        description: 'Start of public mining. Creating more of decentralized applications.'
     }
 ]);
 
@@ -60,14 +60,14 @@ const handleScroll = () => {
     const container = roadmapContainer.value;
     if (!container) return;
 
-    // Get the scroll position and the total scrollable width
+    // Get the scroll position and the total width
     const scrollLeft = container.scrollLeft;
     const scrollWidth = container.scrollWidth - container.clientWidth;
 
     // Calculate the scroll percentage (0 to 1)
     const scrollPercentage = scrollLeft / scrollWidth;
 
-    // Set the CSS variable based on scroll percentage
+    // Set the CSS based on scroll percentage
     container.style.setProperty('--scroll-percentage', scrollPercentage.toString());
 };
 
@@ -97,8 +97,8 @@ onMounted(() => {
 <style scoped>
 .roadmap {
     background-color: #0d1b2a;
-    padding: 2rem 0;
-    overflow-x: hidden;
+    padding: 2rem 1rem;
+    overflow-x: hidden;;
 }
 
 /* Controls for scrolling */
@@ -109,9 +109,9 @@ onMounted(() => {
 }
 
 .scroll-button {
-    background-color: #63b3ed;
+    background-color: transparent;
     color: white;
-    border: none;
+    border:2px solid #fff;
     border-radius: 5px;
     padding: 0.5rem 1rem;
     margin: 0 0.5rem;
@@ -134,6 +134,7 @@ onMounted(() => {
     -webkit-overflow-scrolling: touch;
     position: relative;
     padding-top: 2rem;
+    max-width:1640px
 }
 
 .roadmap-scroll-container::before {
@@ -141,10 +142,10 @@ onMounted(() => {
     position: absolute;
     top: 50px;
     left: 0;
-    width: calc(100% + 23%); /* Ensure the line spans the full width of the container */
-    height: 2px;
+    width: calc(100% + 38%); /* Ensure the line spans the full width of the container */
+    height: 3px;
     /*controlled by scroll */
-    background: linear-gradient(to right, #4a5568 0%, #63b3ed calc(var(--scroll-percentage, 0%) * 100%), #4a5568 100%);
+    background: linear-gradient(to right, #4a5568 0%, rgb(220, 38, 38) calc(var(--scroll-percentage, 0%) * 100%), #4a5568 100%);
     z-index: 0;
     transition: background 0.3s ease-in-out;
 }
@@ -152,40 +153,38 @@ onMounted(() => {
 /* Each roadmap item */
 .roadmap-item {
     flex-shrink: 0;
-    width: 300px;
+    max-width:320px;
     position: relative;
     padding-top: 2rem;
     z-index: 1; /* Ensure items stay above the line */
 }
 
-.roadmap-circle {
+/* The circles go brr */
+.item-circle {
     position: absolute;
     top: 10px;
     left: 50%;
     transform: translateX(-50%);
     width: 20px;
     height: 20px;
-    background-color: #2b6cb0;
+    background-color:rgb(220, 38, 38);
     border-radius: 50%;
     z-index: 2; /* Ensure the circle is above the line */
-    border: 3px solid #4a5568; /* Match the circle's border to the line */
+    border: 2px solid #fff;
 }
 
-.roadmap-content {
-    background-color: #1b263b;
+.item-content {
     padding: 1.5rem;
     border-radius: 8px;
     color: #ffffff;
-    text-align: left;
-    border: 1px solid #2d3748;
-    margin-top: 20px; /* Add spacing between the circle and content */
+    margin-top: 20px;
 }
 
-.period {
-    font-size: 1.25rem;
+/*QX - year*/
+.quarter {
+    font-size: .95rem;
     font-weight: bold;
     margin-bottom: 0.5rem;
-    color: #63b3ed;
     text-align: center;
     position: absolute;
     top: -2rem; /* Move the text above the line */
@@ -194,14 +193,17 @@ onMounted(() => {
     white-space: nowrap; /* Ensure the text stays inline */
 }
 
+/* The date */
 .date-range {
-    font-size: 0.875rem;
+    font-size: 1.1rem;
+    font-weight:600;
     color: #cbd5e0;
     margin-bottom: 1rem;
 }
 
 .description {
-    font-size: 1rem;
+    font-size: .9rem;
+    font-weight:400;
     line-height: 1.4;
 }
 
@@ -210,11 +212,11 @@ onMounted(() => {
         width: 250px;
     }
 
-    .roadmap-content {
+    .item-content {
         padding: 1rem;
     }
 
-    .period {
+    .quarter {
         font-size: 1.1rem;
     }
 
@@ -228,7 +230,7 @@ onMounted(() => {
         width: 200px;
     }
 
-    .period {
+    .quarter {
         font-size: 1rem;
     }
 
