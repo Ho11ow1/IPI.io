@@ -96,9 +96,10 @@ onMounted(() => {
 
 <style scoped>
 .roadmap {
-    background-color: #0d1b2a;
     padding: 2rem 1rem;
-    overflow-x: hidden;;
+    overflow-x: hidden;
+    mask-image: linear-gradient(to right, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 100%);
+
 }
 
 /* Controls for scrolling */
@@ -134,7 +135,7 @@ onMounted(() => {
     -webkit-overflow-scrolling: touch;
     position: relative;
     padding-top: 2rem;
-    max-width:1640px
+    max-width:1640px;
 }
 
 .roadmap-scroll-container::before {
