@@ -3,7 +3,7 @@
 </script>
 
 <template>
-    <section class="coins container mx-auto mb-72 pt-36" id="coins">
+    <section class="coins container mx-auto mb-72 pt-36 hidden-el" id="coins">
         <div class="Section-title">
             <h2 class="text-center mx-auto mb-8 font-medium text-5xl text-neutral-300">
                 COINS

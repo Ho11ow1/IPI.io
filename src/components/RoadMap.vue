@@ -1,5 +1,5 @@
 <template>
-    <section class="roadmap" id="roadmap">
+    <section class="roadmap hidden-el" id="roadmap">
         <div class="roadmap-scroll-container ml-auto" ref="roadmapContainer" @scroll="handleScroll">
             <div class="roadmap-item" v-for="(item, index) in roadmap" :key="index">
                 <div class="item-circle"></div>

@@ -1,5 +1,5 @@
 <template>
-	<section class="container mx-auto">
+	<section class="container mx-auto hiden-el">
 	<table class="main-table mx-auto py-3 px-3">
 		<tr class="coins-list">
 			<!-- Loop through coins to create the headers -->

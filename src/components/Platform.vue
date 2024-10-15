@@ -6,7 +6,7 @@
 
 <template>
 
-<section class="Platform mx-auto container mb-72 pt-36" id="platform">
+<section class="Platform mx-auto container mb-72 pt-36 hidden-el" id="platform">
     <h3 class="text-center mx-auto mb-12 font-medium text-5xl text-neutral-300">
         PLATFORM
     </h3>
