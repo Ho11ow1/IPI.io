@@ -21,7 +21,7 @@
                 FOR PROGRAMMERS
         </button>
     </div>
-    <div class="content flex justify-between items-center" v-if="activeTab === 2"  id="tab1">
+    <div class="content flex justify-between items-center" v-if="activeTab === 1"  id="tab1">
         <div class="left">
             <h4 class="mb-4 font-semibold text-2xl">
                 Open platform for non-tech users
@@ -59,7 +59,7 @@
             <img class="" src="https://placehold.co/600x380">
         </div>
     </div>
-    <div class="content flex justify-between items-center" v-if="activeTab === 1"  id="tab2">
+    <div class="content flex justify-between items-center" v-if="activeTab === 2"  id="tab2">
         <div class="left">
             <h4 class="mb-4 font-semibold text-2xl">
                 Open platform for non-tech users
@@ -95,7 +95,7 @@ export default
     data() 
     {
         return {
-            activeTab: 1, // Default tab
+            activeTab: 2, // Default tab
         };
     },
     methods: 

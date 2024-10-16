@@ -14,12 +14,11 @@ import Contact from './components/Contact.vue';
 <template>
 	<NavBar2/>
 	<main>
-		<MAIN/> <!--Good to go 768px + 1240px-->
-		<!--<Advantage/>--> <!--Works until 1024px // TODO: 768px -> should be good (RM img, Scales text) -->
-		<Platform/> <!--Good to go 768px-->
-		<!-- <Ecosystem/> SHOULD PROBABLY REMOVE THIS-->
-		<Coins/> <!--Good to go 768px + 1240px-->
-		<RoadMap/>
-		<Contact/>  <!-- Good to go 768p + 1240px-->
+		<MAIN/> <!-- Finished -->
+		<Advantage/> <!--Works until 1024px // TODO: 768px -> should be good (RM img, Scales text) -->
+		<Platform/> <!-- Finished -->
+		<Coins/> <!-- Finished -->
+		<RoadMap/> <!-- Finished -->
+		<Contact/> <!-- Finished -->
 	</main>
 </template>

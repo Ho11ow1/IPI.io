@@ -143,7 +143,7 @@ onMounted(() => {
     position: absolute;
     top: 50px;
     left: 0;
-    width: calc(100% + 38%); /* Ensure the line spans the full width of the container */
+    width: calc(100vw + 25%); /* Ensure the line spans the full width of the container */
     height: 3px;
     /*controlled by scroll */
     background: linear-gradient(to right, #4a5568 0%, rgb(220, 38, 38) calc(var(--scroll-percentage, 0%) * 100%), #4a5568 100%);
