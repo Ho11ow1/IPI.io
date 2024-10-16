@@ -6,7 +6,7 @@
 
 <template>
 
-	<section class="container mx-auto px-8 mb-56 flex justify-center items-center" id="contact">
+	<section class="container mx-auto px-8 mb-56 flex justify-center items-center hidden-el" id="contact">
 		<div class="Contact-details mr-14">
 			<div class="contact-section">
 				<div class="rotating-circles">

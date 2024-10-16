@@ -6,7 +6,7 @@
 
 <template>
 
-    <section class="ecosystem container mb-96 pt-32 mx-auto px-24 text-slate-100" id="eco">
+    <section class="ecosystem container mb-96 pt-32 mx-auto px-24 text-slate-100 hidden-el" id="eco">
         <div class="Section-title">
             <h2 class="text-center mx-auto mb-24 font-medium text-5xl text-neutral-300">
                 ECOSYSTEM
