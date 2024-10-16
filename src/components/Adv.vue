@@ -4,7 +4,7 @@
 		<tr class="coins-list">
 			<!-- Loop through coins to create the headers -->
 			<th v-for="(coin, index) in coins" :key="coin.id">
-				<div class="flex items-center flex-col text-center mb-2">
+				<div class="flex items-center flex-col text-center mb-2 headers">
 					<img :src="coin.IMG" :alt="coin.TITLE" class="coin-image mb-4" />
 					<div class="coin-text">
 						<p class="cell-text">
@@ -162,6 +162,13 @@ th{
 	position:relative;
 	max-width: 120px;
 	overflow: hidden;
+}
+
+.headers{
+	margin-bottom:1rem;
+}
+::after, .score{
+	margin-bottom:.35rem;
 }
 
 .score{
