@@ -1,5 +1,5 @@
 <template>
-    <section class="roadmap hidden-el" id="roadmap">
+    <section class="roadmap hidden-el my-96" id="roadmap">
         <div class="roadmap-scroll-container ml-auto" ref="roadmapContainer" @scroll="handleScroll">
             <div class="roadmap-item" v-for="(item, index) in roadmap" :key="index">
                 <div class="item-circle"></div>
@@ -98,8 +98,7 @@ onMounted(() => {
 .roadmap {
     padding: 2rem 1rem;
     overflow-x: hidden;
-    mask-image: linear-gradient(to right, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 100%);
-
+    mask-image: linear-gradient(to right, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0.2) 100%);
 }
 
 /* Controls for scrolling */
@@ -149,6 +148,31 @@ onMounted(() => {
     background: linear-gradient(to right, #4a5568 0%, rgb(220, 38, 38) calc(var(--scroll-percentage, 0%) * 100%), #4a5568 100%);
     z-index: 0;
     transition: background 0.3s ease-in-out;
+}
+
+@media (max-width:1600px)
+{
+    .roadmap-scroll-container::before{
+        width:auto;
+    }
+}
+@media (max-width:1366px)
+{
+    .roadmap-scroll-container::before{
+        width:auto;
+    }
+}
+@media (max-width:1240px)
+{
+    .roadmap-scroll-container::before{
+        width:auto;
+    }
+}
+@media (max-width:768px)
+{
+    .roadmap-scroll-container::before{
+        width:auto;
+    }
 }
 
 /* Each roadmap item */
