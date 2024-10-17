@@ -1,7 +1,22 @@
 <template>
-	<section class="container mx-auto hiden-el" id="advantages">
-	<table class="main-table mx-auto py-3 px-3">
-		<tr class="coins-list">
+	<section class="container mx-auto hidden-el my-96" id="advantages">
+		<h3 class="text-center mx-auto mb-12 font-medium text-5xl text-neutral-300">
+			ADVANTAGES
+		</h3>
+		<div class="buttons mx-auto flex flex-nowrap justify-center items-center mb-24 max-w-screen-md ">
+			<button @click="showTab(2)" class="border-solid border-2 border-red-500 rounded-xl py-3 px-5 font-semibold  hover:border-red-500 hover:text-red-500 active:border-red-500 active:text-red-500" data-toggle="tab" id="btab1" :class="{'active': activeTab === 2, 'inactive': activeTab !== 2}">
+					FOR CRYPTO USERS
+			</button>
+			<div class="seperator flex justify-center items-center">
+				<span></span>
+			</div>
+			<button @click="showTab(1)" class="border-solid border-2 border-neutral-600 rounded-xl py-3 px-5 font-semibold  hover:border-red-500 hover:text-red-500 active:border-red-500 active:text-red-500" data-toggle="tab" id="btab2" :class="{'active': activeTab === 1, 'inactive': activeTab !== 1}">
+					FOR PROGRAMMERS
+			</button>
+		</div>
+	<table class="main-table mx-auto py-3 px-3" v-if="activeTab === 1"  id="tab1"> <!-- Code go brrrr -->
+		<tbody>
+			<tr class="coins-list">
 			<!-- Loop through coins to create the headers -->
 			<th v-for="(coin, index) in coins" :key="coin.id">
 				<div class="flex items-center flex-col text-center mb-2 headers">
@@ -16,121 +31,274 @@
 					</div>
 				</div>
 			</th>
-		</tr>
-		<tr>
-			<td :colspan="coins.length" class="text-center py-2">
-				<h2 class="text-xl font-bold">
-					Consensus / Decentralization Level
-				</h2>
-			</td>
-		</tr>
-		<tr> <!-- Create a new row-->
-			<td v-for="(text, index) in data_1" :key="text.id"> <!-- go with the row because no flex-->
-				<div class="flex items-center flex-col text-center">
-					<img :src="text.IMG" :alt="text.name" class="coin-image mb-4" />
-					<p class="cell-text">
-						{{ text.name }}
-					</p>
+			</tr>
+			<tr>
+				<td :colspan="coins.length" class="text-center py-2">
+					<h2 class="text-xl font-bold">
+						Consensus / Decentralization Level
+					</h2>
+				</td>
+			</tr>
+			<tr> <!-- Create a new row-->
+				<td v-for="(text, index) in data_1" :key="text.id"> <!-- go with the row because no flex-->
+					<div class="flex items-center flex-col text-center">
+						<img :src="text.IMG" :alt="text.name" class="coin-image mb-4" />
+						<p class="cell-text">
+							{{ text.name }}
+						</p>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td :colspan="coins.length" class="text-center py-2">
+					<h2 class="text-xl font-bold">
+						Max Supply
+					</h2>
+				</td>
+			</tr>
+			<tr> <!-- Create a new row-->
+				<td v-for="(text, index) in data_2" :key="text.id"> <!-- go with the row because no flex-->
+					<div class="flex items-center flex-col text-center">
+						<img :src="text.IMG" :alt="text.name" class="coin-image mb-4" />
+						<p class="cell-text">
+							{{ text.name }}
+						</p>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td :colspan="coins.length" class=" text-center py-2">
+					<h2 class="text-xl font-bold">
+					Instamine              
+					</h2>
+				</td>
+			</tr>
+			<tr> <!-- Create a new row-->
+				<td v-for="(text, index) in data_3" :key="text.id"> <!-- go with the row because no flex-->
+					<div class="flex items-center flex-col text-center">
+						<img :src="text.IMG" :alt="text.name" class="coin-image mb-4" />
+						<p class="cell-text">
+							{{ text.name }}
+						</p>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td :colspan="coins.length" class="text-center py-2">
+					<h2 class="text-xl font-bold">
+						Halving / Period
+					</h2>
+				</td>
+			</tr>
+			<tr> <!-- Create a new row-->
+				<td v-for="(text, index) in data_4" :key="text.id"> <!-- go with the row because no flex-->
+					<div class="flex items-center flex-col text-center">
+						<img :src="text.IMG" :alt="text.name" class="coin-image mb-4" />
+						<p class="cell-text">
+							{{ text.name }}
+						</p>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td :colspan="coins.length" class="text-center py-2">
+					<h2 class="text-xl font-bold">
+						Networking Speed / Gas Price
+					</h2>
+				</td>
+			</tr>
+			<tr> <!-- Create a new row-->
+				<td v-for="(text, index) in data_5" :key="text.id"> <!-- go with the row because no flex-->
+					<div class="flex items-center flex-col text-center">
+						<img :src="text.IMG" :alt="text.name" class="coin-image mb-4" />
+						<p class="cell-text">
+							{{ text.name }}
+						</p>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td :colspan="coins.length" class="text-center py-2">
+					<h2 class="text-xl font-bold">
+						Native Wallet & Scanner
+					</h2>
+				</td>
+			</tr>
+			<tr> <!-- Create a new row-->
+				<td v-for="(text, index) in data_6" :key="text.id"> <!-- go with the row because no flex-->
+					<div class="flex items-center flex-col text-center">
+						<img :src="text.IMG" :alt="text.name" class="coin-image mb-4" />
+						<p class="cell-text">
+							{{ text.name }}
+						</p>
+					</div>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<table class="second-table mx-auto py-3 px-3" v-if="activeTab === 2"  id="tab2"> <!-- Crypto Users -->
+		<tbody>
+			<tr class="coins-list">
+			<!-- Loop through coins to create the headers -->
+			<th v-for="(coin, index) in coins" :key="coin.id">
+				<div class="flex items-center flex-col text-center mb-2 headers">
+					<img :src="coin.IMG" :alt="coin.TITLE" class="coin-image mb-4" />
+					<div class="coin-text">
+						<p class="cell-text">
+							{{ coin.TITLE }} asda
+						</p>
+					</div>
+					<div class="score">
+						<span></span>
+					</div>
 				</div>
-			</td>
-		</tr>
-		<tr>
-			<td :colspan="coins.length" class="text-center py-2">
-				<h2 class="text-xl font-bold">
-					Max Supply
-				</h2>
-			</td>
-		</tr>
-		<tr> <!-- Create a new row-->
-			<td v-for="(text, index) in data_2" :key="text.id"> <!-- go with the row because no flex-->
-				<div class="flex items-center flex-col text-center">
-					<img :src="text.IMG" :alt="text.name" class="coin-image mb-4" />
-					<p class="cell-text">
-						{{ text.name }}
-					</p>
-				</div>
-			</td>
-		</tr>
-		<tr>
-			<td :colspan="coins.length" class=" text-center py-2">
-				<h2 class="text-xl font-bold">
-				Instamine              
-				</h2>
-			</td>
-		</tr>
-		<tr> <!-- Create a new row-->
-			<td v-for="(text, index) in data_3" :key="text.id"> <!-- go with the row because no flex-->
-				<div class="flex items-center flex-col text-center">
-					<img :src="text.IMG" :alt="text.name" class="coin-image mb-4" />
-					<p class="cell-text">
-						{{ text.name }}
-					</p>
-				</div>
-			</td>
-		</tr>
-		<tr>
-			<td :colspan="coins.length" class="text-center py-2">
-				<h2 class="text-xl font-bold">
-					Halving / Period
-				</h2>
-			</td>
-		</tr>
-		<tr> <!-- Create a new row-->
-			<td v-for="(text, index) in data_4" :key="text.id"> <!-- go with the row because no flex-->
-				<div class="flex items-center flex-col text-center">
-					<img :src="text.IMG" :alt="text.name" class="coin-image mb-4" />
-					<p class="cell-text">
-						{{ text.name }}
-					</p>
-				</div>
-			</td>
-		</tr>
-		<tr>
-			<td :colspan="coins.length" class="text-center py-2">
-				<h2 class="text-xl font-bold">
-					Networking Speed / Gas Price
-				</h2>
-			</td>
-		</tr>
-		<tr> <!-- Create a new row-->
-			<td v-for="(text, index) in data_5" :key="text.id"> <!-- go with the row because no flex-->
-				<div class="flex items-center flex-col text-center">
-					<img :src="text.IMG" :alt="text.name" class="coin-image mb-4" />
-					<p class="cell-text">
-						{{ text.name }}
-					</p>
-				</div>
-			</td>
-		</tr>
-		<tr>
-			<td :colspan="coins.length" class="text-center py-2">
-				<h2 class="text-xl font-bold">
-					Native Wallet & Scanner
-				</h2>
-			</td>
-		</tr>
-		<tr> <!-- Create a new row-->
-			<td v-for="(text, index) in data_6" :key="text.id"> <!-- go with the row because no flex-->
-				<div class="flex items-center flex-col text-center">
-					<img :src="text.IMG" :alt="text.name" class="coin-image mb-4" />
-					<p class="cell-text">
-						{{ text.name }}
-					</p>
-				</div>
-			</td>
-		</tr>
+			</th>
+			</tr>
+			<tr>
+				<td :colspan="coins.length" class="text-center py-2">
+					<h2 class="text-xl font-bold">
+						Consensus / Decentralization Level
+					</h2>
+				</td>
+			</tr>
+			<tr> <!-- Create a new row-->
+				<td v-for="(text, index) in data_1" :key="text.id"> <!-- go with the row because no flex-->
+					<div class="flex items-center flex-col text-center">
+						<img :src="text.IMG" :alt="text.name" class="coin-image mb-4" />
+						<p class="cell-text">
+							{{ text.name }}
+						</p>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td :colspan="coins.length" class="text-center py-2">
+					<h2 class="text-xl font-bold">
+						Max Supply
+					</h2>
+				</td>
+			</tr>
+			<tr> <!-- Create a new row-->
+				<td v-for="(text, index) in data_2" :key="text.id"> <!-- go with the row because no flex-->
+					<div class="flex items-center flex-col text-center">
+						<img :src="text.IMG" :alt="text.name" class="coin-image mb-4" />
+						<p class="cell-text">
+							{{ text.name }}
+						</p>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td :colspan="coins.length" class=" text-center py-2">
+					<h2 class="text-xl font-bold">
+					Instamine              
+					</h2>
+				</td>
+			</tr>
+			<tr> <!-- Create a new row-->
+				<td v-for="(text, index) in data_3" :key="text.id"> <!-- go with the row because no flex-->
+					<div class="flex items-center flex-col text-center">
+						<img :src="text.IMG" :alt="text.name" class="coin-image mb-4" />
+						<p class="cell-text">
+							{{ text.name }}
+						</p>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td :colspan="coins.length" class="text-center py-2">
+					<h2 class="text-xl font-bold">
+						Halving / Period
+					</h2>
+				</td>
+			</tr>
+			<tr> <!-- Create a new row-->
+				<td v-for="(text, index) in data_4" :key="text.id"> <!-- go with the row because no flex-->
+					<div class="flex items-center flex-col text-center">
+						<img :src="text.IMG" :alt="text.name" class="coin-image mb-4" />
+						<p class="cell-text">
+							{{ text.name }}
+						</p>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td :colspan="coins.length" class="text-center py-2">
+					<h2 class="text-xl font-bold">
+						Networking Speed / Gas Price
+					</h2>
+				</td>
+			</tr>
+			<tr> <!-- Create a new row-->
+				<td v-for="(text, index) in data_5" :key="text.id"> <!-- go with the row because no flex-->
+					<div class="flex items-center flex-col text-center">
+						<img :src="text.IMG" :alt="text.name" class="coin-image mb-4" />
+						<p class="cell-text">
+							{{ text.name }}
+						</p>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td :colspan="coins.length" class="text-center py-2">
+					<h2 class="text-xl font-bold">
+						Native Wallet & Scanner
+					</h2>
+				</td>
+			</tr>
+			<tr> <!-- Create a new row-->
+				<td v-for="(text, index) in data_6" :key="text.id"> <!-- go with the row because no flex-->
+					<div class="flex items-center flex-col text-center">
+						<img :src="text.IMG" :alt="text.name" class="coin-image mb-4" />
+						<p class="cell-text">
+							{{ text.name }}
+						</p>
+					</div>
+				</td>
+			</tr>
+		</tbody>
 	</table>
 	</section>
 </template>
 
 <style scoped>
 
+.mx-auto{
+	margin-left:auto !important;
+	margin-right:auto !important;
+}
+
+.seperator{
+    flex-grow: 1;
+}
+
+.seperator > span {
+    width: 100%;
+    background-color: rgb(82, 82, 82);
+    height: 1px;
+}
+
+.hidden{
+    display:none;
+}
+
+.active {
+    border-color: rgb(239, 68, 68);
+    color: rgb(239, 68, 68);
+}
+
+/* Styles for the inactive tab */
+.inactive {
+    border-color: rgb(82, 82, 82);
+    color: rgb(212, 212, 212);
+}
+
 .py-2{
 	padding-top:.75rem;
 }
 
-.main-table {
-  table-layout: fixed;  /* Ensures columns respect the set width */
+.main-table, .second-table {
+	table-layout: fixed;  /* Ensures columns respect the set width */
 }
 
 .coins-list{
@@ -245,8 +413,10 @@ div{
 <script lang="ts">
 export default {
 	name: 'Table',
-	data() {
+	data() 
+	{
 	return {
+		activeTab: 1, // Default tab
 		coins: [
 		{ id: 1, IMG: 'vite.svg', TITLE: 'IPI' },
 		{ id: 2, IMG: 'vite.svg', TITLE: 'Bitcoin (BTC)' },
@@ -332,6 +502,13 @@ export default {
 		{ id: 10, IMG: 'plus2.svg', name: 'YES' },
 		],
 	};
+	},
+	methods: 
+	{
+		showTab(tabNumber) 
+		{
+			this.activeTab = tabNumber; // Update active tab
+		},
 	},
 };
 </script>

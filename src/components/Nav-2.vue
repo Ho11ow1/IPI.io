@@ -12,7 +12,7 @@ const toggleMenu = () => {
 <template>
     <header class="header w-full" id="header">
         <nav class="nav container mt-3 mx-auto py-6 flex justify-between text-base font-semibold">
-            <div class="Nav-logo">
+            <div class="Nav-logo pl-2">
                 <a href="/" class="flex items-center justify-center">
                     <img src="../assets/vue.svg" alt="Vue Logo" />
                     <h2 class="ml-3 text-neutral-300 font-medium text-3xl">
@@ -44,6 +44,11 @@ const toggleMenu = () => {
                     <li class="nav--item">
                         <a href="#coins">
                             Coins
+                        </a>
+                    </li>
+                    <li class="nav--item">
+                        <a href="#roadmap">
+                            Roadmap
                         </a>
                     </li>
                     <li class="nav--item">
@@ -85,6 +90,13 @@ const toggleMenu = () => {
 
 .nav--menu.block {
     display: block;
+}
+
+@media (max-width:1024px)
+{
+    .container{
+        max-width:860px;
+    }
 }
 
 @media (max-width: 767px) {

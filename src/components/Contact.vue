@@ -1,6 +1,7 @@
 <script setup>
 
-
+import { RiTelegramFill } from "@remixicon/vue";
+import { RiMailLine } from "@remixicon/vue";
 
 </script>
 
@@ -14,8 +15,18 @@
 					<div class="circle circle-inner"></div>
 				</div>
 				<div class="contact-info flex flex-col py-24 px-24">
-					<p class="flex"><img src="https://placehold.co/20x20" alt="Email Icon"> <a href="/">hello@ipi.io</a></p>
-					<p class="flex"><img src="https://placehold.co/20x20" alt="Telegram Icon"> <a href="/">@ipicoin</a></p>
+					<a href="mailto:hello@ipi.io" class="flex items-center gap-2">
+						<RiMailLine style="width:30px; height:30px;"> </RiMailLine>
+						<p class="">
+							hello@ipi.io
+						</p>
+					</a>
+					<a href="https://t.me/@ipicoin" class="flex items-center gap-2">
+						<RiTelegramFill style="width:30px; height:30px;"> </RiTelegramFill>
+						<p class="">
+							@ipicoin
+						</p>
+					</a>
 				</div>
 			</div>
 		</div>

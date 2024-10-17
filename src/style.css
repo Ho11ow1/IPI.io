@@ -39,15 +39,9 @@ a:hover{
     }
 }
 
-.hidden-el{ /*Actual hidden-el*/
-    opacity:0;
+.hidden-el{
+    /* opacity:0;
     filter:blur(5px);
-    transform:translateX(100%);
+    transform:translateX(100%); */
     transition:all 1s;
-}
-
-.hidden-el{ /* Actually Show but i don't know how to make this work in vue :) */
-    opacity:1;
-    filter:blur(0);
-    transform:translateX(0);
 }
