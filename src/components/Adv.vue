@@ -14,7 +14,7 @@
 					FOR PROGRAMMERS
 			</button>
 		</div>
-	<table class="main-table mx-auto py-3 px-3" v-if="activeTab === 1"  id="tab1"> <!-- Code go brrrr -->
+	<table class="main-table mx-auto overflow-x-auto py-3 px-3" v-if="activeTab === 1"  id="tab1"> <!-- Code go brrrr -->
 		<tbody>
 			<tr class="coins-list">
 			<!-- Loop through coins to create the headers -->
@@ -264,8 +264,8 @@
 <style scoped>
 
 .mx-auto{
-	margin-left:auto !important;
-	margin-right:auto !important;
+	margin-left:auto ;
+	margin-right:auto ;
 }
 
 .seperator{
@@ -305,20 +305,15 @@
 	background-color:transparent;
 }
 
-.coins-list > th {
-	width: 120px;
-	max-width: 120px;
+th, td {
+	width:auto;
+	max-width: 110px;
 	word-wrap: break-word;
 	white-space: normal;
 	overflow: hidden;  /* Prevents overflow of long content */
 	text-align: center;
 	margin-bottom:2rem;
-}
-
-.coin-image {
-	height: 36px;
-	width: 36px;
-  	margin: 0 auto;  /* Center the image */
+	position:relative;
 }
 
 h2{
@@ -326,10 +321,10 @@ h2{
 	padding:0;
 }
 
-th{
-	position:relative;
-	max-width: 120px;
-	overflow: hidden;
+.coin-image {
+	height: 36px;
+	width: 36px;
+  	margin: 0 auto;  /* Center the image */
 }
 
 .headers{
@@ -373,10 +368,6 @@ tr *{
 	vertical-align:top;
 }
 
-td{
-	max-width:120px;
-}
-
 p{
 	font-size:.75em;
 }
@@ -390,20 +381,24 @@ div{
 @media (max-width:1024px)
 {	
 	tr *{
-	vertical-align:middle;
+		vertical-align:middle;
 	}
 	div{
 		vertical-align:middle;
+	}
+	table{
+		margin-right:50% !important;
 	}
 }
 
 @media (max-width:1010px)
 {
-	section{
-		margin-right:0;
+	table{
+		margin-left:auto;
+		margin-right:auto;
 	}
 	img{
-		transform:scale(0.5);
+		display:none;
 	}
 }
 
