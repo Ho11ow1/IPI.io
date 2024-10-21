@@ -5,10 +5,7 @@ import { RiTelegramFill } from "@remixicon/vue";
 import { RiMailLine } from "@remixicon/vue";
 
 import Textarea from 'primevue/textarea';
-// <FloatLabel variant="in">
-// 	<Textarea id="over_label" v-model="value" rows="5" cols="30" autoResize />
-// 	<label for="inner_label">Your Message</label>
-// </FloatLabel>
+
 const value2 = ref('');
 
 import Button from 'primevue/button'; 
