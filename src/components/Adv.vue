@@ -390,6 +390,9 @@ div{
 	h2{
 		font-size:.95rem;
 	}
+	.container{
+		max-width:900px;
+	}
 }
 
 @media (max-width:1010px)
