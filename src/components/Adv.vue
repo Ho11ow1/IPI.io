@@ -14,7 +14,7 @@
 					FOR PROGRAMMERS
 			</button>
 		</div>
-	<table class="main-table mx-auto overflow-x-auto py-3 px-3" v-if="activeTab === 1"  id="tab1"> <!-- Code go brrrr -->
+	<table class="main-table overflow-x-auto mx-auto py-3 px-3" v-if="activeTab === 1"  id="tab1"> <!-- Code go brrrr -->
 		<tbody>
 			<tr class="coins-list">
 			<!-- Loop through coins to create the headers -->
@@ -136,7 +136,7 @@
 			</tr>
 		</tbody>
 	</table>
-	<table class="second-table mx-auto py-3 px-3" v-if="activeTab === 2"  id="tab2"> <!-- Crypto Users -->
+	<table class="second-table py-3 px-3" v-if="activeTab === 2"  id="tab2"> <!-- Crypto Users -->
 		<tbody>
 			<tr class="coins-list">
 			<!-- Loop through coins to create the headers -->
@@ -263,11 +263,6 @@
 
 <style scoped>
 
-.mx-auto{
-	margin-left:auto ;
-	margin-right:auto ;
-}
-
 .seperator{
     flex-grow: 1;
 }
@@ -387,16 +382,18 @@ div{
 		vertical-align:middle;
 	}
 	table{
-		margin-right:50% !important;
+		max-width:760px;
+	}
+	p{
+		font-size:.6rem;
+	}
+	h2{
+		font-size:.95rem;
 	}
 }
 
 @media (max-width:1010px)
 {
-	table{
-		margin-left:auto;
-		margin-right:auto;
-	}
 	img{
 		display:none;
 	}
