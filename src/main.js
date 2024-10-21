@@ -1,13 +1,14 @@
-import { createApp } from 'vue'
-import App from './App.vue'
+import App from './App.vue';
+import { createApp } from 'vue';
 
 import PrimeVue from 'primevue/config';
+import Aura from '@primevue/themes/aura';
 
 import './style.css'
 import 'remixicon/fonts/remixicon.css';
 
-const app = createApp(App);
+const app = createApp(App); 
 
-app.use(PrimeVue, { ripple: true });
+app.use(PrimeVue, { theme: { preset: Aura } });
 
 app.mount('#app');
