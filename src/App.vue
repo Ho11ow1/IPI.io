@@ -1,5 +1,5 @@
 <script setup lang="js">
-// import NavBar from './components/Nav.vue'; PrimeBlock Nav (Bad)
+// import NavBar from './components/Nav.vue'; //PrimeBlock Nav (Bad)
 import NavBar2 from './components/Nav-2.vue';
 import MAIN from './components/Main.vue';
 import Advantage from './components/Adv.vue';

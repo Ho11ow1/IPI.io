@@ -149,29 +149,22 @@ onMounted(() => {
     z-index: 0;
     transition: background 0.3s ease-in-out;
 }
-
 @media (max-width:1600px)
 {
-    .roadmap-scroll-container::before{
-        width:auto;
+    .roadmap-scroll-container::before {
+        width: calc(120vw + 25%); /* Ensure the line spans the full width of the container */
     }
 }
-@media (max-width:1366px)
+@media (max-width:1248px)
 {
-    .roadmap-scroll-container::before{
-        width:auto;
+    .roadmap-scroll-container::before {
+        width: calc(160vw + 25%); /* Ensure the line spans the full width of the container */
     }
 }
-@media (max-width:1240px)
+@media (max-width:960px)
 {
-    .roadmap-scroll-container::before{
-        width:auto;
-    }
-}
-@media (max-width:768px)
-{
-    .roadmap-scroll-container::before{
-        width:auto;
+    .roadmap-scroll-container::before {
+        width: calc(180vw + 45%); /* Ensure the line spans the full width of the container */
     }
 }
 

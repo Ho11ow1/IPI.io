@@ -3,7 +3,7 @@
 		<h3 class="text-center mx-auto mb-12 font-medium text-5xl text-neutral-300">
 			ADVANTAGES
 		</h3>
-		<div class="buttons mx-auto flex flex-nowrap justify-center items-center mb-24 max-w-screen-md ">
+		<div class="buttons flex flex-nowrap justify-center items-center mb-24 max-w-screen-md " style="margin:6rem auto;">
 			<button @click="showTab(2)" class="border-solid border-2 border-red-500 rounded-xl py-3 px-5 font-semibold  hover:border-red-500 hover:text-red-500 active:border-red-500 active:text-red-500" data-toggle="tab" id="btab1" :class="{'active': activeTab === 2, 'inactive': activeTab !== 2}">
 					FOR CRYPTO USERS
 			</button>
@@ -14,7 +14,7 @@
 					FOR PROGRAMMERS
 			</button>
 		</div>
-	<table class="main-table mx-auto py-3 px-3" v-if="activeTab === 1"  id="tab1"> <!-- Code go brrrr -->
+	<table class="main-table overflow-x-auto mx-auto py-3 px-3" v-if="activeTab === 1"  id="tab1"> <!-- Code go brrrr -->
 		<tbody>
 			<tr class="coins-list">
 			<!-- Loop through coins to create the headers -->
@@ -136,7 +136,7 @@
 			</tr>
 		</tbody>
 	</table>
-	<table class="second-table mx-auto py-3 px-3" v-if="activeTab === 2"  id="tab2"> <!-- Crypto Users -->
+	<table class="second-table overflow-x-auto mx-auto py-3 px-3" v-if="activeTab === 2"  id="tab2"> <!-- Crypto Users -->
 		<tbody>
 			<tr class="coins-list">
 			<!-- Loop through coins to create the headers -->
@@ -263,11 +263,6 @@
 
 <style scoped>
 
-.mx-auto{
-	margin-left:auto !important;
-	margin-right:auto !important;
-}
-
 .seperator{
     flex-grow: 1;
 }
@@ -305,20 +300,15 @@
 	background-color:transparent;
 }
 
-.coins-list > th {
-	width: 120px;
-	max-width: 120px;
+th, td {
+	width:auto;
+	max-width: 110px;
 	word-wrap: break-word;
 	white-space: normal;
 	overflow: hidden;  /* Prevents overflow of long content */
 	text-align: center;
 	margin-bottom:2rem;
-}
-
-.coin-image {
-	height: 36px;
-	width: 36px;
-  	margin: 0 auto;  /* Center the image */
+	position:relative;
 }
 
 h2{
@@ -326,10 +316,10 @@ h2{
 	padding:0;
 }
 
-th{
-	position:relative;
-	max-width: 120px;
-	overflow: hidden;
+.coin-image {
+	height: 36px;
+	width: 36px;
+  	margin: 0 auto;  /* Center the image */
 }
 
 .headers{
@@ -373,10 +363,6 @@ tr *{
 	vertical-align:top;
 }
 
-td{
-	max-width:120px;
-}
-
 p{
 	font-size:.75em;
 }
@@ -390,20 +376,29 @@ div{
 @media (max-width:1024px)
 {	
 	tr *{
-	vertical-align:middle;
+		vertical-align:middle;
 	}
 	div{
 		vertical-align:middle;
+	}
+	table{
+		max-width:760px;
+	}
+	p{
+		font-size:.6rem;
+	}
+	h2{
+		font-size:.95rem;
+	}
+	.container{
+		max-width:900px;
 	}
 }
 
 @media (max-width:1010px)
 {
-	section{
-		margin-right:0;
-	}
 	img{
-		transform:scale(0.5);
+		display:none;
 	}
 }
 

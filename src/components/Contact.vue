@@ -1,7 +1,25 @@
 <script setup>
+import { ref } from 'vue';
 
 import { RiTelegramFill } from "@remixicon/vue";
 import { RiMailLine } from "@remixicon/vue";
+
+import Textarea from 'primevue/textarea';
+
+const value2 = ref('');
+
+import Button from 'primevue/button'; 
+
+const loading = ref(false);
+
+const load = () => 
+{
+    loading.value = true;
+    setTimeout(() => 
+	{
+        loading.value = false;
+    }, 2000);
+};
 
 </script>
 
@@ -59,13 +77,18 @@ import { RiMailLine } from "@remixicon/vue";
 						<h4 class="text-gray-400 mb-2 ml-2 font-bold text-xs tracking-widest">
 							YOUR MESSAGE
 						</h4>
-						<textarea type="text" placeholder="Your message goes here" class="border-solid border border-neutral-600  bg-transparent font-medium rounded-lg px-5 py-2 h-28 w-full"></textarea>
+						<!-- <textarea type="text" placeholder="Your message goes here" class="border-solid border border-neutral-600  bg-transparent font-medium rounded-lg px-5 py-2 h-28 w-full"></textarea> -->
+						<FloatLabel variant="in">
+							<Textarea id="over_label" placeholder="In Label"v-model="value2" rows="5" cols="38" autoResize />
+							<!--<label for="in_label">In Label</label>--> <!--Doesn't work-->
+						</FloatLabel>
 					</div>
 				</div>
 				<div class="btn mt-8 flex flex-row-reverse">
-					<button type="submit" class="border-solid border-2 border-red-600 bg-red-600 text-gray-100 text-base font-medium rounded-3xl px-10 py-3">
+					<!-- <button type="submit" class="border-solid border-2 border-red-600 bg-red-600 text-gray-100 text-base font-medium rounded-3xl px-10 py-3">
 						SEND
-					</button>
+					</button> -->
+					<Button severity="danger" type="button" label="Submit" icon="pi pi-search" :loading="loading" @click="load" rounded />
 				</div>
 			</form>
 		</div>
@@ -75,10 +98,18 @@ import { RiMailLine } from "@remixicon/vue";
 
 <style scoped>
 
-button:hover{
+.p-textarea{
+	background-color:transparent;
+}
+
+/* button:hover{
 	background-color:aliceblue;
 	border-color:aliceblue;
 	color:#dc2626;
+} */
+
+.p-button{
+	padding:1rem 1.5rem;
 }
 
 .max-w-screen-sm{
@@ -96,7 +127,7 @@ button:hover{
 	position: absolute;
 	width: 350px;
 	height: 350px;
-	/* background-image:url(../assets/dot-c-azalea.png);
+	/* background-image:url(/dot-c-azalea.png);
 	background-position-x:19%;
 	background-position-y:12%;
 	background-repeat:no-repeat; */
