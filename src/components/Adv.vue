@@ -3,7 +3,7 @@
 		<h3 class="text-center mx-auto mb-12 font-medium text-5xl text-neutral-300">
 			ADVANTAGES
 		</h3>
-		<div class="buttons mx-auto flex flex-nowrap justify-center items-center mb-24 max-w-screen-md ">
+		<div class="buttons flex flex-nowrap justify-center items-center mb-24 max-w-screen-md " style="margin:6rem auto;">
 			<button @click="showTab(2)" class="border-solid border-2 border-red-500 rounded-xl py-3 px-5 font-semibold  hover:border-red-500 hover:text-red-500 active:border-red-500 active:text-red-500" data-toggle="tab" id="btab1" :class="{'active': activeTab === 2, 'inactive': activeTab !== 2}">
 					FOR CRYPTO USERS
 			</button>
@@ -136,7 +136,7 @@
 			</tr>
 		</tbody>
 	</table>
-	<table class="second-table py-3 px-3" v-if="activeTab === 2"  id="tab2"> <!-- Crypto Users -->
+	<table class="second-table overflow-x-auto mx-auto py-3 px-3" v-if="activeTab === 2"  id="tab2"> <!-- Crypto Users -->
 		<tbody>
 			<tr class="coins-list">
 			<!-- Loop through coins to create the headers -->
