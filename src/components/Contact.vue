@@ -21,11 +21,13 @@ const load = () =>
     }, 2000);
 };
 
+const show = ref(true);
+
 </script>
 
 <template>
-
-	<section class="container mx-auto px-8 mb-56 flex justify-center items-center hidden-el" id="contact">
+	<Transition :duration="600" name="flow">
+	<section class="container mx-auto px-8 mb-56 flex justify-center items-center hidden-el" id="contact" v-if="show">
 		<div class="Contact-details mr-14">
 			<div class="contact-section">
 				<div class="rotating-circles">
@@ -93,10 +95,22 @@ const load = () =>
 			</form>
 		</div>
 	</section>
-
+	</Transition>
 </template>
 
 <style scoped>
+
+.flow-enter-from, .flow-leave-to{
+    opacity:0;
+    filter:blur(5px);
+    transform:translateY(100%);
+}
+
+.flow-enter-active, .flow-leave-active{
+    opacity:0.5;
+    filter:blur(2px);
+    transform:translateY(50%);
+}
 
 .p-textarea{
 	background-color:transparent;
