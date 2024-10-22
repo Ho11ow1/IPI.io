@@ -1,20 +1,58 @@
-<script setup>
+<script lang="ts">
+
+
+export default 
+{
+	data() 
+	{
+	return {
+		DisplayOne: "",
+        DisplayFull: "ASDADA",
+        DisplayTwo: "",
+        DisplayThree: "",
+        CurrentDisplay: "",
+        IntervalID: 0
+	};
+	},
+	methods: 
+	{
+		ShowText() 
+		{
+			this.IntervalID = setInterval(() => {
+                if (this.currentIndex < this.DisplayFull.length)
+                {
+                    this.DisplayOne += this.DisplayFull[this.currentIndex];
+                    this.currentIndex++; 
+                }
+                else
+                {
+                    clearInterval(this.IntervalID);
+                }
+            })
+            100
+		},
+	},
+    mounted()
+    {
+        this.ShowText();
+    }
+};
 
 </script>
 
 <template>
 
-<section class="container mx-auto px-8 mb-72 pt-36 flex justify-between items-center hidden-el" id="main">
+    <section class="container mx-auto px-8 mb-72 pt-36 flex justify-between items-center hidden-el" id="main">
         <div class="left flex flex-col">
             <div class="Generate">
                 <h2 class="my-4 text-red-600 text-6xl">
-                    I
+                    I <span class="I-1 text-neutral-100">{{ DisplayOne }}</span>
                 </h2>
                 <h2 class="my-4 text-red-600 text-6xl">
-                    P
+                    P <span class="P-1 text-neutral-100">{{ DisplayTwo }}</span>
                 </h2>
                 <h2 class="my-4 text-red-600 text-6xl">
-                    I
+                    I <span class="I-2 text-neutral-100">{{ DisplayThree }}</span>
                 </h2>
             </div>
             <h3 class="text-gray-400 mt-8 text-1xl max-w-5xl main-description">
