@@ -1,33 +1,60 @@
-<script setup>
-import { ref } from 'vue';
-
+<script setup lang="ts">
+import { ref, onMounted, onUnmounted } from 'vue';
 import { RiTelegramFill } from "@remixicon/vue";
 import { RiMailLine } from "@remixicon/vue";
 
 import Textarea from 'primevue/textarea';
-
 const value2 = ref('');
 
 import Button from 'primevue/button'; 
-
 const loading = ref(false);
-
 const load = () => 
 {
-    loading.value = true;
-    setTimeout(() => 
+	loading.value = true;
+	setTimeout(() => 
 	{
-        loading.value = false;
-    }, 2000);
+		loading.value = false;
+	}, 2000);
 };
 
-const show = ref(true);
+let Visible = ref(true);
+
+// let Observer: IntersectionObserver | null = null;
+
+// onMounted(() => 
+// {
+// 	Observer = new IntersectionObserver((entries) => 
+// 	{
+// 		entries.forEach(entry => 
+// 		{
+// 			Visible.value = entry.isIntersecting;
+// 		});
+// 	});
+
+// 	const target = document.getElementById('contact');
+// 	if (target) 
+// 	{
+// 		Observer.observe(target);
+// 	}
+// });
+
+// onUnmounted(() => 
+// {
+// 	if (Observer)
+// 	{
+// 		Observer.disconnect();
+// 	}
+// })
 
 </script>
 
 <template>
-	<Transition :duration="600" name="flow">
-	<section class="container mx-auto px-8 mb-56 flex justify-center items-center hidden-el" id="contact" v-if="show">
+	<Transition name="flow">
+	<section 
+		class="container mx-auto px-8 mb-56 flex justify-center items-center hidden-el animate" 
+		id="contact" 
+		v-motion-slide-visible-once-bottom
+	>
 		<div class="Contact-details mr-14">
 			<div class="contact-section">
 				<div class="rotating-circles">
@@ -99,18 +126,6 @@ const show = ref(true);
 </template>
 
 <style scoped>
-
-.flow-enter-from, .flow-leave-to{
-    opacity:0;
-    filter:blur(5px);
-    transform:translateY(100%);
-}
-
-.flow-enter-active, .flow-leave-active{
-    opacity:0.5;
-    filter:blur(2px);
-    transform:translateY(50%);
-}
 
 .p-textarea{
 	background-color:transparent;
@@ -234,7 +249,7 @@ const show = ref(true);
 	}
 	.Names > input,
 	.Emails > input{
-		max-width:210px;
+		max-width:240px;
 	}
 }
 

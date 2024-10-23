@@ -6,7 +6,11 @@
 
 <template>
 
-<section class="Platform mx-auto container mb-72 pt-36 hidden-el" id="platform">
+<section 
+    class="Platform mx-auto container mb-72 pt-36 hidden-el" 
+    id="platform"
+    v-motion-slide-visible-once-bottom
+>
     <h3 class="text-center mx-auto mb-12 font-medium text-5xl text-neutral-300">
         PLATFORM
     </h3>
