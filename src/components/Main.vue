@@ -69,7 +69,7 @@ const intervalId = setInterval(() =>
 <template>
 
     <section 
-        class="container mx-auto px-8 mb-72 pt-36 flex justify-between items-center hidden-el" 
+        class="container mx-auto px-8 mb-60 pt-36 flex justify-between items-center hidden-el" 
         id="main"
         v-motion-slide-visible-once-bottom
     >

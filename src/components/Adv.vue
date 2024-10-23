@@ -7,14 +7,23 @@
 		<h3 class="text-center mx-auto mb-12 font-medium text-5xl text-neutral-300">
 			OUR ADVANTAGES
 		</h3>
-		<div class="buttons flex flex-nowrap justify-center items-center mb-24 max-w-screen-md " style="margin:6rem auto;">
-			<button @click="showTab(2)" class="border-solid border-2 border-red-500 rounded-xl py-3 px-5 font-semibold  hover:border-red-500 hover:text-red-500 active:border-red-500 active:text-red-500" data-toggle="tab" id="btab1" :class="{'active': activeTab === 2, 'inactive': activeTab !== 2}">
+		<div class="buttons flex flex-nowrap justify-center items-center mb-24 gap-24 max-w-screen-md " style="margin:6rem auto;">
+			<button 
+				@click="showTab(2)" 
+				class="py-3 px-5 font-semibold hover:text-red-500 active:text-red-500" 
+				data-toggle="tab" 
+				id="btab1" 
+				:class="{'active': activeTab === 2, 'inactive': activeTab !== 2}"
+			>
 				INVESTORS COMPARISON
 			</button>
-			<div class="seperator flex justify-center items-center">
-				<span></span>
-			</div>
-			<button @click="showTab(1)" class="border-solid border-2 border-neutral-600 rounded-xl py-3 px-5 font-semibold  hover:border-red-500 hover:text-red-500 active:border-red-500 active:text-red-500" data-toggle="tab" id="btab2" :class="{'active': activeTab === 1, 'inactive': activeTab !== 1}">
+			<button 
+				@click="showTab(1)" 
+				class="py-3 px-5 font-semibold hover:text-red-500 active:text-red-500" 
+				data-toggle="tab" 
+				id="btab2" 
+				:class="{'active': activeTab === 1, 'inactive': activeTab !== 1}"
+			>
 				DEVELOPERS COMPARISON
 			</button>
 		</div>
@@ -282,29 +291,17 @@
 	font-size:.95rem;
 }
 
-.seperator{
-    flex-grow: 1;
-}
-
-.seperator > span {
-    width: 100%;
-    background-color: rgb(82, 82, 82);
-    height: 1px;
-}
-
 .hidden{
     display:none;
 }
 
 .active {
-    border-color: rgb(239, 68, 68);
     color: rgb(239, 68, 68);
 }
 
 /* Styles for the inactive tab */
 .inactive {
-    border-color: rgb(82, 82, 82);
-    color: rgb(212, 212, 212);
+    color: rgb(107, 114, 128);
 }
 
 .py-2{
@@ -586,7 +583,7 @@ export default {
 		{ id: 8, IMG: 'minus.svg', name: 'Every 6 hours (27 Super Representatives rotate)'},
 		{ id: 9, IMG: 'plus.svg', name: '~2 minutes'},
 		{ id: 10, IMG: 'plus2.svg', name: '2.5-4.5 seconds'},
-		]
+		],
 	};
 	},
 	methods: 
