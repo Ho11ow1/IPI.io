@@ -10,7 +10,7 @@ const toggleMenu = () => {
 </script>
 
 <template>
-    <header class="header w-full" id="header">
+    <header class="header w-full" id="header" v-motion-slide-visible-once-bottom>
         <nav class="nav container mt-3 mx-auto py-6 flex justify-between text-base font-semibold">
             <div class="Nav-logo pl-2">
                 <a href="/" class="flex items-center justify-center">

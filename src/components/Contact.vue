@@ -1,31 +1,59 @@
-<script setup>
-import { ref } from 'vue';
-
+<script setup lang="ts">
+import { ref, onMounted, onUnmounted } from 'vue';
 import { RiTelegramFill } from "@remixicon/vue";
 import { RiMailLine } from "@remixicon/vue";
 
 import Textarea from 'primevue/textarea';
-
 const value2 = ref('');
 
 import Button from 'primevue/button'; 
-
 const loading = ref(false);
-
 const load = () => 
 {
-    loading.value = true;
-    setTimeout(() => 
+	loading.value = true;
+	setTimeout(() => 
 	{
-        loading.value = false;
-    }, 2000);
+		loading.value = false;
+	}, 2000);
 };
+
+// let Visible = ref(true);
+
+// let Observer: IntersectionObserver | null = null;
+
+// onMounted(() => 
+// {
+// 	Observer = new IntersectionObserver((entries) => 
+// 	{
+// 		entries.forEach(entry => 
+// 		{
+// 			Visible.value = entry.isIntersecting;
+// 		});
+// 	});
+
+// 	const target = document.getElementById('contact');
+// 	if (target) 
+// 	{
+// 		Observer.observe(target);
+// 	}
+// });
+
+// onUnmounted(() => 
+// {
+// 	if (Observer)
+// 	{
+// 		Observer.disconnect();
+// 	}
+// })
 
 </script>
 
 <template>
-
-	<section class="container mx-auto px-8 mb-56 flex justify-center items-center hidden-el" id="contact">
+	<section 
+		class="container mx-auto px-8 mb-56 flex justify-center items-center hidden-el animate" 
+		id="contact" 
+		v-motion-slide-visible-once-bottom
+	>
 		<div class="Contact-details mr-14">
 			<div class="contact-section">
 				<div class="rotating-circles">
@@ -93,7 +121,6 @@ const load = () =>
 			</form>
 		</div>
 	</section>
-
 </template>
 
 <style scoped>
@@ -220,7 +247,7 @@ const load = () =>
 	}
 	.Names > input,
 	.Emails > input{
-		max-width:210px;
+		max-width:240px;
 	}
 }
 

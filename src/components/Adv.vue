@@ -1,5 +1,9 @@
 <template>
-	<section class="container mx-auto hidden-el my-96" id="advantages">
+	<section 
+		class="container mx-auto hidden-el my-96" 
+		id="advantages"
+		v-motion-slide-visible-once-bottom
+	>
 		<h3 class="text-center mx-auto mb-12 font-medium text-5xl text-neutral-300">
 			ADVANTAGES
 		</h3>
