@@ -50,7 +50,7 @@ const load = () =>
 
 <template>
 	<section 
-		class="container mx-auto px-8 mb-56 flex justify-center items-center hidden-el animate" 
+		class="container mx-auto px-8 mb-56 mt-96 flex justify-center items-center hidden-el animate" 
 		id="contact" 
 		v-motion-slide-visible-once-bottom
 	>

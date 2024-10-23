@@ -1,9 +1,17 @@
 <template>
     <section 
-        class="roadmap hidden-el my-96" 
+        class="roadmap hidden-el my-60" 
         id="roadmap"
         v-motion-slide-visible-once-bottom
     >
+        <div class="Section-title">
+            <h2 class="text-center mx-auto mb-8 font-medium text-5xl text-neutral-300">
+                ROADMAP
+            </h2>
+            <p class="text-center mx-auto mb-24 font-medium text-medium text-neutral-300">
+                IPI is developing a global network platform for crypto ecosystem.
+            </p>
+        </div>
         <div class="roadmap-scroll-container ml-auto" ref="roadmapContainer" @scroll="handleScroll">
             <div class="roadmap-item" v-for="(item, index) in roadmap" :key="index">
                 <div class="item-circle"></div>
