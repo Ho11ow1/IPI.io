@@ -5,20 +5,142 @@
 		v-motion-slide-visible-once-bottom
 	>
 		<h3 class="text-center mx-auto mb-12 font-medium text-5xl text-neutral-300">
-			ADVANTAGES
+			OUR ADVANTAGES
 		</h3>
 		<div class="buttons flex flex-nowrap justify-center items-center mb-24 max-w-screen-md " style="margin:6rem auto;">
 			<button @click="showTab(2)" class="border-solid border-2 border-red-500 rounded-xl py-3 px-5 font-semibold  hover:border-red-500 hover:text-red-500 active:border-red-500 active:text-red-500" data-toggle="tab" id="btab1" :class="{'active': activeTab === 2, 'inactive': activeTab !== 2}">
-					FOR CRYPTO USERS
+				INVESTORS COMPARISON
 			</button>
 			<div class="seperator flex justify-center items-center">
 				<span></span>
 			</div>
 			<button @click="showTab(1)" class="border-solid border-2 border-neutral-600 rounded-xl py-3 px-5 font-semibold  hover:border-red-500 hover:text-red-500 active:border-red-500 active:text-red-500" data-toggle="tab" id="btab2" :class="{'active': activeTab === 1, 'inactive': activeTab !== 1}">
-					FOR PROGRAMMERS
+				DEVELOPERS COMPARISON
 			</button>
 		</div>
 	<table class="main-table overflow-x-auto mx-auto py-3 px-3" v-if="activeTab === 1"  id="tab1"> <!-- Code go brrrr -->
+		<tbody>
+			<tr class="coins-list">
+			<!-- Loop through coins to create the headers -->
+			<th v-for="(coin, index) in coins" :key="coin.id">
+				<div class="flex items-center flex-col text-center mb-2 headers">
+					<img :src="coin.IMG" :alt="coin.TITLE" class="coin-image mb-4" />
+					<div class="coin-text">
+						<p class="cell-text">
+							{{ coin.TITLE }}
+						</p>
+					</div>
+					<div class="score">
+						<span></span>
+					</div>
+				</div>
+			</th>
+			</tr>
+			<tr>
+				<td :colspan="coins.length" class="text-center py-2">
+					<h2 class="text-xl font-bold">
+						Consensus / Decentralization Level
+					</h2>
+				</td>
+			</tr>
+			<tr> <!-- Create a new row-->
+				<td v-for="(text, index) in data_1" :key="text.id"> <!-- go with the row because no flex-->
+					<div class="flex items-center flex-col text-center">
+						<img :src="text.IMG" :alt="text.name" class="coin-image mb-4" />
+						<p class="cell-text">
+							{{ text.name }}
+						</p>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td :colspan="coins.length" class="text-center py-2">
+					<h2 class="text-xl font-bold">
+						TPS** Range
+					</h2>
+				</td>
+			</tr>
+			<tr> <!-- Create a new row-->
+				<td v-for="(text, index) in data_2_2" :key="text.id"> <!-- go with the row because no flex-->
+					<div class="flex items-center flex-col text-center">
+						<img :src="text.IMG" :alt="text.name" class="coin-image mb-4" />
+						<p class="cell-text">
+							{{ text.name }}
+						</p>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td :colspan="coins.length" class=" text-center py-2">
+					<h2 class="text-xl font-bold">
+						Smart Contracts/Speed           
+					</h2>
+				</td>
+			</tr>
+			<tr> <!-- Create a new row-->
+				<td v-for="(text, index) in data_3_2" :key="text.id"> <!-- go with the row because no flex-->
+					<div class="flex items-center flex-col text-center">
+						<img :src="text.IMG" :alt="text.name" class="coin-image mb-4" />
+						<p class="cell-text">
+							{{ text.name }}
+						</p>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td :colspan="coins.length" class="text-center py-2">
+					<h2 class="text-xl font-bold">
+						Smart Contract Language
+					</h2>
+				</td>
+			</tr>
+			<tr> <!-- Create a new row-->
+				<td v-for="(text, index) in data_4_2" :key="text.id"> <!-- go with the row because no flex-->
+					<div class="flex items-center flex-col text-center">
+						<img :src="text.IMG" :alt="text.name" class="coin-image mb-4" />
+						<p class="cell-text">
+							{{ text.name }}
+						</p>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td :colspan="coins.length" class="text-center py-2">
+					<h2 class="text-xl font-bold">
+						No-Code Smart Contracts with AI
+					</h2>
+				</td>
+			</tr>
+			<tr> <!-- Create a new row-->
+				<td v-for="(text, index) in data_5_2" :key="text.id"> <!-- go with the row because no flex-->
+					<div class="flex items-center flex-col text-center">
+						<img :src="text.IMG" :alt="text.name" class="coin-image mb-4" />
+						<p class="cell-text">
+							{{ text.name }}
+						</p>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td :colspan="coins.length" class="text-center py-2">
+					<h2 class="text-xl font-bold">
+						Approx. Finality Time
+					</h2>
+				</td>
+			</tr>
+			<tr> <!-- Create a new row-->
+				<td v-for="(text, index) in data_6_2" :key="text.id"> <!-- go with the row because no flex-->
+					<div class="flex items-center flex-col text-center">
+						<img :src="text.IMG" :alt="text.name" class="coin-image mb-4" />
+						<p class="cell-text">
+							{{ text.name }}
+						</p>
+					</div>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<table class="second-table overflow-x-auto mx-auto py-3 px-3" v-if="activeTab === 2"  id="tab2"> <!-- Crypto Users -->
 		<tbody>
 			<tr class="coins-list">
 			<!-- Loop through coins to create the headers -->
@@ -140,132 +262,25 @@
 			</tr>
 		</tbody>
 	</table>
-	<table class="second-table overflow-x-auto mx-auto py-3 px-3" v-if="activeTab === 2"  id="tab2"> <!-- Crypto Users -->
-		<tbody>
-			<tr class="coins-list">
-			<!-- Loop through coins to create the headers -->
-			<th v-for="(coin, index) in coins" :key="coin.id">
-				<div class="flex items-center flex-col text-center mb-2 headers">
-					<img :src="coin.IMG" :alt="coin.TITLE" class="coin-image mb-4" />
-					<div class="coin-text">
-						<p class="cell-text">
-							{{ coin.TITLE }} asda
-						</p>
-					</div>
-					<div class="score">
-						<span></span>
-					</div>
-				</div>
-			</th>
-			</tr>
-			<tr>
-				<td :colspan="coins.length" class="text-center py-2">
-					<h2 class="text-xl font-bold">
-						Consensus / Decentralization Level
-					</h2>
-				</td>
-			</tr>
-			<tr> <!-- Create a new row-->
-				<td v-for="(text, index) in data_1" :key="text.id"> <!-- go with the row because no flex-->
-					<div class="flex items-center flex-col text-center">
-						<img :src="text.IMG" :alt="text.name" class="coin-image mb-4" />
-						<p class="cell-text">
-							{{ text.name }}
-						</p>
-					</div>
-				</td>
-			</tr>
-			<tr>
-				<td :colspan="coins.length" class="text-center py-2">
-					<h2 class="text-xl font-bold">
-						Max Supply
-					</h2>
-				</td>
-			</tr>
-			<tr> <!-- Create a new row-->
-				<td v-for="(text, index) in data_2" :key="text.id"> <!-- go with the row because no flex-->
-					<div class="flex items-center flex-col text-center">
-						<img :src="text.IMG" :alt="text.name" class="coin-image mb-4" />
-						<p class="cell-text">
-							{{ text.name }}
-						</p>
-					</div>
-				</td>
-			</tr>
-			<tr>
-				<td :colspan="coins.length" class=" text-center py-2">
-					<h2 class="text-xl font-bold">
-					Instamine              
-					</h2>
-				</td>
-			</tr>
-			<tr> <!-- Create a new row-->
-				<td v-for="(text, index) in data_3" :key="text.id"> <!-- go with the row because no flex-->
-					<div class="flex items-center flex-col text-center">
-						<img :src="text.IMG" :alt="text.name" class="coin-image mb-4" />
-						<p class="cell-text">
-							{{ text.name }}
-						</p>
-					</div>
-				</td>
-			</tr>
-			<tr>
-				<td :colspan="coins.length" class="text-center py-2">
-					<h2 class="text-xl font-bold">
-						Halving / Period
-					</h2>
-				</td>
-			</tr>
-			<tr> <!-- Create a new row-->
-				<td v-for="(text, index) in data_4" :key="text.id"> <!-- go with the row because no flex-->
-					<div class="flex items-center flex-col text-center">
-						<img :src="text.IMG" :alt="text.name" class="coin-image mb-4" />
-						<p class="cell-text">
-							{{ text.name }}
-						</p>
-					</div>
-				</td>
-			</tr>
-			<tr>
-				<td :colspan="coins.length" class="text-center py-2">
-					<h2 class="text-xl font-bold">
-						Networking Speed / Gas Price
-					</h2>
-				</td>
-			</tr>
-			<tr> <!-- Create a new row-->
-				<td v-for="(text, index) in data_5" :key="text.id"> <!-- go with the row because no flex-->
-					<div class="flex items-center flex-col text-center">
-						<img :src="text.IMG" :alt="text.name" class="coin-image mb-4" />
-						<p class="cell-text">
-							{{ text.name }}
-						</p>
-					</div>
-				</td>
-			</tr>
-			<tr>
-				<td :colspan="coins.length" class="text-center py-2">
-					<h2 class="text-xl font-bold">
-						Native Wallet & Scanner
-					</h2>
-				</td>
-			</tr>
-			<tr> <!-- Create a new row-->
-				<td v-for="(text, index) in data_6" :key="text.id"> <!-- go with the row because no flex-->
-					<div class="flex items-center flex-col text-center">
-						<img :src="text.IMG" :alt="text.name" class="coin-image mb-4" />
-						<p class="cell-text">
-							{{ text.name }}
-						</p>
-					</div>
-				</td>
-			</tr>
-		</tbody>
-	</table>
+	<div class="links gap-6 mx-auto my-8 text-center flex flex-col max-w-lg">
+		<p class="text-gray-500">
+			* - according to 
+			<a href="https://www.mevwatch.info/">
+				https://www.mevwatch.info/
+			</a>
+		</p>
+		<p class="text-gray-500">
+			** --  First IPI is mined from staking 1 BTC to avoid SEC investigation
+		</p>
+	</div>
 	</section>
 </template>
 
 <style scoped>
+
+.links > p{
+	font-size:.95rem;
+}
 
 .seperator{
     flex-grow: 1;
@@ -329,6 +344,7 @@ h2{
 .headers{
 	margin-bottom:1rem;
 }
+
 ::after, .score{
 	margin-bottom:.35rem;
 }
@@ -341,6 +357,13 @@ h2{
     width:50%;
 	transform:translatex(50%);
     border-bottom:4px solid aqua;
+	vertical-align: top;
+	margin-left:.5rem;
+	margin-right:.5rem;
+}
+table > tbody > tr > td > div{
+	margin-left:.5rem;
+	margin-right:.5rem;
 }
 
 th::after{
@@ -371,12 +394,6 @@ p{
 	font-size:.75em;
 }
 
-div{
-	vertical-align: top;
-	margin-left:.5rem;
-	margin-right:.5rem;
-}
-
 @media (max-width:1024px)
 {	
 	tr *{
@@ -401,8 +418,18 @@ div{
 
 @media (max-width:1010px)
 {
-	img{
+	.coin-image{
+		width:28px;
+		height:28px;
+	}
+	.cell-text{
 		display:none;
+	}
+	h2{
+		margin:0;
+	}
+	table{
+		width:100%;
 	}
 }
 
@@ -500,6 +527,66 @@ export default {
 		{ id: 9, IMG: 'plus2.svg', name: 'YES' },
 		{ id: 10, IMG: 'plus2.svg', name: 'YES' },
 		],
+		data_2_2: [
+		{ id: 1, IMG: 'plus2.svg', name: '96k-123k'},
+		{ id: 2, IMG: 'minus.svg', name: '4-7'},
+		{ id: 3, IMG: 'minus.svg', name: '15-45'},
+		{ id: 4, IMG: 'minus.svg', name: '100-200 (on-chain)'},
+		{ id: 5, IMG: 'mid.svg', name: '1500'},
+		{ id: 6, IMG: 'minus.svg', name: '200-250'},
+		{ id: 7, IMG: 'plus2.svg', name: '50k-65k'},
+		{ id: 8, IMG: 'mid.svg', name: '700-2000'},
+		{ id: 9, IMG: 'mid.svg', name: '1k-2k'},
+		{ id: 10, IMG: 'plus2.svg', name: '1k-46k'},
+		],
+		data_3_2: [
+		{ id: 1, IMG: 'plus2.svg', name: 'Yes, fastest'},
+		{ id: 2, IMG: 'minus.svg', name: 'No'},
+		{ id: 3, IMG: 'plus.svg', name: 'Yes'},
+		{ id: 4, IMG: 'plus.svg', name: 'Yes, fast'},
+		{ id: 5, IMG: 'minus.svg', name: 'No'},
+		{ id: 6, IMG: 'plus.svg', name: 'Yes'},
+		{ id: 7, IMG: 'plus.svg', name: 'Yes, fast'},
+		{ id: 8, IMG: 'plus.svg', name: 'Yes'},
+		{ id: 9, IMG: 'plus.svg', name: 'Yes'},
+		{ id: 10, IMG: 'plus.svg', name: 'Yes, fast'},
+		],
+		data_4_2: [
+		{ id: 1, IMG: 'plus2.svg', name: 'AssemblyScript (TypeScript Dialect), Rust, Go, Python, C, C++'},
+		{ id: 2, IMG: 'minus.svg', name: 'N/A'},
+		{ id: 3, IMG: 'mid.svg', name: 'Solidity'},
+		{ id: 4, IMG: 'mid.svg', name: 'Solidity'},
+		{ id: 5, IMG: 'minus.svg', name: 'N/A'},
+		{ id: 6, IMG: 'minus.svg', name: 'Plutus'},
+		{ id: 7, IMG: 'mid.svg', name: 'Rust'},
+		{ id: 8, IMG: 'mid.svg', name: 'Solidity'},
+		{ id: 9, IMG: 'minus.svg', name: 'Ink! (Rust-based)'},
+		{ id: 10, IMG: 'minus.svg', name: 'TEAL'},
+		],
+		data_5_2: [
+		{ id: 1, IMG: 'plus2.svg', name: 'Yes'},
+		{ id: 2, IMG: 'minus.svg', name: 'No'},
+		{ id: 3, IMG: 'minus.svg', name: 'No'},
+		{ id: 4, IMG: 'minus.svg', name: 'No'},
+		{ id: 5, IMG: 'minus.svg', name: 'No'},
+		{ id: 6, IMG: 'minus.svg', name: 'No'},
+		{ id: 7, IMG: 'minus.svg', name: 'No'},
+		{ id: 8, IMG: 'minus.svg', name: 'No'},
+		{ id: 9, IMG: 'minus.svg', name: 'No'},
+		{ id: 10, IMG: 'minus.svg', name: 'No'},
+		],
+		data_6_2: [
+		{ id: 1, IMG: 'plus2.svg', name: '2.5-4.5 seconds'},
+		{ id: 2, IMG: 'minus.svg', name: '60 minutes (6 confirmations)'},
+		{ id: 3, IMG: 'minus.svg', name: '~6 minutes (12-32 slots for finality)'},
+		{ id: 4, IMG: 'plus2.svg', name: '~5 seconds'},
+		{ id: 5, IMG: 'plus2.svg', name: '~3-5 seconds'},
+		{ id: 6, IMG: 'minus.svg', name: '~20 minutes'},
+		{ id: 7, IMG: 'plus2.svg', name: '~0.4 seconds'},
+		{ id: 8, IMG: 'minus.svg', name: 'Every 6 hours (27 Super Representatives rotate)'},
+		{ id: 9, IMG: 'plus.svg', name: '~2 minutes'},
+		{ id: 10, IMG: 'plus2.svg', name: '2.5-4.5 seconds'},
+		]
 	};
 	},
 	methods: 
