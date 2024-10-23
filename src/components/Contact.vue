@@ -17,7 +17,7 @@ const load = () =>
 	}, 2000);
 };
 
-let Visible = ref(true);
+// let Visible = ref(true);
 
 // let Observer: IntersectionObserver | null = null;
 
@@ -49,7 +49,6 @@ let Visible = ref(true);
 </script>
 
 <template>
-	<Transition name="flow">
 	<section 
 		class="container mx-auto px-8 mb-56 flex justify-center items-center hidden-el animate" 
 		id="contact" 
@@ -122,7 +121,6 @@ let Visible = ref(true);
 			</form>
 		</div>
 	</section>
-	</Transition>
 </template>
 
 <style scoped>
