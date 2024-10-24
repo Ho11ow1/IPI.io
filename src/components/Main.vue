@@ -75,12 +75,12 @@ import WORDS from './words/words.vue'
         id="main"
         v-motion-slide-visible-once-bottom
     >
-        <div class="left flex flex-col">
+        <div class="left flex flex-col" style="max-width:1024px; width:100%;">
             <WORDS/>
-            <h3 class="text-gray-400 mt-8 text-1xl max-w-5xl main-description">
+            <!-- <h3 class="text-gray-400 mt-8 text-1xl max-w-5xl main-description">
                 WE COMBINE THE BEST PROTOCOLS TO BUILD THE FASTEST, SAFEST AND SIMPLEST NON-CUSTODIAL BLOCKCHAIN FOR STORING, TRADING, DAPPS, 
                 DEFI, NFT AND MORE POWERED BY IPI UTILITY COIN. MOST POPULAR COINS WRAPPED.
-            </h3>
+            </h3> -->
             <div class="flex justify-center gap-8 mt-8">
                 <button class="border-solid border-2 border-red-600 bg-red-600 text-gray-100 text-base font-medium rounded-3xl max-w-34 px-4 py-3 hover:bg-neutral-100 hover:border-neutral-100 hover:text-red-600">
                     <a href="https://ipi.io/whitepaper.pdf" class="hover:text-red-600">
