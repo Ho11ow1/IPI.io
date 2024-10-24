@@ -1,69 +1,71 @@
-<script lang="js">
+<script setup lang="js">
 
-let current1 = "";
-let current2 = "";
-let current3 = "";
+// import {ref, onMounted} from 'vue';
 
-let desired1 = "NDEPENDENT";
-let desired2 = "ROTOCOL";
-let desired3 = "NFRASTRUCTURE";
+// let current1 = "";
+// let current2 = "";
+// let current3 = "";
 
-let interval = 200; // milliseconds
+// let desired1 = "NDEPENDENT";
+// let desired2 = "ROTOCOL";
+// let desired3 = "NFRASTRUCTURE";
 
-let index1 = 0;
-let index2 = 0;
-let index3 = 0;
+// let interval = 200; // milliseconds
 
-let currentWordIndex = 0; // Track which word is being updated
+// let index1 = 0;
+// let index2 = 0;
+// let index3 = 0;
 
-const intervalId = setInterval(() => 
-{
-    switch (currentWordIndex) 
-    {
-    case 0:
-        current1 += desired1[index1];
+// let currentWordIndex = 0; // Track which word is being updated
 
-        document.querySelector(".I-1").textContent = current1;
+// const intervalId = setInterval(() => 
+// {
+//     switch (currentWordIndex) 
+//     {
+//     case 0:
+//         current1 += desired1[index1];
 
-        index1 = (index1 + 1) % desired1.length;
+//         document.querySelector(".I-1").textContent = current1;
 
-        if (current1 === desired1) 
-        {
-        currentWordIndex = 1; // Move to the next word
-        }
+//         index1 = (index1 + 1) % desired1.length;
 
-        break;
-    case 1:
-        current2 += desired2[index2];
+//         if (current1 === desired1) 
+//         {
+//         currentWordIndex = 1; // Move to the next word
+//         }
 
-        document.querySelector(".P-1").textContent = current2;
+//         break;
+//     case 1:
+//         current2 += desired2[index2];
 
-        index2 = (index2 + 1) % desired2.length;
+//         document.querySelector(".P-1").textContent = current2;
 
-        if (current2 === desired2) 
-        {
-        currentWordIndex = 2; // Move to the next word
-        }
+//         index2 = (index2 + 1) % desired2.length;
 
-        break;
-    case 2:
-        current3 += desired3[index3];
+//         if (current2 === desired2) 
+//         {
+//         currentWordIndex = 2; // Move to the next word
+//         }
 
-        document.querySelector(".I-2").textContent = current3;
+//         break;
+//     case 2:
+//         current3 += desired3[index3];
 
-        index3 = (index3 + 1) % desired3.length;
+//         document.querySelector(".I-2").textContent = current3;
 
-        if (current3 === desired3) 
-        {
-        clearInterval(intervalId); // Stop the interval when all words are complete
-        console.log("All words generated successfully!");
-        }
+//         index3 = (index3 + 1) % desired3.length;
 
-        break;
-    }
-}, interval);
+//         if (current3 === desired3) 
+//         {
+//         clearInterval(intervalId); // Stop the interval when all words are complete
+//         console.log("All words generated successfully!");
+//         }
 
+//         break;
+//     }
+// }, interval);
 
+import WORDS from './words/words.vue'
 </script>
 
 <template>
@@ -74,17 +76,7 @@ const intervalId = setInterval(() =>
         v-motion-slide-visible-once-bottom
     >
         <div class="left flex flex-col">
-            <div class="Generate">
-                <h2 class="my-4 text-red-600 text-6xl">
-                    I<span class="I-1 text-neutral-200 uppercase mx-2">{{ current1 }}</span>
-                </h2>
-                <h2 class="my-4 text-red-600 text-6xl">
-                    P<span class="P-1 text-neutral-200 uppercase mx-2">{{ current2 }}</span>
-                </h2>
-                <h2 class="my-4 text-red-600 text-6xl">
-                    I<span class="I-2 text-neutral-200 uppercase mx-2">{{ current3 }}</span>
-                </h2>
-            </div>
+            <WORDS/>
             <h3 class="text-gray-400 mt-8 text-1xl max-w-5xl main-description">
                 WE COMBINE THE BEST PROTOCOLS TO BUILD THE FASTEST, SAFEST AND SIMPLEST NON-CUSTODIAL BLOCKCHAIN FOR STORING, TRADING, DAPPS, 
                 DEFI, NFT AND MORE POWERED BY IPI UTILITY COIN. MOST POPULAR COINS WRAPPED.

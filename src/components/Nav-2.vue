@@ -1,16 +1,31 @@
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 import { RiMenuFill } from "@remixicon/vue";
 
 const isMenuOpen = ref(false);
+const isSticky = ref(false);
 
 const toggleMenu = () => {
     isMenuOpen.value = !isMenuOpen.value;
 };
+
+const toggleSticky = () => {
+    isSticky.value = window.scrollY > 40;
+};
+
+onMounted(() => {
+    window.addEventListener("scroll", toggleSticky);
+})
+
 </script>
 
 <template>
-    <header class="header w-full" id="header" v-motion-slide-visible-once-bottom>
+    <header 
+        class="header w-full"
+        :class="[isSticky ? 'sticky-header' : '']"
+        id="header" 
+        v-motion-slide-visible-once-bottom
+    >
         <nav class="nav container mt-3 mx-auto py-6 flex justify-between text-base font-semibold">
             <div class="Nav-logo pl-2">
                 <a href="/" class="flex items-center justify-center">
@@ -76,11 +91,15 @@ const toggleMenu = () => {
 
 <style scoped>
 .header {
-    background-color: #0f1932;
+    background-color: hsl(222.86 53.85% 12.75%);
     position: sticky;
     top: 0;
     left: 0;
     z-index: 1000;
+}
+
+.sticky-header{
+    background-color:hsl(222.86 53.85% 8.75%);
 }
 
 /* Responsive Menu for mobile */
@@ -111,7 +130,7 @@ const toggleMenu = () => {
         left: 0;
         right: 0;
         width: 100vw;
-        background-color: #0f1932;
+        background-color: hsl(222.86 53.85% 8.75%);
         padding: 1rem;
         z-index: 1000;
     }

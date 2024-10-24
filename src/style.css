@@ -8,7 +8,7 @@
 	--white-colour:#fff;
 	--black-colour:#000;
 
-    --bg-colour:#0f1932;
+    --bg-colour:hsl(222.86 53.85% 12.75%);
 }
 
 *{
@@ -41,16 +41,4 @@ a:hover{
 
 .hidden-el{
     transition:all 1s;
-}
-
-.flow-enter-from, .flow-leave-to{
-    opacity:0;
-    filter:blur(5px);
-    transform:translateY(100%);
-}
-
-.flow-enter-active, .flow-leave-active{
-    opacity:0.5;
-    filter:blur(2px);
-    transform:translateY(50%);
 }
