@@ -19,15 +19,19 @@ const ccurrent2 = ref('');
 const ccurrent3 = ref('');
 
 const des1 = ref('');
+let index1 = 0;
 const des2 = ref('');
+let index2 = 0;
 const des3 = ref('');
+let index3 = 0;
 
-let interval = 200; // milliseconds
+let interval = 300; // milliseconds
 
 let letterIndex = 0;
-let counter = 9;
 
 const Arr = [];
+
+let currentWordIndex = 0; // Track which word is being updated
 
 export default 
 {
@@ -39,23 +43,53 @@ export default
             Arr.push([...words]); // Create a new array and push it to Arr
         }
 
-        for (let i = 0; i < 10; i++)
-        {
-            des1.value = Arr[letterIndex][0];
-            ccurrent1.value = des1.value;
-            des2.value = Arr[letterIndex][1];
-            ccurrent2.value = des2.value;
-            des3.value = Arr[letterIndex][2];
-            ccurrent3.value = des3.value;
+        des1.value = Arr[letterIndex][0];
+        des2.value = Arr[letterIndex][1];
+        des3.value = Arr[letterIndex][2];
 
-            letterIndex++;
-
-            if (counter == 10)
+        const IntervalID = setInterval(() => 
             {
-                counter = 0;
-                letterIndex = 0;
-            }
-        }
+                switch (currentWordIndex)
+                {   
+                    case 0:
+                        ccurrent1.value += des1.value[index1];
+                        index1 = (index1 + 1) % des1.value.length;
+                        if (ccurrent1.value === des1.value)
+                        {
+                            currentWordIndex = 1;
+
+                            letterIndex = (letterIndex + 1) % Arr.length;
+                            // Update the displayed words for the next set
+                            des1.value = Arr[letterIndex][0];
+                            des2.value = Arr[letterIndex-1][1];
+                            des3.value = Arr[letterIndex-1][2];
+                        }
+                        break;
+
+                    case 1:
+                        ccurrent2.value += des2.value[index2];
+                        index2 = (index2 + 1) % des2.value.length;
+                        if (ccurrent2.value === des2.value)
+                        {
+                            currentWordIndex = 2;
+                        }
+                        break;
+
+                    case 2:
+                    ccurrent3.value += des3.value[index3];
+                    index3 = (index3 + 1) % des3.value.length;
+                    if (ccurrent3.value === des3.value)
+                    {
+                        ccurrent1.value = "";
+                        ccurrent2.value = "";
+                        ccurrent3.value = "";
+                        currentWordIndex = 0;
+                        console.log("All words generated successfully!");
+                    }
+                    break;
+                }
+
+            }, interval)
 
         return {
             ccurrent1,
