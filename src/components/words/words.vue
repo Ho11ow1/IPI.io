@@ -122,6 +122,6 @@ const IntervalID = setInterval(() =>
         </h2>
     </div>
     <h3 class="text-gray-400 mt-8 text-1xl max-w-5xl main-description">
-        W{{ curdesc }}
+        W<span class="">{{ curdesc }}</span>
     </h3>
 </template>
