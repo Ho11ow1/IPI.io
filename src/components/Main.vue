@@ -1,5 +1,7 @@
 <script lang="js">
 
+import {ref, onMounted} from 'vue';
+
 let current1 = "";
 let current2 = "";
 let current3 = "";

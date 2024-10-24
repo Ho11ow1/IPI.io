@@ -10,7 +10,7 @@ const toggleMenu = () => {
 };
 
 const toggleSticky = () => {
-    isSticky.value = window.scrollY > 50;
+    isSticky.value = window.scrollY > 40;
 };
 
 onMounted(() => {

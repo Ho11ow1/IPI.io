@@ -128,7 +128,7 @@ onMounted(() => {
     margin-bottom: 1rem; /* Spacing below buttons */
 }
 
-.scroll-button {
+/* .scroll-button {
     background-color: transparent;
     color: white;
     border:2px solid #fff;
@@ -141,7 +141,7 @@ onMounted(() => {
 
 .scroll-button:hover {
     background-color: hsl(218 16.85% 34.9%);
-}
+} */
 
 /* Scroll container for horizontal scrolling */
 .roadmap-scroll-container {
