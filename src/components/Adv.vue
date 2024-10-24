@@ -336,6 +336,16 @@ h2{
 	height: 36px;
 	width: 36px;
   	margin: 0 auto;  /* Center the image */
+	margin-bottom:.35rem;
+}
+
+.coins-list > th > div > img{
+	height:45px;
+	width:45px;
+	margin-bottom:1rem;
+} 
+.coins-list > th > div > .coin-text{
+	margin-bottom:.6rem;
 }
 
 .headers{
@@ -439,18 +449,18 @@ export default {
 	data() 
 	{
 	return {
-		activeTab: 1, // Default tab
+		activeTab: 2, // Default tab
 		coins: [
-		{ id: 1, IMG: 'vite.svg', TITLE: 'IPI' },
-		{ id: 2, IMG: 'vite.svg', TITLE: 'Bitcoin (BTC)' },
-		{ id: 3, IMG: 'vite.svg', TITLE: 'Ethereum (ETH)' },
-		{ id: 4, IMG: 'vite.svg', TITLE: 'Binance Smart Chain (BNB)' },
-		{ id: 5, IMG: 'vite.svg', TITLE: 'Ripple (XRP)' },
-		{ id: 6, IMG: 'vite.svg', TITLE: 'Cardano (ADA)' },
-		{ id: 7, IMG: 'vite.svg', TITLE: 'Solana (SOL)' },
-		{ id: 8, IMG: 'vite.svg', TITLE: 'Tron (TRX)' },
-		{ id: 9, IMG: 'vite.svg', TITLE: 'Polkadot (DOT)' },
-		{ id: 10, IMG: 'vite.svg', TITLE: 'Algorand (ALGO)' },
+		{ id: 1, IMG: 'ipi.svg', TITLE: 'IPI' },
+		{ id: 2, IMG: 'btc.svg', TITLE: 'Bitcoin (BTC)' },
+		{ id: 3, IMG: 'eth.svg', TITLE: 'Ethereum (ETH)' },
+		{ id: 4, IMG: 'bnb.svg', TITLE: 'Binance Smart Chain (BNB)' },
+		{ id: 5, IMG: 'xrp.svg', TITLE: 'Ripple (XRP)' },
+		{ id: 6, IMG: 'ada.svg', TITLE: 'Cardano (ADA)' },
+		{ id: 7, IMG: 'sol.svg', TITLE: 'Solana (SOL)' },
+		{ id: 8, IMG: 'trx.svg', TITLE: 'Tron (TRX)' },
+		{ id: 9, IMG: 'dot.svg', TITLE: 'Polkadot (DOT)' },
+		{ id: 10, IMG: 'algo.svg', TITLE: 'Algorand (ALGO)' },
 		],
 		data_1: [
 		{ id: 1, IMG: 'plus2.svg', name: 'Proof of Network / Very High' },

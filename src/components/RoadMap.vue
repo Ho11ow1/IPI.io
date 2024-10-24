@@ -1,36 +1,8 @@
-<template>
-    <section 
-        class="roadmap hidden-el my-60" 
-        id="roadmap"
-        v-motion-slide-visible-once-bottom
-    >
-        <div class="Section-title">
-            <h2 class="text-center mx-auto mb-8 font-medium text-5xl text-neutral-300">
-                ROADMAP
-            </h2>
-            <p class="text-center mx-auto mb-24 font-medium text-medium text-neutral-300">
-                IPI is developing a global network platform for crypto ecosystem.
-            </p>
-        </div>
-        <div class="roadmap-scroll-container ml-auto" ref="roadmapContainer" @scroll="handleScroll">
-            <div class="roadmap-item" v-for="(item, index) in roadmap" :key="index">
-                <div class="item-circle"></div>
-                <div class="item-content">
-                    <div class="quarter">{{ item.quarter }}</div>
-                    <div class="date-range"><h2 class="text-center text-neutral-100">{{ item.dateRange }}</h2></div>
-                    <div class="description"><p class="text-center text-gray-400">{{ item.description }}</p></div>
-                </div>
-            </div>
-        </div>
-        <div class="roadmap-controls mx-auto">
-            <button @click="scrollLeft" class="scroll-button">←</button>
-            <button @click="scrollRight" class="scroll-button">→</button>
-        </div>
-    </section>
-</template>
-
 <script setup lang="ts">
 import { ref, onMounted } from 'vue';
+import Button from 'primevue/button';
+
+const roadmapContainer = ref<HTMLElement | null>(null);
 
 const roadmap = ref([
     {
@@ -65,8 +37,6 @@ const roadmap = ref([
     }
 ]);
 
-const roadmapContainer = ref<HTMLElement | null>(null);
-
 // Function to handle scroll and update the line's color
 const handleScroll = () => {
     const container = roadmapContainer.value;
@@ -85,7 +55,8 @@ const handleScroll = () => {
 
 // Function to scroll left
 const scrollLeft = () => {
-    if (roadmapContainer.value) {
+    if (roadmapContainer.value) 
+    {
         const scrollAmount = roadmapContainer.value.children[0].clientWidth + 16; // Width of item + gap
         roadmapContainer.value.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
     }
@@ -93,30 +64,67 @@ const scrollLeft = () => {
 
 // Function to scroll right
 const scrollRight = () => {
-    if (roadmapContainer.value) {
+    if (roadmapContainer.value) 
+    {
         const scrollAmount = roadmapContainer.value.children[0].clientWidth + 16; // Width of item + gap
         roadmapContainer.value.scrollBy({ left: scrollAmount, behavior: 'smooth' });
     }
 };
 
 onMounted(() => {
-    if (roadmapContainer.value) {
+    if (roadmapContainer) 
+    {
         handleScroll(); // Initial call to set the line color when the page loads
     }
 });
 </script>
 
+
+<template>
+    <section 
+        class="roadmap hidden-el my-60" 
+        id="roadmap"
+        v-motion-slide-visible-once-bottom
+    >
+        <div class="Section-title">
+            <h2 class="text-center mx-auto mb-8 font-medium text-5xl text-neutral-300">
+                ROADMAP
+            </h2>
+            <p class="text-center mx-auto mb-24 font-medium text-medium text-neutral-300">
+                IPI is developing a global network platform for crypto ecosystem.
+            </p>
+        </div>
+        <div class="roadmap-scroll-container ml-auto" ref="roadmapContainer" @scroll="handleScroll">
+            <div class="roadmap-item" v-for="(item, index) in roadmap" :key="index">
+                <div class="item-circle"></div>
+                <div class="item-content">
+                    <div class="quarter">{{ item.quarter }}</div>
+                    <div class="date-range"><h2 class="text-center text-neutral-100">{{ item.dateRange }}</h2></div>
+                    <div class="description"><p class="text-center text-gray-400">{{ item.description }}</p></div>
+                </div>
+            </div>
+        </div>
+        <div class="roadmap-controls mx-auto">
+            <!-- <button @click="scrollLeft" class="scroll-button">←</button>
+            <button @click="scrollRight" class="scroll-button">→</button> -->
+            <Button @click="scrollLeft" severity="secondary" outlined rounded icon="pi pi-chevron-left" class="px-2 py-2"/>
+            <Button @click="scrollRight" severity="secondary" outlined rounded icon="pi pi-chevron-right" class="px-2 py-2"/>
+        </div>
+    </section>
+</template>
+
 <style scoped>
 .roadmap {
     padding: 2rem 1rem;
     overflow-x: hidden;
-    mask-image: linear-gradient(to right, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0.2) 100%);
+    mask-image: linear-gradient(to right, hsl(0 0% 0%) 0%, rgbahsl(0 0% hsla(0 0% 0% / 0.2) 0.2) 100%);
 }
 
 /* Controls for scrolling */
 .roadmap-controls {
     display: flex;
     justify-content: center; /* Center the buttons */
+    column-gap:1.5rem;
     margin-bottom: 1rem; /* Spacing below buttons */
 }
 
@@ -132,7 +140,7 @@ onMounted(() => {
 }
 
 .scroll-button:hover {
-    background-color: #4a5568;
+    background-color: hsl(218 16.85% 34.9%);
 }
 
 /* Scroll container for horizontal scrolling */
@@ -157,10 +165,11 @@ onMounted(() => {
     width: calc(100vw + 25%); /* Ensure the line spans the full width of the container */
     height: 3px;
     /*controlled by scroll */
-    background: linear-gradient(to right, #4a5568 0%, rgb(220, 38, 38) calc(var(--scroll-percentage, 0%) * 100%), #4a5568 100%);
+    background: linear-gradient(to right, hsl(218 16.85% 34.9%) 0%, hsl(0 72.22% 50.59%) calc(var(--scroll-percentage, 0%) * 100%), #4a5568 100%);
     z-index: 0;
     transition: background 0.3s ease-in-out;
 }
+
 @media (max-width:1600px)
 {
     .roadmap-scroll-container::before {
@@ -197,7 +206,7 @@ onMounted(() => {
     transform: translateX(-50%);
     width: 20px;
     height: 20px;
-    background-color:rgb(220, 38, 38);
+    background-color:hsl(0 72.22% 50.59%);
     border-radius: 50%;
     z-index: 2; /* Ensure the circle is above the line */
     border: 2px solid #fff;
@@ -227,7 +236,7 @@ onMounted(() => {
 .date-range {
     font-size: 1.1rem;
     font-weight:600;
-    color: #cbd5e0;
+    color: hsl(211.43 25.3% 83.73%);
     margin-bottom: 1rem;
 }
 
