@@ -29,7 +29,7 @@ onMounted(() => {
         <nav class="nav container mt-3 mx-auto py-6 flex justify-between text-base font-semibold">
             <div class="Nav-logo pl-2">
                 <a href="/" class="flex items-center justify-center">
-                    <img src="../assets/vue.svg" alt="Vue Logo" />
+                    <img src="ipi.svg" alt="Vue Logo" />
                     <h2 class="ml-3 text-neutral-300 font-medium text-3xl">
                         IPI
                     </h2>
