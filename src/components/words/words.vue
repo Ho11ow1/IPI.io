@@ -2,16 +2,16 @@
 import { ref } from 'vue';
 
 const texts = [
-    'NDEPENDENT ROTOCOL NFRASTRUCTURE',
-    'nternational ayment nstrument',
-    'nternet eer-to-Peer nvestment',
-    'nnovative ayment nfrastructure',
-    'nstant ayment ntegration',
-    'ntelligent ayment nterface',
-    'nternet ayment nitiative',
-    'nnovative ayment nstrument',
-    'nternational ayment nfrastructure',
-    'ntelligent ayment nterface'
+    'NDEPENDENT ROTOCOL NFRASTRUCTURE-',
+    'nternational ayment nstrument-',
+    'nternet eer-to-Peer nvestment-',
+    'nnovative ayment nfrastructure-',
+    'nstant ayment ntegration-',
+    'ntelligent ayment nterface-',
+    'nternet ayment nitiative-',
+    'nnovative ayment nstrument-',
+    'nternational ayment nfrastructure-',
+    'ntelligent ayment nterface-'
 ];
 
 const ccurrent1 = ref('');
