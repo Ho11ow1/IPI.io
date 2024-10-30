@@ -9,8 +9,10 @@
 <section 
     class="Platform mx-auto container mb-72 pt-36 hidden-el" 
     id="platform"
-    v-motion-slide-visible-once-bottom
->
+    v-motion
+    :initial="{ opacity: 0, y: 100 }"
+    :enter="{ opacity: 1, y: 0, transition: { duration: 1000 } }">
+
     <h3 class="text-center mx-auto mb-12 font-medium text-5xl text-neutral-300">
         PLATFORM
     </h3>
@@ -25,7 +27,10 @@
                 FOR PROGRAMMERS
         </button>
     </div>
-    <div class="content flex justify-between items-center" v-if="activeTab === 1"  id="tab1">
+    <div class="content flex justify-between items-center" v-if="activeTab === 1"  id="tab1" 
+        v-motion
+        :initial="{ opacity: 0, y: 100 }"
+        :enter="{ opacity: 1, y: 0, transition: { duration: 1000 } }">
         <div class="left">
             <h4 class="mb-4 font-semibold text-2xl">
                 Open platform for non-tech users
@@ -33,26 +38,26 @@
             <h5 class="mb-3 font-medium text-blue-300">
                 Check out our unique blockchain solutions
             </h5>
-            <div class="row flex flex-row mb-12">
-                <img class="pr-6" src="https://placehold.co/44x44"> 
+            <div class="row flex flex-row items-center mb-8">
+                <i class="icon ri-lightbulb-line"></i>
                 <p class="max-w-screen-sm text-blue-300">
                     IPI auto-buy solution. Wallet App automatically top-up IPI to cover fees in DeFi etc swapping most popular cryptos and tokens.
                 </p>
             </div>
-            <div class="row flex flex-row mb-12">
-                <img class="pr-6" src="https://placehold.co/44x44"> 
+            <div class="row flex flex-row items-center mb-8">
+                <i class="icon ri-lightbulb-line"></i>
                 <p class="max-w-screen-sm text-blue-300">
                     If someone wants to (un)wrap coins(or tokens) has to paste his received address and system will answer him where to send coins and tokens or wraps
                 </p>
             </div>
-            <div class="row flex flex-row mb-12">
-                <img class="pr-6" src="https://placehold.co/44x44"> 
+            <div class="row flex flex-row items-center mb-8">
+                <i class="icon ri-lightbulb-line"></i>
                 <p class="max-w-screen-sm text-blue-300">
                     Users can choose in which crypto they want to pay and receive payments. Can send and receive payments to mail/phone number/Social Media after verification
                 </p>
             </div>
-            <div class="row flex flex-row mb-12">
-                <img class="pr-6" src="https://placehold.co/44x44"> 
+            <div class="row flex flex-row items-center mb-8">
+                <i class="icon ri-lightbulb-line"></i>
                 <p class="max-w-screen-sm text-blue-300">
                     Use popular social media to transfer and invite friends & family. If someone doesn’t have a wallet in IPI ecosystem will receive a notification throught SMS/Mail/Social Media PM. Users can name, choose and change to which wallet printed QR code belongs.
                 </p>
@@ -60,10 +65,13 @@
         </div>
         <div class="right">
             <div class="animation"></div> <!--Simple styling animation for red / grey rotation-->
-            <img class="" src="https://placehold.co/600x380">
+            <img class="" src="/Platform-img.png" style="width: 600px; height: 380px;">
         </div>
     </div>
-    <div class="content flex justify-between items-center" v-if="activeTab === 2"  id="tab2">
+    <div class="content flex justify-between items-center" v-if="activeTab === 2"  id="tab2" 
+        v-motion
+        :initial="{ opacity: 0, y: 100 }"
+        :enter="{ opacity: 1, y: 0, transition: { duration: 1000 } }">
         <div class="left">
             <h4 class="mb-4 font-semibold text-2xl">
                 Open platform for non-tech users
@@ -71,22 +79,26 @@
             <h5 class="mb-3 font-medium text-blue-300">
                 Check out our unique blockchain solutions
             </h5>
-            <div class="row flex flex-row mb-12">
-                <img class="pr-6" src="https://placehold.co/44x44"> <p class="max-w-screen-sm text-blue-300">Solidity tools for migrating Smart Contracts and Dapps from Ethereum and create new one with Remix</p>
+            <div class="row flex flex-row items-center mb-8">
+                <i class="icon ri-lightbulb-line"></i> 
+                <p class="max-w-screen-sm text-blue-300">Solidity tools for migrating Smart Contracts and Dapps from Ethereum and create new one with Remix</p>
             </div>
-            <div class="row flex flex-row mb-12">
-                <img class="pr-6" src="https://placehold.co/44x44"> <p class="max-w-screen-sm text-blue-300">Simple variables to integrate IPI wrapping system and build amazing dApps and NFT's systems</p>
+            <div class="row flex flex-row items-center mb-8">
+                <i class="icon ri-lightbulb-line"></i> 
+                <p class="max-w-screen-sm text-blue-300">Simple variables to integrate IPI wrapping system and build amazing dApps and NFT's systems</p>
             </div>
-            <div class="row flex flex-row mb-12">
-                <img class="pr-6" src="https://placehold.co/44x44"> <p class="max-w-screen-sm text-blue-300">Powerful "Liqudity Attack" tools on CEX's and DEX's Markets</p>
+            <div class="row flex flex-row items-center mb-8">
+                <i class="icon ri-lightbulb-line"></i> 
+                <p class="max-w-screen-sm text-blue-300">Powerful "Liqudity Attack" tools on CEX's and DEX's Markets</p>
             </div>
-            <div class="row flex flex-row mb-12">
-                <img class="pr-6" src="https://placehold.co/44x44"> <p class="max-w-screen-sm text-blue-300">Open source technology with fastest and no fees transactions</p>
+            <div class="row flex flex-row items-center mb-8">
+                <i class="icon ri-lightbulb-line"></i>
+                <p class="max-w-screen-sm text-blue-300">Open source technology with fastest and no fees transactions</p>
             </div>
         </div>
         <div class="right">
             <div class="animation"></div> <!--Simple styling animation for red / grey rotation-->
-            <img class="" src="https://placehold.co/600x380">
+            <img class="" src="/Platform-img.png" style="width: 600px; height: 380px;">
         </div>
     </div>
 </section>
@@ -113,6 +125,14 @@ export default
 </script>
 
 <style scoped>
+
+.icon{
+    background-image: linear-gradient(-45deg, #f42f54 0%, #1b2d59 80%, #1b2d59 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 2.75rem;
+    margin-right:1.5rem;
+}
 
 .max-w-screen-sm{
     max-width:540px;

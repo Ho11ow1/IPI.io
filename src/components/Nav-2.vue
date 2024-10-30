@@ -13,6 +13,21 @@ const toggleSticky = () => {
     isSticky.value = window.scrollY > 40;
 };
 
+const scrollToSection = (elementId: string) => {
+    const element = document.getElementById(elementId);
+    if (element) 
+    {
+        const headerOffset = 100;
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+        window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth"
+        });
+    }
+};
+
 onMounted(() => {
     window.addEventListener("scroll", toggleSticky);
 })
@@ -26,11 +41,11 @@ onMounted(() => {
         id="header" 
         v-motion-slide-visible-once-bottom
     >
-        <nav class="nav container mt-3 mx-auto py-6 flex justify-between text-base font-semibold">
+        <nav class="nav container mt-3 mx-auto py-6 flex justify-between text-base">
             <div class="Nav-logo pl-2">
                 <a href="/" class="flex items-center justify-center">
                     <img src="/ipi.svg" alt="Vue Logo" style="max-width:52px;"/>
-                    <h2 class="ml-3 text-neutral-300 font-medium text-3xl">
+                    <h2 class="ml-3 text-3xl font-semibold">
                         IPI
                     </h2>
                 </a>
@@ -40,7 +55,7 @@ onMounted(() => {
             </div>
             <!-- Force Vue-class Nav -->
             <div :class="['nav--menu', isMenuOpen ? 'block' : 'hidden', 'md:flex']">
-                <ul class="nav--list flex flex-col md:flex-row gap-10 md:gap-5 items-center text-neutral-300">
+                <ul class="nav--list flex flex-col md:flex-row gap-10 md:gap-10 items-center text-base">
                     <li class="nav--item">
                         <a href="#app">
                             Home
@@ -62,7 +77,7 @@ onMounted(() => {
                         </a>
                     </li>
                     <li class="nav--item">
-                        <a href="#roadmap">
+                        <a @click.prevent="scrollToSection('roadmap')" href="#roadmap">
                             Roadmap
                         </a>
                     </li>
@@ -78,7 +93,7 @@ onMounted(() => {
                     </li>
                     <li class="nav--item">
                         <a href="https://wallet.ipi.io">
-                            <button class="border-solid border-2 border-red-600 px-6 py-2 rounded-3xl text-base font-semibold">
+                            <button class="border-solid border-2 border-red-600 px-6 py-2 rounded-3xl text-base font-medium">
                                 WALLET
                             </button>
                         </a>

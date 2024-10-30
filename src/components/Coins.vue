@@ -18,7 +18,7 @@
         </div>
         <div class="container flex mx-auto flex-row items-center justify-between Mobile">
             <div class="Mid flex">
-                <div class="grid grid-cols-2 items-center gap-4 max-w-xl second">
+                <div class="grid grid-cols-2 items-center gap-4 max-w-xl second" v-motion :initial="{ opacity: 0, y: 100 }" :enter="{ opacity: 1, y: 0, transition: { duration: 1000 } }">
                     <div class="distribution-item text-left">
                         <h2 class="distribution-title text-xl mb-4">
                             Public Coin Sale 6.5M
@@ -63,12 +63,12 @@
                 </div>
             </div>
             <!-- Interactive Pie Chart Section -->
-            <div class="flex flex-col items-center mr-12 chart">
+            <div class="flex flex-col items-center mr-12 chart" v-motion :initial="{ opacity: 0, y: 100 }" :enter="{ opacity: 1, y: 0, transition: { duration: 1000 } }">
                 <HELPME/>
             </div>
         </div>
 
-            <div class="flex items-center">
+            <div class="flex items-center" v-motion :initial="{ opacity: 0, y: 100 }" :enter="{ opacity: 1, y: 0, transition: { duration: 1000 } }">
                 <div class="info-section grid grid-cols-2 gap-6 max-w-screen-sm stats">
                     <div class="info-box flex items-center px-3 py-3">
                         <div class="info-line purple"></div>

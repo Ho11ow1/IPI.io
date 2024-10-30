@@ -82,7 +82,7 @@ onMounted(() => {
 
 <template>
     <section 
-        class="roadmap hidden-el my-60" 
+        class="roadmap hidden-el"
         id="roadmap"
         v-motion-slide-visible-once-bottom
     >
@@ -118,6 +118,7 @@ onMounted(() => {
     padding: 2rem 1rem;
     overflow-x: hidden;
     mask-image: linear-gradient(to right, hsl(0 0% 0%) 0%, rgbahsl(0 0% hsla(0 0% 0% / 0.2) 0.2) 100%);
+    margin-top: 6rem;
 }
 
 /* Controls for scrolling */

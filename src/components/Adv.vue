@@ -356,32 +356,31 @@ h2{
 	margin-bottom:.35rem;
 }
 
-.score{
-	position:absolute;
+.score {
+    position: absolute;
     content: '';
-    left:0;
-    bottom:0;
-    width:50%;
-	transform:translatex(50%);
-    border-bottom:4px solid aqua;
-	vertical-align: top;
-	margin-left:.5rem;
-	margin-right:.5rem;
+    left: 0;
+    bottom: 0;
+    width: 50%;
+    transform: translatex(38%);
+    border-bottom: 4px solid #7fa3cdff;
+    vertical-align: top;
+    margin-left: .5rem;
+    margin-right: .5rem;
 }
+
+.score::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    height: 4px;
+    background-color: #f94551ff;
+}
+
 table > tbody > tr > td > div{
 	margin-left:.5rem;
 	margin-right:.5rem;
-}
-
-th::after{
-	display:inline-block;
-	position:absolute;
-    content: '';
-    left:0;
-    bottom:0;
-    width:50%;
-	transform:translatex(50%);
-    border-bottom:4px solid red;
 }
 
 td, th{
@@ -440,6 +439,29 @@ p{
 	}
 }
 
+/* Scores for Tab 1 (Developers Comparison) */
+#tab1 .coins-list th:nth-child(1) .score::after { width: 100%; }
+#tab1 .coins-list th:nth-child(2) .score::after { width: 0%; }
+#tab1 .coins-list th:nth-child(3) .score::after { width: 10%; }
+#tab1 .coins-list th:nth-child(4) .score::after { width: 20%; }
+#tab1 .coins-list th:nth-child(5) .score::after { width: 5%; }
+#tab1 .coins-list th:nth-child(6) .score::after { width: 35%; }
+#tab1 .coins-list th:nth-child(7) .score::after { width: 5%; }
+#tab1 .coins-list th:nth-child(8) .score::after { width: 5%; }
+#tab1 .coins-list th:nth-child(9) .score::after { width: 15%; }
+#tab1 .coins-list th:nth-child(10) .score::after { width: 50%; }
+
+/* Scores for Tab 2 (Investors Comparison) */
+#tab2 .coins-list th:nth-child(1) .score::after { width: 100%; }
+#tab2 .coins-list th:nth-child(2) .score::after { width: 60%; }
+#tab2 .coins-list th:nth-child(3) .score::after { width: 10%; }
+#tab2 .coins-list th:nth-child(4) .score::after { width: 10%; }
+#tab2 .coins-list th:nth-child(5) .score::after { width: 0%; }
+#tab2 .coins-list th:nth-child(6) .score::after { width: 20%; }
+#tab2 .coins-list th:nth-child(7) .score::after { width: 20%; }
+#tab2 .coins-list th:nth-child(8) .score::after { width: 15%; }
+#tab2 .coins-list th:nth-child(9) .score::after { width: 25%; }
+#tab2 .coins-list th:nth-child(10) .score::after { width: 30%; }
 
 </style>
 

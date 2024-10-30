@@ -13,6 +13,7 @@
     "@remixicon/vue": "^4.2.0",
     "@vueuse/motion": "^2.2.6",
     "chart.js": "^4.4.4",
+    "crypto-icons": "^1.0.65",
     "install": "^0.13.0",
     "npm": "^10.9.0",
     "primeflex": "^3.3.1",

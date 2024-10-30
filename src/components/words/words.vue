@@ -28,7 +28,7 @@ let index3 = 0;
 const desdesc = ref ('');
 let index4 = 0;
 
-let interval = 300; // milliseconds
+let interval = 225; // milliseconds
 
 let letterIndex = 0;
 
@@ -112,16 +112,22 @@ const IntervalID = setInterval(() =>
 <template>
     <div class="Generate">
         <h2 class="my-4 text-red-600 text-6xl">
-            I<span class="II-1 text-neutral-200 uppercase mx-2">{{ ccurrent1 }}</span>
+            I<span class="II-1 text-neutral-200 uppercase mx-1">{{ ccurrent1 }}</span>
         </h2>
         <h2 class="my-4 text-red-600 text-6xl">
-            P<span class="PP-1 text-neutral-200 uppercase mx-2">{{ ccurrent2 }}</span>
+            P<span class="PP-1 text-neutral-200 uppercase mx-1">{{ ccurrent2 }}</span>
         </h2>
         <h2 class="my-4 text-red-600 text-6xl">
-            I<span class="II-2 text-neutral-200 uppercase mx-2">{{ ccurrent3 }}</span>
+            I<span class="II-2 text-neutral-200 uppercase mx-1">{{ ccurrent3 }}</span>
         </h2>
     </div>
     <h3 class="text-gray-400 mt-8 text-1xl max-w-5xl main-description">
         W<span class="">{{ curdesc }}</span>
     </h3>
 </template>
+
+<style scoped>
+.main-description{
+    color:#97afd5;
+}
+</style>
