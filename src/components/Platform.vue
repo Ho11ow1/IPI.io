@@ -35,30 +35,30 @@
             <h4 class="mb-4 font-semibold text-2xl">
                 Open platform for non-tech users
             </h4>
-            <h5 class="mb-3 font-medium text-blue-300">
+            <h5 class="mb-3 font-medium" style="color: #97afd5;">
                 Check out our unique blockchain solutions
             </h5>
             <div class="row flex flex-row items-center mb-8">
                 <i class="icon ri-lightbulb-line"></i>
-                <p class="max-w-screen-sm text-blue-300">
+                <p class="max-w-screen-sm" style="color: #7fa3cdff;">
                     IPI auto-buy solution. Wallet App automatically top-up IPI to cover fees in DeFi etc swapping most popular cryptos and tokens.
                 </p>
             </div>
             <div class="row flex flex-row items-center mb-8">
                 <i class="icon ri-lightbulb-line"></i>
-                <p class="max-w-screen-sm text-blue-300">
+                <p class="max-w-screen-sm" style="color: #7fa3cdff;">
                     If someone wants to (un)wrap coins(or tokens) has to paste his received address and system will answer him where to send coins and tokens or wraps
                 </p>
             </div>
             <div class="row flex flex-row items-center mb-8">
                 <i class="icon ri-lightbulb-line"></i>
-                <p class="max-w-screen-sm text-blue-300">
+                <p class="max-w-screen-sm" style="color: #7fa3cdff;">
                     Users can choose in which crypto they want to pay and receive payments. Can send and receive payments to mail/phone number/Social Media after verification
                 </p>
             </div>
             <div class="row flex flex-row items-center mb-8">
                 <i class="icon ri-lightbulb-line"></i>
-                <p class="max-w-screen-sm text-blue-300">
+                <p class="max-w-screen-sm" style="color: #7fa3cdff;">
                     Use popular social media to transfer and invite friends & family. If someone doesn’t have a wallet in IPI ecosystem will receive a notification throught SMS/Mail/Social Media PM. Users can name, choose and change to which wallet printed QR code belongs.
                 </p>
             </div>
@@ -76,24 +76,24 @@
             <h4 class="mb-4 font-semibold text-2xl">
                 Open platform for non-tech users
             </h4>
-            <h5 class="mb-3 font-medium text-blue-300">
+            <h5 class="mb-3 font-medium" style="color: #97afd5;">
                 Check out our unique blockchain solutions
             </h5>
             <div class="row flex flex-row items-center mb-8">
                 <i class="icon ri-lightbulb-line"></i> 
-                <p class="max-w-screen-sm text-blue-300">Solidity tools for migrating Smart Contracts and Dapps from Ethereum and create new one with Remix</p>
+                <p class="max-w-screen-sm" style="color: #7fa3cdff;">Solidity tools for migrating Smart Contracts and Dapps from Ethereum and create new one with Remix</p>
             </div>
             <div class="row flex flex-row items-center mb-8">
                 <i class="icon ri-lightbulb-line"></i> 
-                <p class="max-w-screen-sm text-blue-300">Simple variables to integrate IPI wrapping system and build amazing dApps and NFT's systems</p>
+                <p class="max-w-screen-sm" style="color: #7fa3cdff;">Simple variables to integrate IPI wrapping system and build amazing dApps and NFT's systems</p>
             </div>
             <div class="row flex flex-row items-center mb-8">
                 <i class="icon ri-lightbulb-line"></i> 
-                <p class="max-w-screen-sm text-blue-300">Powerful "Liqudity Attack" tools on CEX's and DEX's Markets</p>
+                <p class="max-w-screen-sm" style="color: #7fa3cdff;">Powerful "Liqudity Attack" tools on CEX's and DEX's Markets</p>
             </div>
             <div class="row flex flex-row items-center mb-8">
                 <i class="icon ri-lightbulb-line"></i>
-                <p class="max-w-screen-sm text-blue-300">Open source technology with fastest and no fees transactions</p>
+                <p class="max-w-screen-sm" style="color: #7fa3cdff;">Open source technology with fastest and no fees transactions</p>
             </div>
         </div>
         <div class="right">
@@ -128,7 +128,7 @@ export default
 
 .icon{
     background-image: linear-gradient(-45deg, #f42f54 0%, #1b2d59 80%, #1b2d59 100%);
-    -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     font-size: 2.75rem;
     margin-right:1.5rem;

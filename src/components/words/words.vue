@@ -121,13 +121,13 @@ const IntervalID = setInterval(() =>
             I<span class="II-2 text-neutral-200 uppercase mx-1">{{ ccurrent3 }}</span>
         </h2>
     </div>
-    <h3 class="text-gray-400 mt-8 text-1xl max-w-5xl main-description">
+    <h3 class="mt-8 text-1xl max-w-5xl main-description">
         W<span class="">{{ curdesc }}</span>
     </h3>
 </template>
 
 <style scoped>
 .main-description{
-    color:#97afd5;
+    color:#7fa3cdff;
 }
 </style>
