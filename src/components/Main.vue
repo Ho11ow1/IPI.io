@@ -82,14 +82,14 @@ import WORDS from './words/words.vue'
                 DEFI, NFT AND MORE POWERED BY IPI UTILITY COIN. MOST POPULAR COINS WRAPPED.
             </h3> -->
             <div class="flex justify-center gap-8 mt-8">
-                <button class="border-solid border-2 border-[#f42f54] bg-[#f42f54] text-gray-100 text-sm font-medium rounded-3xl max-w-34 px-4 py-3 hover:bg-neutral-100 hover:border-neutral-100 hover:text-[#f42f54]">
-                    <a href="https://ipi.io/whitepaper.pdf" class="hover:text-[#f42f54]">
+                <button class="border-solid border-2 border-[#f42f54] bg-[#f42f54] white text-sm font-medium rounded-3xl max-w-34 px-6 py-3 hover:bg-neutral-100 hover:border-neutral-100 hover:text-[#f42f54]">
+                    <a href="https://ipi.io/whitepaper.pdf" class="hover:white]">
                         READ OUR WHITEPAPER
                     </a>
                 </button>
-                <button class="border-solid border-2 border-[#f42f54] text-gray-100 text-sm font-medium rounded-3xl max-w-34 px-4 py-3 hover:bg-[#f42f54]">
-                    <a href="https://t.me/ipicoin" class="hover:text-gray-100">
-                        JOIN OUR TELEGRAM GROUP
+                <button class="border-solid border-2 border-[#f42f54] white text-sm font-medium rounded-3xl max-w-34 px-6 py-3 hover:bg-[#f42f54]">
+                    <a href="https://t.me/ipicoin" class="hover:white">
+                        JOIN TELEGRAM GROUP
                     </a>
                 </button>
             </div>

@@ -4,7 +4,7 @@
 		id="advantages"
 		v-motion-slide-visible-once-bottom
 	>
-		<h3 class="text-center mx-auto mb-12 font-medium text-5xl text-neutral-300">
+		<h3 class="text-center mx-auto mb-12 font-medium text-5xl white">
 			OUR ADVANTAGES
 		</h3>
 		<div class="buttons flex flex-nowrap justify-center items-center mb-24 gap-24 max-w-screen-md " style="margin:6rem auto;">
@@ -301,7 +301,7 @@
 
 /* Styles for the inactive tab */
 .inactive {
-    color: rgb(107, 114, 128);
+    color: var(--blue);
 }
 
 .py-2{

@@ -93,7 +93,7 @@ onMounted(() => {
                     </li>
                     <li class="nav--item">
                         <a href="https://wallet.ipi.io">
-                            <button class="border-solid border-2 border-red-600 px-6 py-2 rounded-3xl text-base font-medium">
+                            <button class="border-solid border-2 border-red-600 px-6 py-2 rounded-3xl text-base font-medium hover:bg-red-600 hover:text-white">
                                 WALLET
                             </button>
                         </a>

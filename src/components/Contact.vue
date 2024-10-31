@@ -88,10 +88,10 @@ const load = () => {
 			</div>
 		</div>
 		<div class="Form max-w-screen-sm">
-			<h2 class="mb-8 text-2xl font-semibold">
+			<h2 class="mb-8 text-2xl font-semibold white">
 				CONTACT US
 			</h2>
-			<p class="mb-12 text-base font-medium" style="color: #97afd5;">
+			<p class="mb-12 text-base font-medium blue">
 				We are always open and we welcome and questions you have for our team. 
 				If you wish to get in touch, please fill out the form below. Someone from our 
 				team will get back to you shortly.
@@ -99,18 +99,18 @@ const load = () => {
 			<form class="">
 				<div class="top mb-10 flex gap-8">
 					<div class="Names">
-						<h4 class="mb-3 ml-2 font-bold text-xs tracking-widest" style="color: #97afd5;">
+						<h4 class="mb-3 ml-2 font-bold text-xs tracking-widest blue">
 							YOUR NAME
 						</h4>
 						<input 
 							type="text" 
 							v-model="nameInput"
 							placeholder="Input your name" 
-							class="border-solid border border-neutral-600 bg-transparent font-medium rounded-lg px-5 py-2"
+							class="border-solid border border-neutral-600 bg-transparent font-medium rounded-lg px-5 py-2 white"
 						>
 					</div>
 					<div class="Emails">
-						<h4 class=" mb-3 ml-2 font-bold text-xs tracking-widest" style="color: #97afd5;">
+						<h4 class=" mb-3 ml-2 font-bold text-xs tracking-widest blue">
 							YOUR E-MAIL
 						</h4>
 						<input 
@@ -123,7 +123,7 @@ const load = () => {
 				</div>
 				<div class="msg">
 					<div class="Bot">
-						<h4 class=" mb-2 ml-2 font-bold text-xs tracking-widest" style="color: #97afd5;">
+						<h4 class=" mb-2 ml-2 font-bold text-xs tracking-widest blue">
 							YOUR MESSAGE
 						</h4>
 						<!-- <textarea type="text" placeholder="Your message goes here" class="border-solid border border-neutral-600  bg-transparent font-medium rounded-lg px-5 py-2 h-28 w-full"></textarea> -->

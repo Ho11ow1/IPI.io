@@ -9,10 +9,10 @@
         v-motion-slide-visible-once-bottom
     >
         <div class="Section-title">
-            <h2 class="text-center mx-auto mb-8 font-medium text-5xl text-neutral-300">
+            <h2 class="text-center mx-auto mb-8 font-medium text-5xl white">
                 COINS
             </h2>
-            <p class="text-center mx-auto mb-24 font-medium text-medium text-neutral-300">
+            <p class="text-center mx-auto mb-24 font-medium text-medium blue">
                 Breakdown of our Coin Recipients.
             </p>
         </div>
@@ -20,7 +20,7 @@
             <div class="Mid flex">
                 <div class="grid grid-cols-2 items-center gap-4 max-w-xl second" v-motion :initial="{ opacity: 0, y: 100 }" :enter="{ opacity: 1, y: 0, transition: { duration: 1000 } }">
                     <div class="distribution-item text-left">
-                        <h2 class="distribution-title text-xl mb-4">
+                        <h2 class="distribution-title text-xl font-semibold mb-4">
                             Public Coin Sale 6.5M
                         </h2>
                         <p class="distribution-des max-w-64">
@@ -28,7 +28,7 @@
                         </p>
                     </div>
                     <div class="distribution-item text-left grid-column">
-                        <h2 class="distribution-title text-xl mb-4">
+                        <h2 class="distribution-title text-xl font-semibold mb-4">
                             Team Incentive 1.5M
                         </h2>
                         <p class="distribution-des max-w-64">
@@ -36,7 +36,7 @@
                         </p>
                     </div>
                     <div class="distribution-item text-left grid-column">
-                        <h2 class="distribution-title text-xl mb-4">
+                        <h2 class="distribution-title text-xl font-semiboldmb-4">
                             Marketing 1M
                         </h2>
                         <p class="distribution-des max-w-64">
@@ -44,7 +44,7 @@
                         </p>
                     </div>
                     <div class="distribution-item text-left grid-column">
-                        <h2 class="distribution-title text-xl mb-4">
+                        <h2 class="distribution-title text-xl font-semibold mb-4">
                             Reserve Fund
                         </h2>
                         <p class="distribution-des max-w-64">
@@ -53,7 +53,7 @@
                     </div>
                     <div class="flex flex-row">
                         <div class="distribution-item text-left grid-column">
-                        <h2 class="distribution-title text-xl mb-4">
+                        <h2 class="distribution-title text-xl font-semibold mb-4">
                             Bug bounty
                         </h2>
                         <p class="distribution-des max-w-64">
@@ -73,28 +73,28 @@
                     <div class="info-box flex items-center px-3 py-3">
                         <div class="info-line purple"></div>
                         <div class="info-content flex flex-col">
-                            <p class="info-title text-neutral-300">START TIME</p>
+                            <p class="info-title blue">START TIME</p>
                             <p class="info-value font-semibold">July, 2023</p>
                         </div>
                     </div>
                     <div class="info-box flex items-center px-3 py-3">
                         <div class="info-line orange"></div>
                         <div class="info-content flex flex-col">
-                            <p class="info-title text-neutral-300">COIN SYMBOL</p>
+                            <p class="info-title blue">COIN SYMBOL</p>
                             <p class="info-value font-semibold">IPI</p>
                         </div>
                     </div>
                     <div class="info-box flex items-center px-3 py-3">
                         <div class="info-line red"></div>
                         <div class="info-content flex flex-col">
-                            <p class="info-title text-neutral-300">MINING START</p>
+                            <p class="info-title blue">MINING START</p>
                             <p class="info-value font-semibold">1 January, 2025</p>
                         </div>
                     </div>
                     <div class="info-box flex items-center px-3 py-3">
-                        <div class="info-line blue"></div>
+                        <div class="info-line blue-bg"></div>
                         <div class="info-content flex flex-col">
-                            <p class="info-title text-neutral-300">COINS OFFERED</p>
+                            <p class="info-title blue">COINS OFFERED</p>
                             <p class="info-value font-semibold">6.5M</p>
                         </div>
                     </div>
@@ -149,7 +149,7 @@
     background-color: #e74c3c;
 }
 
-.blue {
+.blue-bg {
     background-color: #3498db;
 }
 
@@ -169,7 +169,7 @@
     top: 0;
     height: 100%;
     width: 45px;
-    border: 2px solid #97afd5;
+    border: 2px solid hsl(217, 42%, 38%);
 }
 
 .distribution-item::before{

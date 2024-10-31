@@ -13,7 +13,7 @@
     :initial="{ opacity: 0, y: 100 }"
     :enter="{ opacity: 1, y: 0, transition: { duration: 1000 } }">
 
-    <h3 class="text-center mx-auto mb-12 font-medium text-5xl text-neutral-300">
+    <h3 class="text-center mx-auto mb-12 font-medium text-5xl white">
         PLATFORM
     </h3>
     <div class="buttons mx-auto flex flex-nowrap justify-center items-center mb-24 max-w-screen-md ">

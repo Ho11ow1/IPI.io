@@ -87,10 +87,10 @@ onMounted(() => {
         v-motion-slide-visible-once-bottom
     >
         <div class="Section-title">
-            <h2 class="text-center mx-auto mb-8 font-medium text-5xl text-neutral-300">
+            <h2 class="text-center mx-auto mb-8 font-medium text-5xl white">
                 ROADMAP
             </h2>
-            <p class="text-center mx-auto mb-24 font-medium text-medium text-neutral-300">
+            <p class="text-center mx-auto mb-24 font-medium text-medium blue">
                 IPI is developing a global network platform for crypto ecosystem.
             </p>
         </div>
@@ -98,9 +98,9 @@ onMounted(() => {
             <div class="roadmap-item" v-for="(item, index) in roadmap" :key="index">
                 <div class="item-circle"></div>
                 <div class="item-content">
-                    <div class="quarter">{{ item.quarter }}</div>
-                    <div class="date-range"><h2 class="text-center text-neutral-100">{{ item.dateRange }}</h2></div>
-                    <div class="description"><p class="text-center text-gray-400">{{ item.description }}</p></div>
+                    <div class="quarter white">{{ item.quarter }}</div>
+                    <div class="date-range"><h2 class="text-center white">{{ item.dateRange }}</h2></div>
+                    <div class="description"><p class="text-center blue">{{ item.description }}</p></div>
                 </div>
             </div>
         </div>
