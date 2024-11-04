@@ -242,8 +242,8 @@ onMounted(() => {
 }
 
 .description {
-    font-size: .9rem;
-    font-weight:400;
+    font-size: 1rem;
+    font-weight: 500;
     line-height: 1.4;
 }
 
@@ -261,7 +261,7 @@ onMounted(() => {
     }
 
     .description {
-        font-size: 0.875rem;
+        font-size: 0.95rem;
     }
 }
 
@@ -275,7 +275,7 @@ onMounted(() => {
     }
 
     .description {
-        font-size: 0.75rem;
+        font-size: 0.85rem;
     }
 }
 </style>

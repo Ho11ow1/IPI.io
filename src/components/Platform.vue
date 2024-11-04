@@ -17,13 +17,13 @@
         PLATFORM
     </h3>
     <div class="buttons mx-auto flex flex-nowrap justify-center items-center mb-24 max-w-screen-md ">
-        <button @click="showTab(2)" class="border-solid border-2 border-red-500 rounded-xl py-3 px-5 font-semibold  hover:border-red-500 hover:text-red-500 active:border-red-500 active:text-red-500" data-toggle="tab" id="btab1" :class="{'active': activeTab === 2, 'inactive': activeTab !== 2}">
+        <button @click="showTab(2)" class="border-solid border-2 border-[hsl(212.5,55.7%,6.1%)] rounded-xl py-3 px-5 font-semibold  hover:border-red-500 hover:text-red-500 active:border-red-500 active:text-red-500" data-toggle="tab" id="btab1" :class="{'active': activeTab === 2, 'inactive': activeTab !== 2}">
                 FOR CRYPTO USERS
         </button>
         <div class="seperator flex justify-center items-center">
             <span></span>
         </div>
-        <button @click="showTab(1)" class="border-solid border-2 border-neutral-600 rounded-xl py-3 px-5 font-semibold  hover:border-red-500 hover:text-red-500 active:border-red-500 active:text-red-500" data-toggle="tab" id="btab2" :class="{'active': activeTab === 1, 'inactive': activeTab !== 1}">
+        <button @click="showTab(1)" class="border-solid border-2 border-[hsl(212.5,55.7%,6.1%)] rounded-xl py-3 px-5 font-semibold  hover:border-red-500 hover:text-red-500 active:border-red-500 active:text-red-500" data-toggle="tab" id="btab2" :class="{'active': activeTab === 1, 'inactive': activeTab !== 1}">
                 FOR PROGRAMMERS
         </button>
     </div>
@@ -39,25 +39,25 @@
                 Check out our unique blockchain solutions
             </h5>
             <div class="row flex flex-row items-center mb-8">
-                <i class="icon ri-lightbulb-line"></i>
+                <i class="icon ri-lightbulb-line white"></i>
                 <p class="max-w-screen-sm" style="color: #7fa3cdff;">
                     IPI auto-buy solution. Wallet App automatically top-up IPI to cover fees in DeFi etc swapping most popular cryptos and tokens.
                 </p>
             </div>
             <div class="row flex flex-row items-center mb-8">
-                <i class="icon ri-lightbulb-line"></i>
+                <i class="icon ri-lightbulb-line white"></i>
                 <p class="max-w-screen-sm" style="color: #7fa3cdff;">
                     If someone wants to (un)wrap coins(or tokens) has to paste his received address and system will answer him where to send coins and tokens or wraps
                 </p>
             </div>
             <div class="row flex flex-row items-center mb-8">
-                <i class="icon ri-lightbulb-line"></i>
+                <i class="icon ri-lightbulb-line white"></i>
                 <p class="max-w-screen-sm" style="color: #7fa3cdff;">
                     Users can choose in which crypto they want to pay and receive payments. Can send and receive payments to mail/phone number/Social Media after verification
                 </p>
             </div>
             <div class="row flex flex-row items-center mb-8">
-                <i class="icon ri-lightbulb-line"></i>
+                <i class="icon ri-lightbulb-line white"></i>
                 <p class="max-w-screen-sm" style="color: #7fa3cdff;">
                     Use popular social media to transfer and invite friends & family. If someone doesn’t have a wallet in IPI ecosystem will receive a notification throught SMS/Mail/Social Media PM. Users can name, choose and change to which wallet printed QR code belongs.
                 </p>
@@ -80,19 +80,19 @@
                 Check out our unique blockchain solutions
             </h5>
             <div class="row flex flex-row items-center mb-8">
-                <i class="icon ri-lightbulb-line"></i> 
+                <i class="icon ri-lightbulb-line white"></i> 
                 <p class="max-w-screen-sm" style="color: #7fa3cdff;">Solidity tools for migrating Smart Contracts and Dapps from Ethereum and create new one with Remix</p>
             </div>
             <div class="row flex flex-row items-center mb-8">
-                <i class="icon ri-lightbulb-line"></i> 
+                <i class="icon ri-lightbulb-line white"></i> 
                 <p class="max-w-screen-sm" style="color: #7fa3cdff;">Simple variables to integrate IPI wrapping system and build amazing dApps and NFT's systems</p>
             </div>
             <div class="row flex flex-row items-center mb-8">
-                <i class="icon ri-lightbulb-line"></i> 
+                <i class="icon ri-lightbulb-line white"></i> 
                 <p class="max-w-screen-sm" style="color: #7fa3cdff;">Powerful "Liqudity Attack" tools on CEX's and DEX's Markets</p>
             </div>
             <div class="row flex flex-row items-center mb-8">
-                <i class="icon ri-lightbulb-line"></i>
+                <i class="icon ri-lightbulb-line white"></i>
                 <p class="max-w-screen-sm" style="color: #7fa3cdff;">Open source technology with fastest and no fees transactions</p>
             </div>
         </div>
@@ -144,7 +144,7 @@ export default
 
 .seperator > span {
     width: 100%;
-    background-color: rgb(82, 82, 82);
+    background-color: hsl(212.5, 55.7%, 36.1%);
     height: 1px;
 }
 
@@ -159,7 +159,7 @@ export default
 
 /* Styles for the inactive tab */
 .inactive {
-    border-color: rgb(82, 82, 82);
+    border-color: hsl(212.5, 55.7%, 36.1%);
     color: rgb(212, 212, 212);
 }
 

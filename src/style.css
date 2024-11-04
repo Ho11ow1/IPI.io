@@ -8,6 +8,8 @@
 	--white-colour:#fff;
 	--black-colour:#000;
     --blue:#97afd5;
+    --dark-blue:#7fa3cdff;
+    --other:hsl(212.5, 55.7%, 46.1%);
 
     --bg-colour:hsl(222.86 53.85% 12.75%);
 }
@@ -59,3 +61,12 @@ a:hover{
 .blue{
     color:var(--blue);
 }
+
+.dark-blue{
+    color:var(--dark-blue);
+}
+
+.other{
+    color:var(--other);
+}
+

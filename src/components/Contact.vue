@@ -91,7 +91,7 @@ const load = () => {
 			<h2 class="mb-8 text-2xl font-semibold white">
 				CONTACT US
 			</h2>
-			<p class="mb-12 text-base font-medium blue">
+			<p class="mb-12 text-base font-medium dark-blue">
 				We are always open and we welcome and questions you have for our team. 
 				If you wish to get in touch, please fill out the form below. Someone from our 
 				team will get back to you shortly.
@@ -127,7 +127,7 @@ const load = () => {
 							YOUR MESSAGE
 						</h4>
 						<!-- <textarea type="text" placeholder="Your message goes here" class="border-solid border border-neutral-600  bg-transparent font-medium rounded-lg px-5 py-2 h-28 w-full"></textarea> -->
-							<Textarea id="over_label" placeholder="Your message goes here" v-model="value2" rows="5" cols="66" autoResize />
+							<Textarea id="over_label" placeholder="Your message goes here" v-model="value2" rows="5" cols="58" autoResize />
 					</div>
 				</div>
 				<div class="btn mt-8 flex flex-row-reverse">

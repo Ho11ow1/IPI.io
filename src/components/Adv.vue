@@ -47,7 +47,7 @@
 			</tr>
 			<tr>
 				<td :colspan="coins.length" class="text-center py-2">
-					<h2 class="text-xl font-bold">
+					<h2 class="text-xl font-bold white">
 						Consensus / Decentralization Level
 					</h2>
 				</td>
@@ -64,7 +64,7 @@
 			</tr>
 			<tr>
 				<td :colspan="coins.length" class="text-center py-2">
-					<h2 class="text-xl font-bold">
+					<h2 class="text-xl font-bold white">
 						TPS** Range
 					</h2>
 				</td>
@@ -81,7 +81,7 @@
 			</tr>
 			<tr>
 				<td :colspan="coins.length" class=" text-center py-2">
-					<h2 class="text-xl font-bold">
+					<h2 class="text-xl font-bold white">
 						Smart Contracts/Speed           
 					</h2>
 				</td>
@@ -98,7 +98,7 @@
 			</tr>
 			<tr>
 				<td :colspan="coins.length" class="text-center py-2">
-					<h2 class="text-xl font-bold">
+					<h2 class="text-xl font-bold white">
 						Smart Contract Language
 					</h2>
 				</td>
@@ -115,7 +115,7 @@
 			</tr>
 			<tr>
 				<td :colspan="coins.length" class="text-center py-2">
-					<h2 class="text-xl font-bold">
+					<h2 class="text-xl font-bold white">
 						No-Code Smart Contracts with AI
 					</h2>
 				</td>
@@ -132,7 +132,7 @@
 			</tr>
 			<tr>
 				<td :colspan="coins.length" class="text-center py-2">
-					<h2 class="text-xl font-bold">
+					<h2 class="text-xl font-bold white">
 						Approx. Finality Time
 					</h2>
 				</td>
@@ -169,7 +169,7 @@
 			</tr>
 			<tr>
 				<td :colspan="coins.length" class="text-center py-2">
-					<h2 class="text-xl font-bold">
+					<h2 class="text-xl font-bold white">
 						Consensus / Decentralization Level
 					</h2>
 				</td>
@@ -186,7 +186,7 @@
 			</tr>
 			<tr>
 				<td :colspan="coins.length" class="text-center py-2">
-					<h2 class="text-xl font-bold">
+					<h2 class="text-xl font-bold white">
 						Max Supply
 					</h2>
 				</td>
@@ -203,7 +203,7 @@
 			</tr>
 			<tr>
 				<td :colspan="coins.length" class=" text-center py-2">
-					<h2 class="text-xl font-bold">
+					<h2 class="text-xl font-bold white">
 					Instamine              
 					</h2>
 				</td>
@@ -220,7 +220,7 @@
 			</tr>
 			<tr>
 				<td :colspan="coins.length" class="text-center py-2">
-					<h2 class="text-xl font-bold">
+					<h2 class="text-xl font-bold white">
 						Halving / Period
 					</h2>
 				</td>
@@ -237,7 +237,7 @@
 			</tr>
 			<tr>
 				<td :colspan="coins.length" class="text-center py-2">
-					<h2 class="text-xl font-bold">
+					<h2 class="text-xl font-bold white">
 						Networking Speed / Gas Price
 					</h2>
 				</td>
@@ -254,7 +254,7 @@
 			</tr>
 			<tr>
 				<td :colspan="coins.length" class="text-center py-2">
-					<h2 class="text-xl font-bold">
+					<h2 class="text-xl font-bold white">
 						Native Wallet & Scanner
 					</h2>
 				</td>
@@ -272,13 +272,13 @@
 		</tbody>
 	</table>
 	<div class="links gap-6 mx-auto my-8 text-center flex flex-col max-w-lg">
-		<p class="text-gray-500">
+		<p class="blue">
 			* - according to 
 			<a href="https://www.mevwatch.info/">
 				https://www.mevwatch.info/
 			</a>
 		</p>
-		<p class="text-gray-500">
+		<p class="blue">
 			** --  First IPI is mined from staking 1 BTC to avoid SEC investigation
 		</p>
 	</div>
@@ -330,6 +330,7 @@ th, td {
 h2{
 	margin-bottom:.75rem;
 	padding:0;
+	font-weight: 700;  /* Bold weight */
 }
 
 .coin-image {
@@ -373,7 +374,7 @@ h2{
     content: '';
     position: absolute;
     left: 0;
-    bottom: -10px;
+    bottom: -9px;
     height: 4px;
     background-color: #f94551ff;
 }
@@ -462,6 +463,19 @@ p{
 #tab2 .coins-list th:nth-child(8) .score::after { width: 15%; }
 #tab2 .coins-list th:nth-child(9) .score::after { width: 25%; }
 #tab2 .coins-list th:nth-child(10) .score::after { width: 30%; }
+
+/* Update font weights to 700 */
+.cell-text {
+    font-weight: 700;  /* Bold weight */
+}
+
+td p, th p {
+    font-weight: 700;  /* Bold weight */
+}
+
+.coin-text p {
+    font-weight: 700;  /* Bold weight */
+}
 
 </style>
 
