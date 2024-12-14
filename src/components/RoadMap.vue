@@ -3,6 +3,9 @@ import { ref, onMounted } from 'vue';
 import Button from 'primevue/button';
 
 const roadmapContainer = ref<HTMLElement | null>(null);
+const isDragging = ref(false);
+const startX = ref(0);
+const scrollLeft = ref(0);
 
 const roadmap = ref([
     {
@@ -54,7 +57,7 @@ const handleScroll = () => {
 };
 
 // Function to scroll left
-const scrollLeft = () => {
+const scrollLeftHandler = () => {
     if (roadmapContainer.value) 
     {
         const scrollAmount = roadmapContainer.value.children[0].clientWidth + 16; // Width of item + gap
@@ -63,12 +66,43 @@ const scrollLeft = () => {
 };
 
 // Function to scroll right
-const scrollRight = () => {
+const scrollRightHandler = () => {
     if (roadmapContainer.value) 
     {
         const scrollAmount = roadmapContainer.value.children[0].clientWidth + 16; // Width of item + gap
         roadmapContainer.value.scrollBy({ left: scrollAmount, behavior: 'smooth' });
     }
+};
+
+const startDragging = (e: MouseEvent) => {
+    if (!roadmapContainer.value)
+    {
+        return;
+    }    
+    isDragging.value = true;
+    roadmapContainer.value.classList.add('grabbing');
+    startX.value = e.pageX - roadmapContainer.value.offsetLeft;
+    scrollLeft.value = roadmapContainer.value.scrollLeft;
+};
+
+const stopDragging = () => {
+    if (!roadmapContainer.value)
+    {
+        return;
+    }    
+    isDragging.value = false;
+    roadmapContainer.value.classList.remove('grabbing');
+};
+
+const move = (e: MouseEvent) => {
+    if (!isDragging.value || !roadmapContainer.value)
+    {
+        return;
+    }    
+    e.preventDefault();
+    const x = e.pageX - roadmapContainer.value.offsetLeft;
+    const walk = (x - startX.value); // Removed the multiplier for smoother scrolling
+    roadmapContainer.value.scrollLeft = scrollLeft.value - walk;
 };
 
 onMounted(() => {
@@ -94,7 +128,7 @@ onMounted(() => {
                 IPI is developing a global network platform for crypto ecosystem.
             </p>
         </div>
-        <div class="roadmap-scroll-container ml-auto" ref="roadmapContainer" @scroll="handleScroll">
+        <div class="roadmap-scroll-container ml-auto" ref="roadmapContainer" @scroll="handleScroll" @mousedown="startDragging" @mousemove="move" @mouseup="stopDragging">
             <div class="roadmap-item" v-for="(item, index) in roadmap" :key="index">
                 <div class="item-circle"></div>
                 <div class="item-content">
@@ -107,8 +141,8 @@ onMounted(() => {
         <div class="roadmap-controls mx-auto">
             <!-- <button @click="scrollLeft" class="scroll-button">←</button>
             <button @click="scrollRight" class="scroll-button">→</button> -->
-            <Button @click="scrollLeft" severity="secondary" outlined rounded icon="pi pi-chevron-left" class="px-2 py-2"/>
-            <Button @click="scrollRight" severity="secondary" outlined rounded icon="pi pi-chevron-right" class="px-2 py-2"/>
+            <Button @click="scrollLeftHandler" severity="secondary" outlined rounded icon="pi pi-chevron-left" class="px-2 py-2"/>
+            <Button @click="scrollRightHandler" severity="secondary" outlined rounded icon="pi pi-chevron-right" class="px-2 py-2"/>
         </div>
     </section>
 </template>
@@ -153,9 +187,17 @@ onMounted(() => {
     scrollbar-width: none;
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
+    cursor: grab;
+    user-select: none;
     position: relative;
     padding-top: 2rem;
     max-width:1640px;
+    scroll-snap-type: x proximity;
+    transition: all 0.3s ease-out;
+}
+
+.roadmap-scroll-container.grabbing {
+    cursor: grabbing;
 }
 
 .roadmap-scroll-container::before {
@@ -197,6 +239,7 @@ onMounted(() => {
     position: relative;
     padding-top: 2rem;
     z-index: 1; /* Ensure items stay above the line */
+    scroll-snap-align: start;
 }
 
 /* The circles go brr */

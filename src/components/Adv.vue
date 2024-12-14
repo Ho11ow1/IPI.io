@@ -374,7 +374,6 @@ h2{
     content: '';
     position: absolute;
     left: 0;
-    bottom: -9px;
     height: 4px;
     background-color: #f94551ff;
 }

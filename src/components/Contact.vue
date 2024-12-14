@@ -88,53 +88,67 @@ const load = () => {
 			</div>
 		</div>
 		<div class="Form max-w-screen-sm">
-			<h2 class="mb-8 text-2xl font-semibold white">
-				CONTACT US
-			</h2>
-			<p class="mb-12 text-base font-medium dark-blue">
-				We are always open and we welcome and questions you have for our team. 
-				If you wish to get in touch, please fill out the form below. Someone from our 
-				team will get back to you shortly.
-			</p>
-			<form class="">
-				<div class="top mb-10 flex gap-8">
-					<div class="Names">
-						<h4 class="mb-3 ml-2 font-bold text-xs tracking-widest blue">
+			<div class="Form-top">
+				<h2 class="mb-8 text-2xl font-semibold white">
+					CONTACT US
+				</h2>
+				<p class="mb-12 text-base font-medium dark-blue">
+					We are always open and we welcome and questions you have for our team. 
+					If you wish to get in touch, please fill out the form below. Someone from our 
+					team will get back to you shortly.
+				</p>
+			</div>
+			<form>
+				<div class="flex flex-col md:flex-row gap-8 mb-10">
+					<div class="Names w-full md:w-1/2 max-w-[260px]">
+						<h4 class="mb-3 font-bold text-xs tracking-widest blue">
 							YOUR NAME
 						</h4>
 						<input 
 							type="text" 
 							v-model="nameInput"
 							placeholder="Input your name" 
-							class="border-solid border border-neutral-600 bg-transparent font-medium rounded-lg px-5 py-2 white"
+							class="w-full border-solid border border-neutral-600 bg-transparent font-medium rounded-lg px-5 py-2 white"
 						>
 					</div>
-					<div class="Emails">
-						<h4 class=" mb-3 ml-2 font-bold text-xs tracking-widest blue">
+					<div class="Emails w-full md:w-1/2 max-w-[260px]">
+						<h4 class="mb-3 font-bold text-xs tracking-widest blue">
 							YOUR E-MAIL
 						</h4>
 						<input 
 							type="email" 
 							v-model="emailInput"
 							placeholder="Input your E-mail" 
-							class="border-solid border border-neutral-600 bg-transparent font-medium rounded-lg px-5 py-2"
+							class="w-full border-solid border border-neutral-600 bg-transparent font-medium rounded-lg px-5 py-2"
 						>
 					</div>
 				</div>
 				<div class="msg">
 					<div class="Bot">
-						<h4 class=" mb-2 ml-2 font-bold text-xs tracking-widest blue">
+						<h4 class="mb-2 font-bold text-xs tracking-widest blue">
 							YOUR MESSAGE
 						</h4>
-						<!-- <textarea type="text" placeholder="Your message goes here" class="border-solid border border-neutral-600  bg-transparent font-medium rounded-lg px-5 py-2 h-28 w-full"></textarea> -->
-							<Textarea id="over_label" placeholder="Your message goes here" v-model="value2" rows="5" cols="58" autoResize />
+						<Textarea 
+							id="over_label" 
+							placeholder="Your message goes here" 
+							v-model="value2" 
+							rows="5" 
+							cols="58" 
+							autoResize 
+							class="w-full"
+						/>
 					</div>
 				</div>
-				<div class="btn mt-8 flex flex-row-reverse">
-					<!-- <button type="submit" class="border-solid border-2 border-red-600 bg-red-600 text-gray-100 text-base font-medium rounded-3xl px-10 py-3">
-						SEND
-					</button> -->
-					<Button severity="danger" type="button" label="Submit" icon="pi pi-search" :loading="loading" @click="load" rounded />
+				<div class="btn mt-8">
+					<Button 
+						type="button" 
+						label="Submit" 
+						icon="pi pi-send" 
+						:loading="loading" 
+						@click="load" 
+						rounded 
+						class="ml-auto"
+					/>
 				</div>
 			</form>
 		</div>
@@ -143,9 +157,16 @@ const load = () => {
 
 <style scoped>
 
-Button{
-	background-color:hsl(0, 100%, 50%);
-	border-color:hsl(0, 100%, 50%);
+Button {
+    background-color: hsl(0, 85%, 60%); 
+    border-color: hsl(0, 85%, 60%);
+	color: hsl(20, 100%, 100%);
+}
+
+Button:hover {
+    background-color: hsl(195, 85%, 60%) !important; 
+    border-color: hsl(195, 85%, 60%) !important;
+    color: hsl(20, 100%, 100%) !important;
 }
 
 @media (min-width:768px)
@@ -293,6 +314,54 @@ Button{
 	.top{
 		justify-content:space-between;
 	}
+}
+
+.Form {
+	width: 100%;
+}
+
+.Names input,
+.Emails input {
+	width: 100%;
+	max-width: 260px;
+}
+
+.btn {
+	display: flex;
+	justify-content: flex-end;
+}
+
+@media (max-width: 768px) {
+	.Names input,
+	.Emails input {
+		max-width: 100%;
+	}
+
+	.Form {
+		padding: 0 1rem;
+	}
+}
+
+.Names,
+.Emails {
+    flex: 1;
+    min-width: 0; /* This prevents flex items from overflowing */
+}
+
+.Names input,
+.Emails input {
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .flex.flex-row {
+        gap: 4px; /* Reduce gap on mobile */
+    }
+    
+    .Names,
+    .Emails {
+        width: 50%;
+    }
 }
 
 </style>
