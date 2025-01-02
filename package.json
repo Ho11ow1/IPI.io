@@ -1,35 +1,38 @@
 {
-  "name": "vite-project",
-  "private": true,
-  "version": "0.0.0",
-  "type": "commonjs",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
-  },
-  "dependencies": {
-    "@primevue/themes": "^4.0.7",
-    "@remixicon/vue": "^4.2.0",
-    "@vueuse/motion": "^2.2.6",
-    "chart.js": "^4.4.4",
-    "crypto-icons": "^1.0.65",
-    "install": "^0.13.0",
-    "npm": "^10.9.0",
-    "primeflex": "^3.3.1",
-    "primeicons": "^7.0.0",
-    "primevue": "^4.0.7",
-    "remixicon": "^4.3.0",
-    "vue": "^3.5.10",
-    "vue-chartjs": "^5.3.1"
-  },
-  "devDependencies": {
-    "@types/node": "^22.7.5",
-    "@vitejs/plugin-vue": "^5.1.4",
-    "autoprefixer": "^10.4.20",
-    "postcss": "^8.4.47",
-    "sass-embedded": "^1.79.4",
-    "tailwindcss": "^3.4.13",
-    "vite": "^5.4.8"
-  }
+    "name": "ipi",
+    "private": true,
+    "version": "0.0.0",
+    "type": "commonjs",
+    "scripts": 
+    {
+        "dev": "vite",
+        "build": "vite build",
+        "preview": "vite preview"
+    },
+    "dependencies": 
+    {
+        "@primevue/themes": "^4.0.7",
+        "@remixicon/vue": "^4.2.0",
+        "@vueuse/motion": "^2.2.6",
+        "chart.js": "^4.4.4",
+        "crypto-icons": "^1.0.65",
+        "install": "^0.13.0",
+        "npm": "^10.9.0",
+        "primeflex": "^3.3.1",
+        "primeicons": "^7.0.0",
+        "primevue": "^4.0.7",
+        "remixicon": "^4.3.0",
+        "vue": "^3.5.10",
+        "vue-chartjs": "^5.3.1"
+    },
+    "devDependencies": 
+    {
+        "@types/node": "^22.7.5",
+        "@vitejs/plugin-vue": "^5.1.4",
+        "autoprefixer": "^10.4.20",
+        "postcss": "^8.4.47",
+        "sass-embedded": "^1.79.4",
+        "tailwindcss": "^3.4.13",
+        "vite": "^5.4.8"
+    }
 }
