@@ -2,132 +2,141 @@
 import { ref } from 'vue';
 
 const texts = [
-    'NDEPENDENT ROTOCOL NFRASTRUCTURE-',
-    'nternational ayment nstrument-',
-    'nternet eer-to-Peer nvestment-',
-    'nnovative ayment nfrastructure-',
-    'nstant ayment ntegration-',
-    'ntelligent ayment nterface-',
-    'nternet ayment nitiative-',
-    'nnovative ayment nstrument-',
-    'nternational ayment nfrastructure-',
-    'ntelligent ayment nterface-'
+    'ndependant rotocol nfrastructure',
+    'nternational ayment nstrument',
+    'nternet eer-to-Peer nvestment',
+    'nnovative ayment nfrastructure',
+    'nstant ayment ntegration',
+    'ntelligent ayment nterface',
+    'nternet ayment nitiative',
+    'nnovative ayment nstrument',
+    'nternational ayment nfrastructure',
+    'ntelligent ayment nterface'
 ];
 
-const ccurrent1 = ref('');
-const ccurrent2 = ref('');
-const ccurrent3 = ref('');
-const curdesc = ref('');
+const currentWord1 = ref('');
+const currentWord2 = ref('');
+const currentWord3 = ref('');
+const currentDescription = ref('');
 
-const des1 = ref('');
-let index1 = 0;
-const des2 = ref('');
-let index2 = 0;
-const des3 = ref('');
-let index3 = 0;
-const desdesc = ref ('');
-let index4 = 0;
+const word1 = ref('');
+const word2 = ref('');
+const word3 = ref('');
+const fullDescription = ref('');
+let word1Index = 0;
+let word2Index = 0;
+let word3Index = 0;
+let descriptionIndex = 0;
 
-let interval = 225; // milliseconds
+const wordsArray = [];
+let wordArrayIndex = 0;
+let activeWordIndex = 0;
 
-let letterIndex = 0;
-
-const Arr = [];
-
-let currentWordIndex = 0; // Track which word is being updated
-
+// Split texts into words and populate wordsArray
 for (let i = 0; i < texts.length; i++) 
 {
-    const words = texts[i].split(" "); // Split into words
-    Arr.push([...words]); // Create a new array and push it to Arr
+    const words = texts[i].split(" ");
+    wordsArray.push([...words]);
 }
 
-des1.value = Arr[letterIndex][0];
-des2.value = Arr[letterIndex][1];
-des3.value = Arr[letterIndex][2];
-desdesc.value = 'E COMBINE THE BEST PROTOCOLS TO BUILD THE FASTEST, SAFEST AND SIMPLEST NON-CUSTODIAL BLOCKCHAIN FOR STORING, TRADING, DAPPS, DEFI, NFT AND MORE POWERED BY IPI UTILITY COIN. MOST POPULAR COINS WRAPPED.'; // Set the initial value for the fourth word
+word1.value = wordsArray[wordArrayIndex][0];
+word2.value = wordsArray[wordArrayIndex][1];
+word3.value = wordsArray[wordArrayIndex][2];
+fullDescription.value = 'E COMBINE THE BEST PROTOCOLS TO BUILD THE FASTEST, '+ 'SAFEST AND SIMPLEST NON-CUSTODIAL BLOCKCHAIN FOR STORING, '+
+                        'TRADING, DAPPS, DEFI, NFT AND MORE POWERED BY IPI UTILITY COIN. '+ 'MOST POPULAR COINS WRAPPED.';
 
-let delay = 30;
-let i = 0;
+let descriptionTypingDelay = 30;
+let descriptionTypingCounter = 0;
 
-let IntervalId = setInterval(()=>{
-    if (i < 200)
+let descriptionIntervalId = setInterval(() => {
+    if (descriptionTypingCounter < 200) 
     {
-        curdesc.value += desdesc.value[index4];
-        index4 = (index4 + 1) % desdesc.value.length;
-        i++;
+        currentDescription.value += fullDescription.value[descriptionIndex];
+        descriptionIndex = (descriptionIndex + 1) % fullDescription.value.length;
+        descriptionTypingCounter++;
+    } 
+    else 
+    {
+        clearInterval(descriptionIntervalId);
     }
-    else
-    {
-        clearInterval(IntervalId);
-    }
-}, delay)
+}, descriptionTypingDelay);
 
-const IntervalID = setInterval(() => 
+function sleep(milliseconds) {
+    return new Promise(resolve => setTimeout(resolve, milliseconds));
+}
+
+let typingInterval = 175;
+
+async function typeWriter() 
+{
+    while (true) 
     {
-        switch (currentWordIndex)
-        {   
+        switch (activeWordIndex) 
+        {
             case 0:
-                ccurrent1.value += des1.value[index1];
-                index1 = (index1 + 1) % des1.value.length;
+                currentWord1.value += word1.value[word1Index];
+                word1Index++;
 
-                if (ccurrent1.value === des1.value)
+                if (word1Index >= word1.value.length) 
                 {
-                    currentWordIndex = 1;
-
-                    letterIndex = (letterIndex + 1) % Arr.length;
-                    // Update the displayed words for the next set
-                    des1.value = Arr[letterIndex][0];
-                    des2.value = Arr[letterIndex-1][1];
-                    des3.value = Arr[letterIndex-1][2];
+                    activeWordIndex = 1;
+                    word1Index = 0;
                 }
-            break;
+                break;
 
             case 1:
-                ccurrent2.value += des2.value[index2];
-                index2 = (index2 + 1) % des2.value.length;
-                if (ccurrent2.value === des2.value)
+                currentWord2.value += word2.value[word2Index];
+                word2Index++;
+
+                if (word2Index >= word2.value.length) 
                 {
-                    currentWordIndex = 2;
+                    activeWordIndex = 2;
+                    word2Index = 0;
                 }
-            break;
+                break;
 
             case 2:
-                ccurrent3.value += des3.value[index3];
-                index3 = (index3 + 1) % des3.value.length;
-                if (ccurrent3.value === des3.value)
+                currentWord3.value += word3.value[word3Index];
+                word3Index++;
+
+                if (word3Index >= word3.value.length) 
                 {
-                    ccurrent1.value = "";
-                    ccurrent2.value = "";
-                    ccurrent3.value = "";
-                    currentWordIndex = 0;
-                    console.log("All words generated successfully!");
+                    await sleep(1500);
+                    currentWord1.value = '';
+                    currentWord2.value = '';
+                    currentWord3.value = '';
+                    word3Index = 0; // Reset index in case of OutOfSync error
+                    activeWordIndex = 0;
+
+                    // Update words for the next set
+                    wordArrayIndex = (wordArrayIndex + 1) % wordsArray.length;
+                    word1.value = wordsArray[wordArrayIndex][0];
+                    word2.value = wordsArray[wordArrayIndex][1];
+                    word3.value = wordsArray[wordArrayIndex][2];
                 }
-            break;
+                break;
         }
 
-    }, interval)
+        await sleep(typingInterval);
+    }
+}
+
+typeWriter();
 </script>
 
 <template>
     <div class="Generate">
         <h2 class="my-4 text-red-600 text-6xl">
-            I<span class="II-1 text-neutral-200 uppercase mx-1">{{ ccurrent1 }}</span>
+            I<span class="II-1 text-neutral-200 uppercase mx-1">{{ currentWord1 }}</span>
         </h2>
         <h2 class="my-4 text-red-600 text-6xl">
-            P<span class="PP-1 text-neutral-200 uppercase mx-1">{{ ccurrent2 }}</span>
+            P<span class="PP-1 text-neutral-200 uppercase mx-1">{{ currentWord2 }}</span>
         </h2>
         <h2 class="my-4 text-red-600 text-6xl">
-            I<span class="II-2 text-neutral-200 uppercase mx-1">{{ ccurrent3 }}</span>
+            I<span class="II-2 text-neutral-200 uppercase mx-1">{{ currentWord3 }}</span>
         </h2>
     </div>
-    <h3 class="mt-8 text-1xl max-w-5xl main-description">
-        W<span class="">{{ curdesc }}</span>
+    <h3 class="mt-8 text-1xl max-w-5xl text-[#7fa3cdff]">
+        W<span class="">{{ currentDescription }}</span>
     </h3>
 </template>
-
-<style scoped>
-.main-description{
-    color:#7fa3cdff;
-}
-</style>

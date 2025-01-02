@@ -1,5 +1,6 @@
 <script setup>
     import HELPME from './things/work.vue'
+    
 </script>
 
 <template>
@@ -190,8 +191,8 @@
 } */
 
 canvas{
-    max-width:480px;
-    max-height:480px;
+    max-width:360px;
+    max-height:360px;
 }
 
 @media (max-width:1280px)
