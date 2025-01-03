@@ -116,9 +116,9 @@
 
 <template>
     <section 
+        class="hidden-el mb-80 px-4 overflow-hidden relative"
         id="roadmap" 
         v-motion-slide-visible-once-bottom
-        class="hidden-el mt-24 px-4 pt-8 pb-8 overflow-x-hidden relative"
     >
         <div class="Section-title">
             <h2 class="text-center mx-auto mb-8 font-medium text-5xl text-white">

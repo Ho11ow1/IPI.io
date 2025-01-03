@@ -5,7 +5,7 @@
 
 <template>
     <section 
-        class="container mx-auto px-8 mb-60 pt-36 flex flex-wrap justify-between items-center hidden-el max-w-[1680px] lg:flex-nowrap"
+        class="container mx-auto mb-80 px-8 flex flex-wrap justify-between items-center hidden-el overflow-hidden max-w-[1680px] lg:flex-nowrap"
         id="main"
         v-motion-slide-visible-once-bottom
     >

@@ -61,7 +61,7 @@
 
 <template>
 	<section 
-		class="container mx-auto px-4 md:px-8 mb-56 mt-96 flex flex-wrap-reverse md:flex-nowrap justify-center items-center gap-4 md:gap-64 hidden-el animate" 
+		class="container mx-auto mb-32 px-4 md:px-8 flex flex-wrap-reverse md:flex-nowrap justify-center items-center gap-4 md:gap-64 hidden-el overflow-hidden animate" 
 		id="contact" 
 		v-motion-slide-visible-once-bottom
 	>

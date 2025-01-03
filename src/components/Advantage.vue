@@ -163,7 +163,7 @@
 
 <template>
 	<section 
-		class="container mx-auto hidden-el my-96" 
+		class="container mx-auto mb-80 hidden-el overflow-hidden" 
 		id="advantages"
 		v-motion-slide-visible-once-bottom
 	>

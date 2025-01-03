@@ -17,7 +17,7 @@
         const element = document.getElementById(elementId);
         if (element) 
         {
-            const headerOffset = 100;
+            const headerOffset = 175;
             const elementPosition = element.getBoundingClientRect().top;
             const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
@@ -40,7 +40,7 @@
 
 <template>
     <header 
-        class="w-full bg-[#151C31] sticky top-0 left-0 z-[1000] transition-colors duration-300"
+        class="w-full bg-[#151C31] sticky top-0 left-0 z-[1000] transition-colors duration-300 mb-16"
         :class="[isSticky ? 'bg-[hsl(222.86,53.85%,8.75%)]' : '']"
         id="header" 
         v-motion-slide-visible-once-bottom
@@ -73,22 +73,22 @@
                         p-4 md:p-0
                         z-[1000]">
                     <li>
-                        <a href="#app">
+                        <a @click.prevent="scrollToSection('main')" href="#main">
                             Home
                         </a>
                     </li>
                     <li>
-                        <a href="#advantages">
+                        <a @click.prevent="scrollToSection('advantages')" href="#advantages">
                             Advantages
                         </a>
                     </li>
                     <li>
-                        <a href="#platform">
+                        <a @click.prevent="scrollToSection('platform')" href="#platform">
                             Platform
                         </a>
                     </li>
                     <li>
-                        <a href="#coins">
+                        <a @click.prevent="scrollToSection('coins')" href="#coins">
                             Coins
                         </a>
                     </li>

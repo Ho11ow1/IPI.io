@@ -5,7 +5,7 @@
 <template>
 
 <section 
-    class="Platform container mx-auto mb-72 pt-36 hidden-el px-4" 
+    class="Platform container mx-auto mb-80 hidden-el overflow-hidden px-4" 
     id="platform"
     v-motion
     :initial="{ opacity: 0, y: 100 }"

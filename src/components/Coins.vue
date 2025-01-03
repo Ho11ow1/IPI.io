@@ -1,11 +1,12 @@
 <script setup>
     import HELPME from './things/work.vue'
-    
+
+
 </script>
 
 <template>
     <section 
-        class="coins container mx-auto mb-72 pt-36 hidden-el" 
+        class="coins container mx-auto mb-80 hidden-el overflow-hidden" 
         id="coins"
         v-motion-slide-visible-once-bottom
     >

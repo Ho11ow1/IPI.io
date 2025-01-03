@@ -5,7 +5,7 @@
 <template>
 
     <section 
-        class="ecosystem container mb-96 pt-32 mx-auto px-24 text-slate-100 hidden-el" 
+        class="ecosystem container mx-auto mb-80 px-24 text-slate-100 hidden-el overflow-hidden" 
         id="eco"
         v-motion-slide-visible-once-bottom
     >
