@@ -131,14 +131,14 @@ export default
     data() 
     {
         return {
-            activeTab: 2, // Default tab
+            activeTab: 2,
         };
     },
     methods: 
     {
         showTab(tabNumber) 
         {
-        this.activeTab = tabNumber; // Update active tab
+        this.activeTab = tabNumber;
         },
     },
 };

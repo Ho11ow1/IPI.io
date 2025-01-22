@@ -5,7 +5,7 @@
 <script lang="ts">
 import { Chart as ChartJS, ArcElement, Tooltip } from 'chart.js'
 import { Pie } from 'vue-chartjs'
-import * as chartConfig from './killingmyself.js'
+import * as chartConfig from './chartConfig.js'
 
 ChartJS.register(ArcElement, Tooltip);
 

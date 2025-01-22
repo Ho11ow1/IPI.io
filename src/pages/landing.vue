@@ -1,13 +1,13 @@
 <script setup lang="ts">
 	import { ref, onMounted } from 'vue';
 
-	import NavBar from '../components/Navbar.vue';
-	import Main from '../components/Main.vue';
-	import Advantage from '../components/Advantage.vue';
-	import Platform from '../components/Platform.vue';
-	import Coins from '../components/Coins.vue';
-	import RoadMap from '../components/RoadMap.vue';
-	import Contact from '../components/Contact.vue';
+	import NavBar from '../components/navbar.vue';
+	import Main from '../components/main.vue';
+	import Advantage from '../components/advantage.vue';
+	import Platform from '../components/platform.vue';
+	import Coins from '../components/coins.vue';
+	import RoadMap from '../components/roadMap.vue';
+	import Contact from '../components/contact.vue';
 
 	const Loaded = ref(false);
 	// Make sure all are loaded // else: Spinner

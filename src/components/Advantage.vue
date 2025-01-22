@@ -4,7 +4,7 @@
 		data() 
 		{
 		return {
-			activeTab: 2, // Default tab
+			activeTab: 2,
 			coins: [
 			{ id: 1, IMG: 'ipi.svg', TITLE: 'IPI' },
 			{ id: 2, IMG: 'btc.svg', TITLE: 'Bitcoin (BTC)' },
@@ -32,17 +32,17 @@
 			data_2: [
 			{ id: 1, IMG: 'plus2.svg', name: '100M' },
 			{ id: 2, IMG: 'plus2.svg', name: '21M' },
-			{ id: 3, IMG: 'minus.svg', name: '∞' },
+			{ id: 3, IMG: 'minus.svg', name: 'infinity' },
 			{ id: 4, IMG: 'plus.svg', name: '200M' },
-			{ id: 5, IMG: 'minus.svg', name: '100B' },
-			{ id: 6, IMG: 'minus.svg', name: '45B' },
-			{ id: 7, IMG: 'minus.svg', name: '∞' },
-			{ id: 8, IMG: 'minus.svg', name: '∞' },
-			{ id: 9, IMG: 'minus.svg', name: '∞' },
-			{ id: 10, IMG: 'minus.svg', name: '10B' },
+			{ id: 5, IMG: 'mid.svg', name: '100B' },
+			{ id: 6, IMG: 'mid.svg', name: '45B' },
+			{ id: 7, IMG: 'minus.svg', name: 'infinity' },
+			{ id: 8, IMG: 'minus.svg', name: 'infinity' },
+			{ id: 9, IMG: 'minus.svg', name: 'infinity' },
+			{ id: 10, IMG: 'mid.svg', name: '10B' },
 			],
 			data_3: [
-			{ id: 1, IMG: 'plus2.svg', name: '0**' },
+			{ id: 1, IMG: 'plus2.svg', name: '10M' },
 			{ id: 2, IMG: 'plus2.svg', name: '0' },
 			{ id: 3, IMG: 'mid.svg', name: '72M' },
 			{ id: 4, IMG: 'minus.svg', name: '200M' },
@@ -56,14 +56,14 @@
 			data_4: [
 			{ id: 1, IMG: 'plus2.svg', name: 'Yes/~4Y' },
 			{ id: 2, IMG: 'plus2.svg', name: 'Yes/~4Y' },
-			{ id: 3, IMG: 'minus.svg', name: 'NO' },
-			{ id: 4, IMG: 'minus.svg', name: 'NO' },
-			{ id: 5, IMG: 'minus.svg', name: 'NO' },
-			{ id: 6, IMG: 'minus.svg', name: 'NO' },
-			{ id: 7, IMG: 'minus.svg', name: 'NO' },
-			{ id: 8, IMG: 'minus.svg', name: 'NO' },
-			{ id: 9, IMG: 'minus.svg', name: 'NO' },
-			{ id: 10, IMG: 'minus.svg', name: 'NO' },
+			{ id: 3, IMG: 'minus.svg', name: 'No' },
+			{ id: 4, IMG: 'minus.svg', name: 'No' },
+			{ id: 5, IMG: 'minus.svg', name: 'No' },
+			{ id: 6, IMG: 'minus.svg', name: 'No' },
+			{ id: 7, IMG: 'minus.svg', name: 'No' },
+			{ id: 8, IMG: 'minus.svg', name: 'No' },
+			{ id: 9, IMG: 'minus.svg', name: 'No' },
+			{ id: 10, IMG: 'minus.svg', name: 'No' },
 			],
 			data_5: [
 			{ id: 1, IMG: 'plus2.svg', name: 'Very fast/Very cheap' },
@@ -83,23 +83,23 @@
 			{ id: 3, IMG: 'plus2.svg', name: 'Yes' },
 			{ id: 4, IMG: 'mid.svg', name: 'Scanner only' },
 			{ id: 5, IMG: 'mid.svg', name: 'Scanner only' },
-			{ id: 6, IMG: 'plus2.svg', name: 'YES' },
-			{ id: 7, IMG: 'plus2.svg', name: 'YES' },
-			{ id: 8, IMG: 'plus2.svg', name: 'YES' },
-			{ id: 9, IMG: 'plus2.svg', name: 'YES' },
-			{ id: 10, IMG: 'plus2.svg', name: 'YES' },
+			{ id: 6, IMG: 'plus2.svg', name: 'Yes' },
+			{ id: 7, IMG: 'plus2.svg', name: 'Yes' },
+			{ id: 8, IMG: 'plus2.svg', name: 'Yes' },
+			{ id: 9, IMG: 'plus2.svg', name: 'Yes' },
+			{ id: 10, IMG: 'plus2.svg', name: 'Yes' },
 			],
 			data_2_2: [
-			{ id: 1, IMG: 'plus2.svg', name: '96k-123k'},
+			{ id: 1, IMG: 'plus2.svg', name: 'infinity'},
 			{ id: 2, IMG: 'minus.svg', name: '4-7'},
 			{ id: 3, IMG: 'minus.svg', name: '15-45'},
 			{ id: 4, IMG: 'minus.svg', name: '100-200 (on-chain)'},
 			{ id: 5, IMG: 'mid.svg', name: '1500'},
 			{ id: 6, IMG: 'minus.svg', name: '200-250'},
-			{ id: 7, IMG: 'plus2.svg', name: '50k-65k'},
+			{ id: 7, IMG: 'plus.svg', name: '50k-65k'},
 			{ id: 8, IMG: 'mid.svg', name: '700-2000'},
 			{ id: 9, IMG: 'mid.svg', name: '1k-2k'},
-			{ id: 10, IMG: 'plus2.svg', name: '1k-46k'},
+			{ id: 10, IMG: 'plus.svg', name: '1k-46k'},
 			],
 			data_3_2: [
 			{ id: 1, IMG: 'plus2.svg', name: 'Yes, fastest'},
@@ -155,7 +155,7 @@
 		{
 			showTab(tabNumber) 
 			{
-				this.activeTab = tabNumber; // Update active tab
+				this.activeTab = tabNumber;
 			},
 		},
 	};
@@ -228,7 +228,7 @@
 			<tr>
 				<td :colspan="coins.length" class="text-center py-2">
 					<h2 class="text-xl font-bold white">
-						TPS** Range
+						TPS Range
 					</h2>
 				</td>
 			</tr>
@@ -367,7 +367,7 @@
 			<tr>
 				<td :colspan="coins.length" class=" text-center py-2">
 					<h2 class="text-xl font-bold white">
-					Instamine              
+					Initial Supply   
 					</h2>
 				</td>
 			</tr>
@@ -462,7 +462,6 @@
     color: rgb(239, 68, 68);
 }
 
-/* Styles for the inactive tab */
 .inactive {
     color: var(--blue);
 }
@@ -484,7 +483,7 @@ th, td {
 	max-width: 110px;
 	word-wrap: break-word;
 	white-space: normal;
-	overflow: hidden;  /* Prevents overflow of long content */
+	overflow: hidden;
 	text-align: center;
 	margin-bottom:2rem;
 	position:relative;
@@ -493,13 +492,13 @@ th, td {
 h2{
 	margin-bottom:.75rem;
 	padding:0;
-	font-weight: 700;  /* Bold weight */
+	font-weight: 700;
 }
 
 .coin-image {
 	height: 36px;
 	width: 36px;
-  	margin: 0 auto;  /* Center the image */
+	margin: 0 auto;
 	margin-bottom:.35rem;
 }
 
@@ -602,7 +601,6 @@ p{
 	}
 }
 
-/* Scores for Tab 1 (Developers Comparison) */
 #tab1 .coins-list th:nth-child(1) .score::after { width: 100%; }
 #tab1 .coins-list th:nth-child(2) .score::after { width: 0%; }
 #tab1 .coins-list th:nth-child(3) .score::after { width: 10%; }
@@ -614,7 +612,6 @@ p{
 #tab1 .coins-list th:nth-child(9) .score::after { width: 15%; }
 #tab1 .coins-list th:nth-child(10) .score::after { width: 50%; }
 
-/* Scores for Tab 2 (Investors Comparison) */
 #tab2 .coins-list th:nth-child(1) .score::after { width: 100%; }
 #tab2 .coins-list th:nth-child(2) .score::after { width: 60%; }
 #tab2 .coins-list th:nth-child(3) .score::after { width: 10%; }
@@ -626,17 +623,16 @@ p{
 #tab2 .coins-list th:nth-child(9) .score::after { width: 25%; }
 #tab2 .coins-list th:nth-child(10) .score::after { width: 30%; }
 
-/* Update font weights to 700 */
 .cell-text {
-    font-weight: 700;  /* Bold weight */
+    font-weight: 700;
 }
 
 td p, th p {
-    font-weight: 700;  /* Bold weight */
+    font-weight: 700;
 }
 
 .coin-text p {
-    font-weight: 700;  /* Bold weight */
+    font-weight: 700;
 }
 
 </style>

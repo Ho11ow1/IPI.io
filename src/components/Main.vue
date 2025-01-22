@@ -1,5 +1,5 @@
 <script setup lang="js">
-    import WORDS from './words/words.vue'
+    import TypeWriter from './Words/typeWriter.vue'
     
 </script>
 
@@ -10,7 +10,7 @@
         v-motion-slide-visible-once-bottom
     >
         <div class="left flex flex-col w-full max-w-[1024px]">
-            <WORDS/>
+            <TypeWriter/>
             <div class="flex justify-center gap-8 mt-8">
                 <button class="border-2 border-[#f42f54] bg-[#f42f54] text-white text-sm font-medium rounded-3xl px-6 py-3 hover:bg-neutral-100 hover:border-neutral-100 hover:text-[#f42f54]">
                     <a href="https://ipi.io/whitepaper.pdf">

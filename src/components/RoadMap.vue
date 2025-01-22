@@ -19,57 +19,51 @@
             description: 'Starting IPI Mainnet, Requirement analysis, research and development, designing the architecture of the blockchain network and protocols.',
         },
         {
-            quarter: 'Q2 2023',
-            dateRange: 'Apr 2023 - Sep 2023',
+            quarter: '2023/2024',
+            dateRange: 'Apr 2023 - Sep 2024',
             description: 'Development of multi-chain wallet and native scanner.Creating a smart contract engine.Private offering.'
         },
         {
-            quarter: 'Q3 2024',
-            dateRange: 'Oct 2023 - Sep 2024',
+            quarter: '2024/2025',
+            dateRange: 'Oct 2024 - Sep 2025',
             description: 'Developing smart contract engine, developer tools, documentation, and basic building blocks'
         },
         {
-            quarter: 'Q4 2024',
-            dateRange: 'Oct 2024 - Dec 2024',
+            quarter: 'Q4 2025',
+            dateRange: 'Sep 2025 - Dec 2025',
             description: 'Building a community of developers creating decentralized applications with us. Transitioning existing protocols.'
         },
         {
-            quarter: 'Q1 2025 - till later',
-            dateRange: 'Jan 2025 - till later',
+            quarter: '2025 - till later',
+            dateRange: 'late 2025 - till later',
             description: 'Start of public mining. Creating more of decentralized applications.'
         }
     ]);
 
-    // Function to handle scroll and update the line's color
     const handleScroll = () => {
         const container = roadmapContainer.value;
         if (!container) return;
 
-        // Get the scroll position and the total width
         const scrollLeft = container.scrollLeft;
         const scrollWidth = container.scrollWidth - container.clientWidth;
 
-        // Calculate the scroll percentage (0 to 1)
         const scrollPercentage = scrollLeft / scrollWidth;
 
-        // Set the CSS based on scroll percentage
         container.style.setProperty('--scroll-percentage', scrollPercentage.toString());
     };
 
-    // Function to scroll left
     const scrollLeftHandler = () => {
         if (roadmapContainer.value) 
         {
-            const scrollAmount = roadmapContainer.value.children[0].clientWidth + 16; // Width of item + gap
+            const scrollAmount = roadmapContainer.value.children[0].clientWidth + 16;
             roadmapContainer.value.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
         }
     };
 
-    // Function to scroll right
     const scrollRightHandler = () => {
         if (roadmapContainer.value) 
         {
-            const scrollAmount = roadmapContainer.value.children[0].clientWidth + 16; // Width of item + gap
+            const scrollAmount = roadmapContainer.value.children[0].clientWidth + 16;
             roadmapContainer.value.scrollBy({ left: scrollAmount, behavior: 'smooth' });
         }
     };
@@ -101,14 +95,14 @@
         }    
         e.preventDefault();
         const x = e.pageX - roadmapContainer.value.offsetLeft;
-        const walk = (x - startX.value); // Removed the multiplier for smoother scrolling
+        const walk = (x - startX.value);
         roadmapContainer.value.scrollLeft = scrollLeft.value - walk;
     };
 
     onMounted(() => {
         if (roadmapContainer) 
         {
-            handleScroll(); // Initial call to set the line color when the page loads
+            handleScroll();
         }
     });
 </script>

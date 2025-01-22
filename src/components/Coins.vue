@@ -1,5 +1,5 @@
 <script setup>
-    import HELPME from './things/work.vue'
+    import Chart from './Chart/chart.vue'
 
 
 </script>
@@ -66,7 +66,7 @@
             </div>
             <!-- Interactive Pie Chart Section -->
             <div class="flex flex-col items-center mr-12 chart" v-motion :initial="{ opacity: 0, y: 100 }" :enter="{ opacity: 1, y: 0, transition: { duration: 1000 } }">
-                <HELPME/>
+                <Chart/>
             </div>
         </div>
 
@@ -75,8 +75,8 @@
                     <div class="info-box flex items-center px-3 py-3">
                         <div class="info-line purple"></div>
                         <div class="info-content flex flex-col">
-                            <p class="info-title blue">START TIME</p>
-                            <p class="info-value font-semibold">July, 2023</p>
+                            <p class="info-title blue">MAINNET START</p>
+                            <p class="info-value font-semibold">October, 2024</p>
                         </div>
                     </div>
                     <div class="info-box flex items-center px-3 py-3">
@@ -90,7 +90,7 @@
                         <div class="info-line red"></div>
                         <div class="info-content flex flex-col">
                             <p class="info-title blue">MINING START</p>
-                            <p class="info-value font-semibold">1 January, 2025</p>
+                            <p class="info-value font-semibold">May, 2025</p>
                         </div>
                     </div>
                     <div class="info-box flex items-center px-3 py-3">

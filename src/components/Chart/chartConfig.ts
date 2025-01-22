@@ -7,7 +7,7 @@ export const data = {
         borderColor: '#0f1932;',
         borderWidth: 2,
         hoverBackgroundColor: 'red',
-        hoverBorderWidth : '3'
+        hoverBorderWidth : 3
     }
     ]
 }

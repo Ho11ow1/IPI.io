@@ -15,12 +15,10 @@
 		loading.value = true;
 		setTimeout(() => {
 			loading.value = false;
-			// Clear all input fields
 			textarea.value = '';
 			nameInput.value = '';
 			emailInput.value = '';
 			
-			// Clear native input fields
 			const inputs = document.querySelectorAll('input');
 			inputs.forEach(input => {
 				input.value = '';
@@ -28,35 +26,38 @@
 		}, 2000);
 	};
 
-	// let Visible = ref(true);
+/*
+{
+	let Visible = ref(true);
 
-	// let Observer: IntersectionObserver | null = null;
+	let Observer: IntersectionObserver | null = null;
 
-	// onMounted(() => 
-	// {
-	// 	Observer = new IntersectionObserver((entries) => 
-	// 	{
-	// 		entries.forEach(entry => 
-	// 		{
-	// 			Visible.value = entry.isIntersecting;
-	// 		});
-	// 	});
+	onMounted(() => 
+	{
+		Observer = new IntersectionObserver((entries) => 
+		{
+			entries.forEach(entry => 
+			{
+				Visible.value = entry.isIntersecting;
+			});
+		});
 
-	// 	const target = document.getElementById('contact');
-	// 	if (target) 
-	// 	{
-	// 		Observer.observe(target);
-	// 	}
-	// });
+		const target = document.getElementById('contact');
+		if (target) 
+		{
+			Observer.observe(target);
+		}
+	});
 
-	// onUnmounted(() => 
-	// {
-	// 	if (Observer)
-	// 	{
-	// 		Observer.disconnect();
-	// 	}
-	// })
-
+	onUnmounted(() => 
+	{
+		if (Observer)
+		{
+			Observer.disconnect();
+		}
+	})
+}
+*/
 </script>
 
 <template>
@@ -175,7 +176,7 @@
 		background-color: rgb(96, 165, 250) !important;
 		border-color: rgb(96, 165, 250) !important;
 	}
-	/* Minimal required CSS for rotating circles animation */
+
 	.circle {
 		border-radius: 50%;
 		position: absolute;
